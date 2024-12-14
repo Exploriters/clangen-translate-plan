@@ -1,25 +1,18 @@
-# clangen
-
-### [Discord Server](https://discord.gg/clangen) || [Official website](https://clangen.io) || [Itch.io Page](https://sablesteel.itch.io/clan-gen-fan-edit) 
-
-## Description
-Fan-edit of the warrior cat clangen game built using Python and Pygame.
-
-## Credits
+# clangen翻译计划！
+### [原版Discord频道](https://discord.gg/clangen) || [原版在线网页](https://clangen.io) || [Itch.io页面](https://sablesteel.itch.io/clan-gen-fan-edit) ||[模组Discord帖子](https://discord.com/channels/1003759225522110524/1280195222445228206)
+## 描述
+致力于为Clangen增加多语言支持（主要是汉化）的尝试！:D
+## Clangen原版作者
 Original creator: just-some-cat.tumblr.com
-
 Fan-edit creator: SableSteel, and many others
-
-## Downloads
-### Stable
-Stable versions can be downloaded directly from the [official ClanGen website](https://clangen.io/download)
-
-### Development
-**Note**: Development versions are automatic snapshots of current development efforts. They are _not_ stable, can crash and even corrupt your save files.
-Additionally, we do not provide tech support for development versions.
-
-Download at your own risk here: [ClanGen development download](https://clangen.io/download-development)
-
+## Clangen汉化计划贡献者
+Clangen汉化计划的进展离不开数不清的参与者们！大家的帮助是无比珍贵的！！
+我们在这里且随时欢迎Clangen爱好者们与意图参与汉化的贡献者们的到来！↓
+QQ群：208213687
+## Clangen原版下载
+[稳定版](https://clangen.io/download)
+[dev版](https://clangen.io/download-development)
+# 以下是原README.MD当中提供的如何从源文件运行Clangen的方法
 ## Running from source
 ClanGen uses poetry to manage virtual environments. Therefore it is required to install the dependencies and run the game from source without manual tweaking.
 
