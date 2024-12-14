@@ -6,6 +6,20 @@ class translate():
             "universal.Open Data Directory": "打开文件目录",
             "universal.Opens the data directory.<br>This is where save files<br>and logs are stored.": "打开文件目录。<br>也就是存档与日志的所在处。",
             #endregion
+            #region ========== PRONOUNS ==========
+            "pronouns.he": "他",
+            "pronouns.him": "他",
+            "pronouns.his": "他的",
+            "pronouns.himself": "他自己",
+            "pronouns.she": "她",
+            "pronouns.her": "她",
+            "pronouns.hers": "她的",
+            "pronouns.herself": "她自己",
+            "pronouns.they": "祂",
+            "pronouns.them": "祂",
+            "pronouns.theirs": "祂的",
+            "pronouns.themself": "祂自己",
+            #endregion
             #region ========== START SCREEN ==========
             "start.Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse.": "警告：本游戏包含关于血腥、传统意义暴力与虐待动物的温和描述。",
             "start.continue": "继续",
@@ -87,7 +101,12 @@ class translate():
             "windows.Pronoun saved and added to presets!": "称谓已被保存并加入到预设了！",
             "windows.save": "保存",
             "windows.Test Set": "测试组合",
-
+            "windows.[subject] are quick.<br>": "[subject]很迅速。<br>",
+            "windows.[subject] is quick.<br>": "[subject]很迅速。<br>",
+            "windows.Everyone saw [object]. <br>": "所有猫都看见了[object]。<br>",
+            "windows.[poss] paw slipped.<br>": "[poss]爪子打滑了。<br>",
+            "windows.That den is [inposs].<br>": "那个巢穴是[inposs]。<br>",
+            "windows.This cat hunts by [self].<br>": "这猫正凭[self]在狩猎。<br>",
             #region ====== SYMBOL ======
             "windows.Show Symbols With:": "按分类显示族徽：",
             "symbolTag.plant": "植物",
@@ -112,6 +131,33 @@ class translate():
             "symbolTag.location": "地点",
             "symbolTag.descriptor": "描述",
             "symbolTag.miscellaneous": "杂项",
+            #endregion
+            #endregion
+            #region ========== WARRIOR DEN ==========
+            "warriorDen.This screen allows you to manage your warriors more effectively! You can give them a <br>specific focus, which will provide some benefits (and possibly some negatives) to your <br>Clan.  Some focuses are not available in classic mode.  Click on each focus to see a <br>description of what they will do.  Focuses that target other Clans will allow you to <br>choose which Clans you target.  Your focus can only be changed every 3 moons, <br>so choose carefully.": "此页面允许你更有效地管理你的武士！你可以给他们一个特定的<br>专注项，这将为你的族群提供一些增益（也可能有一些惩罚）。<br>一些专注项在经典模式下不可用。<br>单击专注项以查看关于此专注项对武士行为影响的说明。<br>针对其他族群的专注允许你选择将哪个族群作为你的目标。<br>专注项每3个月只能更换一次，所以要慎重选择。",
+            "warriorDen.Change Focus": "修改专注项",
+
+            #region ====== CLAN SETTING ======
+            "setting.Business As Usual": "一切照常",
+            "setting.The Clan has no specific focus and won't get any bonuses.": "族群不会专注于任何特殊的事情，<br>也不会得到任何加成。",
+            "setting.Feeding the Clan": "喂饱族群",
+            "setting.The Clan will focus on hunting, each working warrior (including deputy and leader) and each working apprentice will gather additional prey on each moonskip.": "族群将会专注于狩猎，每只可工作的武士<br>（包括副族长和族长）和每只可工作的学徒<br>将在每次月份跳过时获取额外的猎物。",
+            "setting.Assisting with Herb Gathering": "协助采集药草",
+            "setting.The Clan will focus on herb gathering, each medicine cat and medicine cat apprentice will gather additional herbs on each moonskip due to extra help from the warriors.": "族群将会专注于药草采集，由于武士们的<br>额外帮助，每只巫医和巫医学徒将在每次<br>月份跳过时采集到额外的药草。",
+            "setting.Threatening Outsiders": "威胁族群外的猫",
+            "setting.The relationship with cats outside of the Clan decreases due to intentionally threatening behavior from your warriors.": "与族群外的猫的关系将因为你的武士们的<br>恶意威胁行为而降低。",
+            "setting.Entreating with Outsiders": "联合族群外的猫",
+            "setting.The relationship with cats outside of the Clan increases as your warriors make efforts to sow seeds of friendship.": "与族群外的猫的关系将因为你的武士们所<br>努力撒播的友谊之种而增加。",
+            "setting.Resting and Recovering": "修生养息",
+            "setting.The Clan will take more care and time in their tasks and therefore the rate of injuries, illnesses and outbreaks will be reduced.": "族群会在他们的任务当中花费更多的时间、<br>更为小心谨慎。因此，他们遭遇伤病的<br>几率会降低。",
+            "setting.Sabotaging Other Clans": "妨碍其他族群",
+            "setting.Your mediator and warriors work together to undermine the other Clans. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.": "你的斡旋猫和武士联合起来以妨碍其他族群<br>仅在你有可工作的斡旋猫时可用。当你专注<br>于此项时，你可以选择将哪个族群作为<br>你的目标。",
+            "setting.Helping Other Clans": "帮助其他族群",
+            "setting.Your mediator and warriors work together to help the other Clans with whatever they need. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.": "你的斡旋猫和武士联合起来以在其他族群<br>需要帮助时施以援手。仅在你有可工作的<br>斡旋猫时可用。当你专注于此项时，你<br>可以选择将哪个族群作为你的目标。",
+            "setting.Raiding Other Clans": "掠夺其他族群",
+            "setting.Your warriors begin crossing borders for resources. Prey and herbs will greatly increase each moonskip, but injuries and illnesses will increase and the relationship with other Clans decrease. You will be able to choose which Clans you target.": "你的武士开始跨过边界并掠夺资源。在每次<br>月份跳过时所收获的猎物和药草将会大大<br>增加，但与此同时武士们受到的伤病也会<br>增加，且与其他族群的关系将会降低。你<br>可以选择将哪个族群作为你的目标。",
+            "setting.Hoarding Resources": "囤积资源",
+            "setting.Your warriors begin stockpiling as many resources as they can get their paws on, regardless of their own safety. Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.": "你的武士不顾自身安危地开始储存尽可能多<br>的资源。猎物和药草会增加，但遭遇的伤病<br>也会增加。",
             #endregion
             #endregion
         }

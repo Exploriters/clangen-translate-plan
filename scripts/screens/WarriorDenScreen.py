@@ -17,6 +17,8 @@ from scripts.utility import (
     get_text_box_theme,
 )
 
+from ..translate import translate
+
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
 
@@ -58,7 +60,7 @@ class WarriorDenScreen(Screens):
             if event.ui_element in self.focus_buttons.values():
                 for code, value in self.focus_buttons.items():
                     if value == event.ui_element:
-                        description = settings_dict["clan_focus"][code][1]
+                        description = translate.tran("setting." + str(settings_dict["clan_focus"][code][1]), game.settings["language"])
 
                         game.clan.switch_setting(self.active_code)
                         game.clan.switch_setting(code)
@@ -139,12 +141,7 @@ class WarriorDenScreen(Screens):
             "",
             object_id=ObjectID("#help_button", "@image_button"),
             manager=MANAGER,
-            tool_tip_text="This screen allows you to manage your warriors more effectively! You can give them a "
-            "specific focus, which will provide some benefits (and possibly some negatives) to your "
-            "Clan.  Some focuses are not available in classic mode.  Click on each focus to see a "
-            "description of what they will do.  Focuses that target other Clans will allow you to "
-            "choose which Clans you target.  Your focus can only be changed every 3 moons, "
-            "so choose carefully.",
+            tool_tip_text=translate.tran("warriorDen.This screen allows you to manage your warriors more effectively! You can give them a <br>specific focus, which will provide some benefits (and possibly some negatives) to your <br>Clan.  Some focuses are not available in classic mode.  Click on each focus to see a <br>description of what they will do.  Focuses that target other Clans will allow you to <br>choose which Clans you target.  Your focus can only be changed every 3 moons, <br>so choose carefully.", game.settings["language"]),
         )
 
         self.focus_frame = pygame_gui.elements.UIImage(
@@ -157,7 +154,7 @@ class WarriorDenScreen(Screens):
 
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((150, 592), (139, 30))),
-            "Change Focus",
+            translate.tran("warriorDen.Change Focus", game.settings["language"]),
             get_button_dict(ButtonStyles.SQUOVAL, (139, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -264,7 +261,7 @@ class WarriorDenScreen(Screens):
         for i, (code, desc) in enumerate(settings_dict["clan_focus"].items()):
             self.focus_buttons[code] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, 2), (250, 28))),
-                desc[0],
+                translate.tran("setting." + str(desc[0]), game.settings["language"]),
                 get_button_dict(ButtonStyles.ROUNDED_RECT, (250, 28)),
                 object_id=ObjectID(None, "@buttonstyles_rounded_rect"),
                 container=self.focus["button_container"],
@@ -364,7 +361,7 @@ class WarriorDenScreen(Screens):
         # create the new info text
         self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
             f"<b>Selected information:</b><br>"
-            + settings_dict["clan_focus"][self.active_code][1],
+            + translate.tran("setting." + str(settings_dict["clan_focus"][self.active_code][1]), game.settings["language"]),
             ui_scale(pygame.Rect((415, 466), (318, 130))),
             wrap_to_height=True,
             object_id="#text_box_30_horizcenter_vertcenter_spacing_95",

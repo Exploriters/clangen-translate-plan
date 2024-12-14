@@ -933,25 +933,25 @@ class PronounCreation(UIWindow):
             "conju": 1,
         }
 
-        if sub(r"[^A-Za-z0-9 ]+", "", self.boxes["subject"].get_text()) != "":
+        if sub("", "", self.boxes["subject"].get_text()) != "":
             pronoun_template["subject"] = sub(
-                r"[^A-Za-z0-9 ]+", "", self.boxes["subject"].get_text()
+                "", "", self.boxes["subject"].get_text()
             )
-        if sub(r"[^A-Za-z0-9 ]+", "", self.boxes["object"].get_text()) != "":
+        if sub("", "", self.boxes["object"].get_text()) != "":
             pronoun_template["object"] = sub(
-                r"[^A-Za-z0-9 ]+", "", self.boxes["object"].get_text()
+                "", "", self.boxes["object"].get_text()
             )
-        if sub(r"[^A-Za-z0-9 ]+", "", self.boxes["poss"].get_text()) != "":
+        if sub("", "", self.boxes["poss"].get_text()) != "":
             pronoun_template["poss"] = sub(
-                r"[^A-Za-z0-9 ]+", "", self.boxes["poss"].get_text()
+                "", "", self.boxes["poss"].get_text()
             )
-        if sub(r"[^A-Za-z0-9 ]+", "", self.boxes["inposs"].get_text()) != "":
+        if sub("", "", self.boxes["inposs"].get_text()) != "":
             pronoun_template["inposs"] = sub(
-                r"[^A-Za-z0-9 ]+", "", self.boxes["inposs"].get_text()
+                "", "", self.boxes["inposs"].get_text()
             )
-        if sub(r"[^A-Za-z0-9 ]+", "", self.boxes["self"].get_text()) != "":
+        if sub("", "", self.boxes["self"].get_text()) != "":
             pronoun_template["self"] = sub(
-                r"[^A-Za-z0-9 ]+", "", self.boxes["self"].get_text()
+                "", "", self.boxes["self"].get_text()
             )
         if self.conju == 2:
             pronoun_template["conju"] = 2
@@ -1015,15 +1015,39 @@ class PronounCreation(UIWindow):
 
     def get_sample_text(self, pronouns):
         text = ""
-        subject = f"{pronouns['subject']} are quick. <br>"
+        subject = translate.tran("windows.[subject] are quick.<br>",
+            game.settings["language"],
+            [["[subject]",
+            translate.tran("pronouns." + str(pronouns['subject']), game.settings["language"])
+            ]])
         if pronouns["conju"] == 2:
-            subject = f"{pronouns['subject']} is quick. <br>"
+            subject = translate.tran("windows.[subject] is quick.<br>",
+            game.settings["language"],
+            [["[subject]",
+            translate.tran("pronouns." + str(pronouns['subject']), game.settings["language"])
+            ]])
         text += subject.capitalize()
-        text += f"Everyone saw {pronouns['object']}. <br>"
-        poss = f"{pronouns['poss']} paw slipped.<br>"
+        text += translate.tran("windows.Everyone saw [object]. <br>",
+            game.settings["language"],
+            [["[object]",
+            translate.tran("pronouns." + str(pronouns['object']), game.settings["language"])
+            ]])
+        poss = translate.tran("windows.[poss] paw slipped.<br>",
+            game.settings["language"],
+            [["[poss]",
+            translate.tran("pronouns." + str(pronouns['poss']), game.settings["language"])
+            ]])
         text += poss.capitalize()
-        text += f"That den is {pronouns['inposs']}. <br>"
-        text += f"This cat hunts by {pronouns['self']}.<br>"
+        text += translate.tran("windows.That den is [inposs].<br>",
+            game.settings["language"],
+            [["[inposs]",
+            translate.tran("pronouns." + str(pronouns['inposs']), game.settings["language"])
+            ]])
+        text += translate.tran("windows.This cat hunts by [self].<br>",
+            game.settings["language"],
+            [["[self]",
+            translate.tran("pronouns." + str(pronouns['self']), game.settings["language"])
+            ]])
         # Full Sentence Example, doesn't fit.
         """sentence = f"{pronouns['poss']} keen sense alerted {pronouns['object']} to prey and {pronouns['subject']} decided to treat {pronouns['self']} by catching prey that would be {pronouns['inposs']} alone to eat. "
         if pronouns["conju"] == 2:
