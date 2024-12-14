@@ -1,0 +1,47 @@
+{
+    "json.schemas": [
+        {
+            "url": "./schemas/thought.schema.json",
+            "fileMatch": [
+                "thoughts/**/*.json"
+            ]
+        }
+    ],
+    "python.formatting.provider": "yapf",
+    "editor.formatOnSave": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "cSpell.words": [
+        "blit",
+        "bloodlust",
+        "Clanmates",
+        "cooldown",
+        "freshkill",
+        "greenleaf",
+        "headedness",
+        "hoofprints",
+        "kittypet",
+        "kittypets",
+        "leafbare",
+        "leaffall",
+        "newleaf",
+        "parentless",
+        "pygame",
+        "Silverpelt",
+        "starclan",
+        "Thunderpath",
+        "Twoleg",
+        "Twolegs",
+        "ujson",
+        "verdana"
+    ]
+}
