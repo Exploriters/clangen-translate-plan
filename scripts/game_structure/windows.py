@@ -1063,7 +1063,7 @@ class KillCat(UIWindow):
     def __init__(self, cat):
         super().__init__(
             ui_scale(pygame.Rect((300, 200), (450, 200))),
-            window_display_title="Kill Cat",
+            window_display_title=translate.tran("windows.Kill Cat", game.settings["language"]),
             object_id="#kill_cat_window",
             resizable=False,
         )
@@ -1078,7 +1078,7 @@ class KillCat(UIWindow):
         )
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         self.heading = pygame_gui.elements.UITextBox(
-            f"<b>-- How did this cat die? --</b>",
+            translate.tran("windows.<b>-- How did this cat die? --</b>", game.settings["language"]),
             ui_scale(pygame.Rect((10, 10), (430, 75))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
@@ -1090,7 +1090,7 @@ class KillCat(UIWindow):
             "",
             object_id="@unchecked_checkbox",
             tool_tip_text=process_text(
-                "If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives",
+                translate.tran("windows.If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives", game.settings["language"]),
                 cat_dict,
             ),
             manager=MANAGER,
@@ -1101,7 +1101,7 @@ class KillCat(UIWindow):
             "",
             object_id="@checked_checkbox",
             tool_tip_text=process_text(
-                "If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives",
+                translate.tran("windows.If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives", game.settings["language"]),
                 cat_dict,
             ),
             manager=MANAGER,
@@ -1111,7 +1111,7 @@ class KillCat(UIWindow):
         if self.the_cat.status == "leader":
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((347, 152), (77, 30))),
-                "done",
+                translate.tran("windows.done", game.settings["language"]),
                 get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
@@ -1119,15 +1119,17 @@ class KillCat(UIWindow):
             )
 
             self.prompt = process_text(
-                "This cat died when {PRONOUN/m_c/subject}...", cat_dict
+                translate.tran("windows.This cat died when {PRONOUN/m_c/subject}...",  game.settings["language"]),
+                cat_dict
             )
             self.initial = process_text(
-                "{VERB/m_c/were/was} killed by a higher power.", cat_dict
+                translate.tran("windows.{VERB/m_c/were/was} killed by a higher power.",  game.settings["language"]),
+                cat_dict
             )
 
             self.all_lives_check.hide()
             self.life_text = pygame_gui.elements.UITextBox(
-                "Take all the leader's lives",
+                translate.tran("windows.Take all the leader's lives",  game.settings["language"]),
                 ui_scale(pygame.Rect((60, 147), (450, 40))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
@@ -1153,10 +1155,11 @@ class KillCat(UIWindow):
             # This should only occur for retired leaders.
 
             self.prompt = process_text(
-                "This cat died when {PRONOUN/m_c/subject}...", cat_dict
+                translate.tran("windows.This cat died when {PRONOUN/m_c/subject}...",  game.settings["language"]),
+                cat_dict
             )
             self.initial = process_text(
-                "{VERB/m_c/were/was} killed by something unknowable to even StarClan",
+                translate.tran("windows.{VERB/m_c/were/was} killed by something unknowable to even StarClan",  game.settings["language"]),
                 cat_dict,
             )
             self.all_lives_check.hide()
@@ -1180,14 +1183,14 @@ class KillCat(UIWindow):
 
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((186, 152), (77, 30))),
-                "done",
+                translate.tran("windows.done",  game.settings["language"]),
                 get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
                 container=self,
             )
         else:
-            self.initial = "This cat was killed by a higher power."
+            self.initial = translate.tran("windows.This cat was killed by a higher power.",  game.settings["language"])
             self.prompt = None
             self.all_lives_check.hide()
             self.one_life_check.hide()
@@ -1202,7 +1205,7 @@ class KillCat(UIWindow):
 
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((186, 152), (77, 30))),
-                "done",
+                translate.tran("windows.done",  game.settings["language"]),
                 get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
@@ -1216,7 +1219,7 @@ class KillCat(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
                 death_message = sub(
-                    r"[^A-Za-z0-9<->/.()*'&#!?,| _]+",
+                    "",
                     "",
                     self.death_entry_box.get_text(),
                 )
@@ -1939,28 +1942,28 @@ class ChangeCatToggles(UIWindow):
 
         # Text
         self.text_1 = pygame_gui.elements.UITextBox(
-            "Prevent fading",
+            translate.tran("windows.Prevent fading",  game.settings["language"]),
             ui_scale(pygame.Rect(55, 25, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
         )
 
         self.text_2 = pygame_gui.elements.UITextBox(
-            "Prevent kits",
+            translate.tran("windows.Prevent kits",  game.settings["language"]),
             ui_scale(pygame.Rect(55, 50, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
         )
 
         self.text_3 = pygame_gui.elements.UITextBox(
-            "Prevent retirement",
+            translate.tran("windows.Prevent retirement",  game.settings["language"]),
             ui_scale(pygame.Rect(55, 75, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
         )
 
         self.text_4 = pygame_gui.elements.UITextBox(
-            "Limit romantic interactions and mate changes",
+            translate.tran("windows.Limit romantic interactions and mate changes",  game.settings["language"]),
             ui_scale(pygame.Rect(55, 100, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
