@@ -1,3 +1,5 @@
+from scripts.game_structure.game_essentials import game
+
 class translate():
     ''' 翻译文本的词典，请按照各自的语言排好。 '''
     dicts = {
@@ -109,11 +111,11 @@ class translate():
             "windows.This cat hunts by [self].<br>": "这猫正凭[self]在狩猎。<br>",
             "windows.Kill Cat": "杀死猫咪",
             "windows.<b>-- How did this cat die? --</b>": "<b>—— 这只猫是怎么死的？——</b>",
-            "windows.If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives": "若启用此项，族长将会失去{PRONOUN/m_c/poss}所有生命。",
-            "windows.This cat died when {PRONOUN/m_c/subject}...": "这只猫死于在{PRONOUN/m_c/subject}…时……",
+            "windows.If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives": "若启用此项，族长将会失去{PRONOUN/m_c/poss}所有生命",
+            "windows.This cat died when {PRONOUN/m_c/subject}...": "这只猫{PRONOUN/m_c/subject}死于……",
             "windows.{VERB/m_c/were/was} killed by a higher power.": "被某种不可名状的强大力量杀死了。",
             "windows.Take all the leader's lives": "夺走族长的所有生命",
-            "windows.{VERB/m_c/were/was} killed by something unknowable to even StarClan": "被某种甚至星族都对此一无所知的东西杀害了。",
+            "windows.{VERB/m_c/were/was} killed by something unknowable to even StarClan": "被某种甚至星族都对此一无所知的东西杀害了",
             "windows.This cat was killed by a higher power.": "这只猫被某种不可名状的强大力量杀死了。",
             "windows.Prevent fading": "阻止消散",
             "windows.Prevent kits": "阻止拥有后代",
@@ -175,14 +177,14 @@ class translate():
         }
     }
 
-    def tran(self, language = "english", rep = []):
+    def tran(self, rep = []):
         '''
         翻译指定的文本内容！
         :param self: 【必须】需要被翻译的文本的唯一标识符。
-        :param language: 【可选】游戏的当前语言，一般来说应该是game.settings["language"]。若留空将默认使用english。
         :param rep: 【可选】由替换文本组成的数组，格式为：[[替换词1, 目标词1],[替换词2, 目标词2]]
         :return: 返回翻译后的文本为字符串。
         '''
+        language = game.settings["language"]
         if language == "english":
             return str(self)[str(self).index('.')+1:]
         else:
