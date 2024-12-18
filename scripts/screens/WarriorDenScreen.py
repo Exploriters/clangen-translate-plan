@@ -60,7 +60,7 @@ class WarriorDenScreen(Screens):
             if event.ui_element in self.focus_buttons.values():
                 for code, value in self.focus_buttons.items():
                     if value == event.ui_element:
-                        description = translate.tran("setting." + str(settings_dict["clan_focus"][code][1]), game.settings["language"])
+                        description = translate.tran("setting." + str(settings_dict["clan_focus"][code][1]))
 
                         game.clan.switch_setting(self.active_code)
                         game.clan.switch_setting(code)
@@ -141,7 +141,7 @@ class WarriorDenScreen(Screens):
             "",
             object_id=ObjectID("#help_button", "@image_button"),
             manager=MANAGER,
-            tool_tip_text=translate.tran("warriorDen.This screen allows you to manage your warriors more effectively! You can give them a <br>specific focus, which will provide some benefits (and possibly some negatives) to your <br>Clan.  Some focuses are not available in classic mode.  Click on each focus to see a <br>description of what they will do.  Focuses that target other Clans will allow you to <br>choose which Clans you target.  Your focus can only be changed every 3 moons, <br>so choose carefully.", game.settings["language"]),
+            tool_tip_text=translate.tran("warriorDen.This screen allows you to manage your warriors more effectively! You can give them a <br>specific focus, which will provide some benefits (and possibly some negatives) to your <br>Clan.  Some focuses are not available in classic mode.  Click on each focus to see a <br>description of what they will do.  Focuses that target other Clans will allow you to <br>choose which Clans you target.  Your focus can only be changed every 3 moons, <br>so choose carefully."),
         )
 
         self.focus_frame = pygame_gui.elements.UIImage(
@@ -154,7 +154,7 @@ class WarriorDenScreen(Screens):
 
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((150, 592), (139, 30))),
-            translate.tran("warriorDen.Change Focus", game.settings["language"]),
+            translate.tran("warriorDen.Change Focus"),
             get_button_dict(ButtonStyles.SQUOVAL, (139, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -261,7 +261,7 @@ class WarriorDenScreen(Screens):
         for i, (code, desc) in enumerate(settings_dict["clan_focus"].items()):
             self.focus_buttons[code] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, 2), (250, 28))),
-                translate.tran("setting." + str(desc[0]), game.settings["language"]),
+                translate.tran("setting." + str(desc[0])),
                 get_button_dict(ButtonStyles.ROUNDED_RECT, (250, 28)),
                 object_id=ObjectID(None, "@buttonstyles_rounded_rect"),
                 container=self.focus["button_container"],
@@ -361,7 +361,7 @@ class WarriorDenScreen(Screens):
         # create the new info text
         self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
             f"<b>Selected information:</b><br>"
-            + translate.tran("setting." + str(settings_dict["clan_focus"][self.active_code][1]), game.settings["language"]),
+            + translate.tran("setting." + str(settings_dict["clan_focus"][self.active_code][1])),
             ui_scale(pygame.Rect((415, 466), (318, 130))),
             wrap_to_height=True,
             object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
