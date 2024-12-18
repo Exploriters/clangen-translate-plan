@@ -112,7 +112,7 @@ class translate():
             "windows.Kill Cat": "杀死猫咪",
             "windows.<b>-- How did this cat die? --</b>": "<b>—— 这只猫是怎么死的？——</b>",
             "windows.If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives": "若启用此项，族长将会失去{PRONOUN/m_c/poss}所有生命",
-            "windows.This cat died when {PRONOUN/m_c/subject}...": "这只猫{PRONOUN/m_c/subject}死于……",
+            "windows.This cat died when {PRONOUN/m_c/subject}...": "这只猫{PRONOUN/m_c/subject}死于......",
             "windows.{VERB/m_c/were/was} killed by a higher power.": "被某种不可名状的强大力量杀死了。",
             "windows.Take all the leader's lives": "夺走族长的所有生命",
             "windows.{VERB/m_c/were/was} killed by something unknowable to even StarClan": "被某种甚至星族都对此一无所知的东西杀害了",
