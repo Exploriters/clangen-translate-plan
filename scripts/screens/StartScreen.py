@@ -194,14 +194,14 @@ class StartScreen(Screens):
 
         self.continue_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
-            translate.tran("start.continue", game.settings["language"]),
+            translate.tran("start.continue"),
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            translate.tran("start.switch clan", game.settings["language"]),
+            translate.tran("start.switch clan"),
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -209,7 +209,7 @@ class StartScreen(Screens):
         )
         self.new_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            translate.tran("start.new clan", game.settings["language"]),
+            translate.tran("start.new clan"),
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -217,7 +217,7 @@ class StartScreen(Screens):
         )
         self.settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            translate.tran("start.settings + info", game.settings["language"]),
+            translate.tran("start.settings + info"),
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -225,7 +225,7 @@ class StartScreen(Screens):
         )
         self.quit = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            translate.tran("start.quit", game.settings["language"]),
+            translate.tran("start.quit"),
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -237,14 +237,14 @@ class StartScreen(Screens):
             "",
             object_id="#twitter_button",
             manager=MANAGER,
-            tool_tip_text=translate.tran("start.Check out our Twitter!", game.settings["language"]),
+            tool_tip_text=translate.tran("start.Check out our Twitter!"),
         )
         self.social_buttons["tumblr_button"] = UIImageButton(
             ui_scale(pygame.Rect((5, 647), (40, 40))),
             "",
             object_id="#tumblr_button",
             manager=MANAGER,
-            tool_tip_text=translate.tran("start.Check out our Tumblr!", game.settings["language"]),
+            tool_tip_text=translate.tran("start.Check out our Tumblr!"),
             anchors={"left_target": self.social_buttons["twitter_button"]},
         )
 
@@ -253,7 +253,7 @@ class StartScreen(Screens):
             "",
             object_id="#discord_button",
             manager=MANAGER,
-            tool_tip_text=translate.tran("start.Join our Discord!", game.settings["language"]),
+            tool_tip_text=translate.tran("start.Join our Discord!"),
             anchors={"left_target": self.social_buttons["tumblr_button"]},
         )
         errorimg = image_cache.load_image(
@@ -288,7 +288,7 @@ class StartScreen(Screens):
 
         self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((527, 511), (178, 30))),
-            translate.tran("universal.Open Data Directory", game.settings["language"]),
+            translate.tran("universal.Open Data Directory"),
             get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -296,7 +296,7 @@ class StartScreen(Screens):
             #tool_tip_text="Opens the data directory. "
             #"This is where save files "
             #"and logs are stored.",
-            tool_tip_text=translate.tran("universal.Opens the data directory.<br>This is where save files<br>and logs are stored.", game.settings["language"]),
+            tool_tip_text=translate.tran("universal.Opens the data directory.<br>This is where save files<br>and logs are stored."),
         )
 
         self.closebtn = UIImageButton(
@@ -373,7 +373,7 @@ class StartScreen(Screens):
                     write_file.write(get_version_info().version_number)
 
         self.warning_label = pygame_gui.elements.UITextBox(
-            translate.tran("start.Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse.", game.settings["language"]),
+            translate.tran("start.Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse."),
             ui_scale(pygame.Rect((0, 600), (800, 40))),
             object_id=ObjectID("#text_box_30_horizcenter", "#dark"),
             manager=MANAGER,
