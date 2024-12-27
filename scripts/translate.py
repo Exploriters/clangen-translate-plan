@@ -36,7 +36,7 @@ class translate():
             #region ========== SETTING SCREEN ==========
             "setting.general settings": "常规设置",
             "setting.audio settings": "音频设置",
-            "setting.info": "信息（会崩别点）",
+            "setting.info": "信息",
             "setting.language": "语言选项",
             "setting.Save Settings": "保存设置",
             "setting.windowed": "窗口",
@@ -163,10 +163,61 @@ class translate():
             "symbolTag.miscellaneous": "杂项",
             #endregion
             #endregion
+            #region ========== PATROL SCREEN ==========
+            "patrol.random patrol type": "随机巡逻类型",
+            "patrol.training": "训练",
+            "patrol.border": "边界巡逻",
+            "patrol.hunting": "狩猎",
+            "patrol.herb gathering": "药草采集",
+            "patrol.Choose up to six cats to take on patrol.\nSmaller patrols help cats gain more experience, but larger patrols are safer.": "选择至多六只猫去巡逻。\n规模更小的巡逻队可以帮助猫咪获取更多的经验，但规模更大的巡逻队更安全。",
+            "patrol.Add Cat": "添加猫咪",
+            "patrol.Go On Patrol": "派遣巡逻队",
+            #endregion
+            #region ========== PATROLS ==========
+            #region ===== GENERAL =====
+            #region === Border ===
+            #region = gen_bord_dog1 =
+            "patrol.r_c tracks the scent of a large dog along the edge of the Clan's territory.": "r_c在族群领地的边界追踪到了一只大型犬的气味。",
+            "patrol.r_c decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.": "r_c决定不去对付这样一只危险的生物，尤其是在它还没有越过边界的情况下。",
+            "patrol.r_c bolts back to camp, yowling a warning!": "r_c跑回了营地，咆哮着发出警告！",
+            "patrol.s_c sets up an ambush for the wandering dog. When the dog nears {PRONOUN/s_c/poss} hiding spot, s_c leaps out with claws unsheathed, bloodies its snout, and leads it on a wild chasing dance across the border and out of c_n territory.": "s_c为那只游荡的狗设下了埋伏。当狗靠近{PRONOUN/s_c/poss}藏身之处时，s_c一跃而出、爪锋出鞘，在那狗口鼻上留下道道血痕，并在这狂野的追逐战中疾奔，直到引着那狗跨出边界，离开了c_n的领地。",
+            "patrol.{PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} the skill or power to take on a dog single-pawed, but s_c would give {PRONOUN/s_c/poss} life for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of {PRONOUN/s_c/poss} doom, each rancid breath the last thing {PRONOUN/s_c/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c/subject} eventually {VERB/s_c/leap/leaps} to refuge.": "{PRONOUN/s_c/subject/CAP}不认为{PRONOUN/s_c/subject/CAP}有着足够的技巧或力量能够在孤军奋战的情况下去与一条狗抗衡，但s_c会为c_n献出{PRONOUN/s_c/poss}生命。{PRONOUN/s_c/subject/CAP}勇敢地冲了出去以将狗引出c_n的领地，每一声震耳欲聋的吠叫都可能是{PRONOUN/s_c/poss}灭亡即将到来的前兆，每一阵腐臭的气息都可能是{PRONOUN/s_c/subject}所能闻到的最后一种气味。但，不知怎的，当{PRONOUN/s_c/poss}四肢与肺部燃烧般剧痛时，{PRONOUN/s_c/subject}最终跃向了安全地带寻得庇护。",
+            "patrol.s_c follows the scent all the way to the source - the wide, slavering jaws of the source - and the huge dog barks ferociously as it bears down on {PRONOUN/s_c/object}. s_c's fur stands on end, and {PRONOUN/s_c/subject} {VERB/s_c/respond/responds} on instinct alone. Which is to say, s_c barks right back. The dog is momentarily baffled, just long enough for s_c to hightail it into the bushes. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't think anyone at camp will believe {PRONOUN/s_c/object} about this caper.": "s_c跟着那气味一路来到了它的源头——源头，那淌着口水的血盆大口——那大狗凶猛地向{PRONOUN/s_c/object}吠叫着，并压在了{PRONOUN/s_c/object}的身上。s_c的皮毛竖立，本能地做出了反应……呃，怎么说呢，s_c给那狗吠了回去。这只狗一时间被搞得不知所云，这时间也刚好够s_c把它赶进灌木丛中。{PRONOUN/s_c/subject/CAP}不认为营地里会有任何猫相信这场闹剧。",
+            "patrol.r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/lead/leads} the huge dog away from the Clan, in {PRONOUN/r_c/poss} heart, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} that's what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing. As darkness closes in around {PRONOUN/r_c/object} and the dog's jaws descend again, r_c tries to sink {PRONOUN/r_c/poss} claws into its face, and hopes desperately that {PRONOUN/r_c/subject} led it far enough.": "r_c会用{PRONOUN/r_c/poss}生命来保护c_n，当{PRONOUN/r_c/subject}领着这条大狗远离族群时，在{PRONOUN/r_c/poss}心中，{PRONOUN/r_c/subject}接受了这荒诞行为是{PRONOUN/r_c/self}所做。当黑暗在{PRONOUN/r_c/object}身周降临、狗的下颚再次降下时，r_c试着将{PRONOUN/r_c/poss}利爪嵌到它的脸上，并绝望地希望{PRONOUN/r_c/subject}已经将它引得足够远了。",
+            "patrol.r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing safely. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.": "r_c会用{PRONOUN/r_c/poss}生命来保护c_n，当{PRONOUN/r_c/subject}冲过那只大狗以将其引向远方、远离c_n的天边时，{PRONOUN/r_c/subject}接受了{PRONOUN/r_c/subject}现在的处境。恐惧给了{PRONOUN/r_c/object}速度，但要让{PRONOUN/r_c/object}落败仅仅需要一击命中。奇迹般地，{PRONOUN/r_c/subject}在那狗摇晃{PRONOUN/r_c/subject}时从狗的嘴中飞了出去、平稳落地。r_c伤痕累累、绝望战栗——但，{PRONOUN/r_c/subject}还活着。",
+            #endregion
+            #region = gen_bord_dog2 =
+
+            #endregion
+            #region = gen_bord_dog3 =
+
+            #endregion
+            #endregion
+            #endregion
+            #endregion
+            #region ========== ALLEGIANCES SCREEN ==========
+            "allegiances.<b>[clanName]Clan Allegiances</b>": "<b>为[clanName]族效忠的猫</b>",
+            "allegiances.\n      APPRENTICE: ": "\n      学徒：",
+            "allegiances.\n      APPRENTICES: ": "\n      学徒：",
+            "allegiances.<b><u>LEADER</u></b>": "<b><u>族长</u></b>",
+            "allegiances.<b><u>DEPUTY</u></b>": "<b><u>副族长</u></b>",
+            "allegiances.<b><u>MEDICINE CAT</u></b>": "<b><u>巫医</u></b>",
+            "allegiances.<b><u>MEDICINE CATS</u></b>": "<b><u>巫医</u></b>",
+            "allegiances.<b><u>MEDIATOR</u></b>": "<b><u>斡旋猫</u></b>",
+            "allegiances.<b><u>MEDIATORS</u></b>": "<b><u>斡旋猫</u></b>",
+            "allegiances.<b><u>WARRIOR</u></b>": "<b><u>武士</u></b>",
+            "allegiances.<b><u>WARRIORS</u></b>": "<b><u>武士</u></b>",
+            "allegiances.<b><u>APPRENTICE</u></b>": "<b><u>学徒</u></b>",
+            "allegiances.<b><u>APPRENTICES</u></b>": "<b><u>学徒</u></b>",
+            "allegiances.<b><u>QUEENS AND KITS</u></b>": "<b><u>猫后与幼崽</u></b>",
+            "allegiances. <i>(caring for [kittens])</i>": "\n      <i>(正在照料[kittens])</i>",
+            "allegiances. <i>(caring for [kittens0], and [kittens1])</i>": "\n      <i>(正在照料[kittens0]，以及[kittens1])</i>",
+            "allegiances.<b><u>ELDER</u></b>": "<b><u>长老</u></b>",
+            "allegiances.<b><u>ELDERS</u></b>": "<b><u>长老</u></b>",
+            #endregion
             #region ========== WARRIOR DEN ==========
             "warriorDen.This screen allows you to manage your warriors more effectively! You can give them a <br>specific focus, which will provide some benefits (and possibly some negatives) to your <br>Clan.  Some focuses are not available in classic mode.  Click on each focus to see a <br>description of what they will do.  Focuses that target other Clans will allow you to <br>choose which Clans you target.  Your focus can only be changed every 3 moons, <br>so choose carefully.": "此页面允许你更有效地管理你的武士！你可以给他们一个特定的<br>专注项，这将为你的族群提供一些增益（也可能有一些惩罚）。<br>一些专注项在经典模式下不可用。<br>单击专注项以查看关于此专注项对武士行为影响的说明。<br>针对其他族群的专注允许你选择将哪个族群作为你的目标。<br>专注项每3个月只能更换一次，所以要慎重选择。",
             "warriorDen.Change Focus": "修改专注项",
-
             #region ====== CLAN SETTING ======
             "setting.Business As Usual": "一切照常",
             "setting.The Clan has no specific focus and won't get any bonuses.": "族群不会专注于任何特殊的事情，<br>也不会得到任何加成。",
@@ -189,6 +240,70 @@ class translate():
             "setting.Hoarding Resources": "囤积资源",
             "setting.Your warriors begin stockpiling as many resources as they can get their paws on, regardless of their own safety. Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.": "你的武士不顾自身安危地开始储存尽可能多<br>的资源。猎物和药草会增加，但遭遇的伤病<br>也会增加。",
             #endregion
+            #endregion
+            #region ========== PELTS ==========
+            "pelts.an ": "",
+            "pelts.a ": "",
+            "pelts.scarred ": "伤痕累累的",
+            "pelts.long-furred ": "长毛",
+            'pelts.white': '白色',
+            'pelts.palegrey': '浅灰色',
+            'pelts.silver': '银色',
+            'pelts.grey': '灰色',
+            'pelts.darkgrey': '深灰色',
+            'pelts.ghost': '幽蓝色',
+            'pelts.cream': '奶油色',
+            'pelts.paleginger': '浅姜色',
+            'pelts.golden': '金色',
+            'pelts.darkginger': '深姜色',
+            'pelts.sienna': '土褐色',
+            'pelts.lightbrown': '亮棕色',
+            'pelts.lilac': '丁香色',
+            'pelts.golden-brown': '金棕色',
+            'pelts.darkbrown': '暗棕色',
+            'pelts.chocolate': '巧克力色',
+            "pelts.pale": "浅色",
+            "pelts.gray": "灰色",
+            "pelts.ginger": "姜黄色",
+            "pelts.brown": "棕色",
+            "pelts.black": "黑色",
+            "pelts.pale gray": "浅灰色",
+            "pelts.dark gray": "深灰色",
+            "pelts.pale ginger": "浅姜色",
+            "pelts.dark ginger": "深姜色",
+            "pelts.light brown": "亮棕色",
+            "pelts.golden brown": "金棕色",
+            "pelts.dark brown": "暗棕色",
+            "pelts.c_n tabby": "c_n虎斑",
+            "pelts.speckled c_n": "c_n斑点",
+            "pelts.unusually dappled c_n": "有不寻常花斑的c_n",
+            "pelts.c_n ticked": "c_n细纹班",
+            "pelts.c_n smoke": "c_n带暹罗重点色深化",
+            "pelts.dorsal-striped c_n": "有背部条纹的c_n",
+            "pelts.unusually spotted c_n": "有不寻常斑点的c_n",
+            "pelts.masked c_n tabby": "有覆面虎斑的c_n",
+            "pelts.tortie": "玳瑁",
+            "pelts.calico": "三花",
+            "pelts.mottled": "斑驳",
+            'pelts. tabby': "虎斑",
+            "pelts.[peltColor] mottled[base]": "[peltColor]斑驳[base]",
+            "pelts.[peltColor] [color][base]": "[peltColor][color][base]",
+            "pelts.white and ": "白色，且掺杂着",
+            "pelts. and white": "，且有白色斑块的",
+            "pelts. point": "重点色",
+            "pelts. she-cat": "母猫",
+            "pelts. tom": "公猫",
+            "pelts. cat": "猫咪",
+            "pelts.vitiligo": "患有白癜风",
+            "pelts. with[details0], and[details1]": "，[details0]，且[details1]的",
+            "pelts. with[details0]": "，[details0]的",
+            'pelts. and ': "且",
+            "pelts.no tail": "没有尾巴",
+            "pelts.half a tail": "只有半截尾巴",
+            "pelts.three legs": "只有三条腿",
+            "pelts.a missing ear": "缺了一只耳朵",
+            "pelts.no ears": "没有耳朵",
+            "pelts.[scarred][peltLength][mostlyWhite][peltColor][normalWhite][point][gender][additional_details]": "[scarred][mostlyWhite][peltColor][normalWhite][point][peltLength][gender][additional_details]",
             #endregion
         }
     }

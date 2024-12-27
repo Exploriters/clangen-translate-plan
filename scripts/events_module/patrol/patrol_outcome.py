@@ -36,6 +36,7 @@ from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,
 )
 
+from scripts.translate import translate
 
 class PatrolOutcome:
     """Holds all info on patrol outcomes, and methods to handle that outcome"""
@@ -217,7 +218,7 @@ class PatrolOutcome:
         # the text has to be processed before - otherwise leader might be referenced with their warrior name
         processed_text = event_text_adjust(
             Cat,
-            self.text,
+            translate.tran("patrol." + self.text),
             patrol_leader=patrol.patrol_leader,
             random_cat=patrol.random_cat,
             stat_cat=self.stat_cat,

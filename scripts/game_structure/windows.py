@@ -84,7 +84,7 @@ class SymbolFilterWindow(UIWindow):
         )
         self.filter_title = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((5, 5), (-1, -1))),
-            text=translate.tran("windows.Show Symbols With:",game.settings["language"]),
+            text=translate.tran("windows.Show Symbols With:"),
             object_id="#text_box_40",
             container=self,
         )
@@ -139,7 +139,7 @@ class SymbolFilterWindow(UIWindow):
 
                     self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
                         ui_scale(pygame.Rect((6, y_pos + 4), (-1, -1))),
-                        text=translate.tran("symbolTag." + str(s_tag),game.settings["language"]),
+                        text=translate.tran("symbolTag." + str(s_tag)),
                         container=self.filter_container,
                         object_id="#text_box_30_horizleft",
                         manager=MANAGER,
@@ -234,7 +234,7 @@ class SaveCheck(UIWindow):
                 anchors={"centerx": "centerx"},
             )
             self.message = (
-                translate.tran("windows.Would you like to save your game before exiting to the Main Menu? If you don't, progress<br>may be lost!",game.settings["language"])
+                translate.tran("windows.Would you like to save your game before exiting to the Main Menu? If you don't, progress<br>may be lost!")
             )
         else:
             self.main_menu_button = UISurfaceImageButton(
@@ -247,7 +247,7 @@ class SaveCheck(UIWindow):
                 container=self,
                 anchors={"centerx": "centerx"},
             )
-            self.message = translate.tran("windows.Would you like to save your game before exiting to the Main Menu? If you don't, progress<br>may be lost!",game.settings["language"])
+            self.message = translate.tran("windows.Would you like to save your game before exiting to the Main Menu? If you don't, progress<br>may be lost!")
 
         self.game_over_message = UITextBoxTweaked(
             self.message,
@@ -345,7 +345,7 @@ class DeleteCheck(UIWindow):
         self.reloadscreen = reloadscreen
 
         self.delete_check_message = UITextBoxTweaked(
-            translate.tran(str("windows.Do you wish to delete [clanName]? This is permanent and cannot be undone."), game.settings["language"],[["[clanName]",str(self.clan_name + 'Clan')]]),
+            translate.tran(str("windows.Do you wish to delete [clanName]? This is permanent and cannot be undone."), [["[clanName]",str(self.clan_name + 'Clan')]]),
             ui_scale(pygame.Rect((20, 20), (260, -1))),
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
@@ -413,7 +413,7 @@ class GameOver(UIWindow):
         self.clan_name = str(game.clan.name + "Clan")
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
-            translate.tran("windows.[clanName] has died out. For now, this is where their story ends. Perhaps it's time to tell a new tale?",game.settings["language"],[["[clanName]",self.clan_name]]),
+            translate.tran("windows.[clanName] has died out. For now, this is where their story ends. Perhaps it's time to tell a new tale?",[["[clanName]",self.clan_name]]),
             ui_scale(pygame.Rect((20, 20), (260, -1))),
             line_spacing=1,
             object_id="",
@@ -421,7 +421,7 @@ class GameOver(UIWindow):
         )
 
         self.game_over_message = UITextBoxTweaked(
-            translate.tran("windows.(leaving will not erase the save file)",game.settings["language"]),
+            translate.tran("windows.(leaving will not erase the save file)"),
             ui_scale(pygame.Rect((20, 155), (260, -1))),
             line_spacing=0.8,
             object_id="#text_box_22_horizcenter",
@@ -430,14 +430,14 @@ class GameOver(UIWindow):
 
         self.begin_anew_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 115), (111, 30))),
-            translate.tran("windows.begin anew",game.settings["language"]),
+            translate.tran("windows.begin anew"),
             get_button_dict(ButtonStyles.SQUOVAL, (111, 30)),
             object_id="@buttonstyles_squoval",
             container=self,
         )
         self.not_yet_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((159, 115), (111, 30))),
-            translate.tran("windows.not yet",game.settings["language"]),
+            translate.tran("windows.not yet"),
             get_button_dict(ButtonStyles.SQUOVAL, (111, 30)),
             object_id="@buttonstyles_squoval",
             container=self,
@@ -464,7 +464,7 @@ class ChangeCatName(UIWindow):
     def __init__(self, cat):
         super().__init__(
             ui_scale(pygame.Rect((300, 215), (400, 185))),
-            window_display_title=translate.tran("windows.Change Cat Name",game.settings["language"]),
+            window_display_title=translate.tran("windows.Change Cat Name"),
             object_id="#change_cat_name_window",
             resizable=False,
         )
@@ -479,7 +479,7 @@ class ChangeCatName(UIWindow):
         self.specsuffic_hidden = self.the_cat.name.specsuffix_hidden
 
         self.heading = pygame_gui.elements.UITextBox(
-            translate.tran("windows.-Change [catName]'s Name-",game.settings["language"],[["[catName]",self.the_cat.name]]),
+            translate.tran("windows.-Change [catName]'s Name-",[["[catName]",self.the_cat.name]]),
             ui_scale(pygame.Rect((0, 10), (400, 40))),
             object_id="#text_box_30_horizcenter",
             manager=MANAGER,
@@ -487,7 +487,7 @@ class ChangeCatName(UIWindow):
         )
 
         self.name_changed = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Name Changed!",game.settings["language"]),
+            translate.tran("windows.Name Changed!"),
             ui_scale(pygame.Rect((245, 130), (400, 40))),
             visible=False,
             object_id="#text_box_30_horizleft",
@@ -497,7 +497,7 @@ class ChangeCatName(UIWindow):
 
         self.done_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((161, 145), (77, 30))),
-            translate.tran("windows.done",game.settings["language"]),
+            translate.tran("windows.done"),
             get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -520,7 +520,7 @@ class ChangeCatName(UIWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text=translate.tran("windows.Randomize the prefix",game.settings["language"]),
+            tool_tip_text=translate.tran("windows.Randomize the prefix"),
             sound_id="dice_roll",
         )
 
@@ -531,7 +531,7 @@ class ChangeCatName(UIWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text=translate.tran("windows.Randomize the suffix",game.settings["language"]),
+            tool_tip_text=translate.tran("windows.Randomize the suffix"),
             sound_id="dice_roll",
         )
 
@@ -539,7 +539,7 @@ class ChangeCatName(UIWindow):
             ui_scale(pygame.Rect((202 + x_pos, 80 + y_pos), (34, 34))),
             "",
             object_id="@unchecked_checkbox",
-            tool_tip_text=translate.tran("windows.Remove the cat's special suffix",game.settings["language"]),
+            tool_tip_text=translate.tran("windows.Remove the cat's special suffix"),
             manager=MANAGER,
             container=self,
         )
@@ -548,7 +548,7 @@ class ChangeCatName(UIWindow):
             ui_scale(pygame.Rect((202 + x_pos, 80 + y_pos), (34, 34))),
             "",
             object_id="@checked_checkbox",
-            tool_tip_text=translate.tran("windows.Re-enable the cat's special suffix",game.settings["language"]),
+            tool_tip_text=translate.tran("windows.Re-enable the cat's special suffix"),
             manager=MANAGER,
             container=self,
         )
@@ -619,7 +619,7 @@ class ChangeCatName(UIWindow):
 
                 if old_name != str(self.the_cat.name):
                     self.name_changed.show()
-                    self.heading.set_text(translate.tran("windows.-Change [catName]'s Name-",game.settings["language"],[["[catName]",self.the_cat.name]]))
+                    self.heading.set_text(translate.tran("windows.-Change [catName]'s Name-",[["[catName]",self.the_cat.name]]))
                 else:
                     self.name_changed.hide()
 
@@ -679,7 +679,7 @@ class PronounCreation(UIWindow):
     def __init__(self, cat):
         super().__init__(
             ui_scale(pygame.Rect((80, 150), (650, 400))),
-            window_display_title=translate.tran("windows.Create Cat Pronouns",game.settings["language"]),
+            window_display_title=translate.tran("windows.Create Cat Pronouns"),
             object_id="#change_cat_gender_window",
             resizable=False,
         )
@@ -696,7 +696,7 @@ class PronounCreation(UIWindow):
             container=self,
         )
         self.heading = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Create new pronouns, <br>you have full control. <br>Test your created pronouns before saving them!",game.settings["language"]),
+            translate.tran("windows.Create new pronouns, <br>you have full control. <br>Test your created pronouns before saving them!"),
             ui_scale(pygame.Rect((15, 60), (380, 75))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
@@ -718,7 +718,7 @@ class PronounCreation(UIWindow):
         )
         # Title of Demo Box
         self.elements["demo title"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.<b>Demo",game.settings["language"]),
+            translate.tran("windows.<b>Demo"),
             ui_scale(pygame.Rect((75, 15), (225, 32))),
             object_id="#text_box_34_horizleft",
             manager=MANAGER,
@@ -742,7 +742,7 @@ class PronounCreation(UIWindow):
 
         # Tittle
         self.elements["Pronoun Creation"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Pronoun Creation",game.settings["language"]),
+            translate.tran("windows.Pronoun Creation"),
             ui_scale(pygame.Rect((0, 15), (225, 32))),
             object_id="#text_box_40_horizcenter",
             manager=MANAGER,
@@ -752,7 +752,7 @@ class PronounCreation(UIWindow):
 
         # Adjusted positions for labels
         self.box_labels["subject"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Subject",game.settings["language"]),
+            translate.tran("windows.Subject"),
             ui_scale(pygame.Rect((87, 115), (100, 30))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
@@ -760,7 +760,7 @@ class PronounCreation(UIWindow):
         )
 
         self.box_labels["object"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Object",game.settings["language"]),
+            translate.tran("windows.Object"),
             ui_scale(pygame.Rect((212, 115), (100, 30))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
@@ -768,7 +768,7 @@ class PronounCreation(UIWindow):
         )
 
         self.box_labels["poss"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Possessive",game.settings["language"]),
+            translate.tran("windows.Possessive"),
             ui_scale(pygame.Rect((25, 205), (100, 30))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
@@ -776,7 +776,7 @@ class PronounCreation(UIWindow):
         )
 
         self.box_labels["inposs"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Independent<br>Possessive",game.settings["language"]),
+            translate.tran("windows.Independent<br>Possessive"),
             ui_scale(pygame.Rect((125, 185), (150, 60))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
@@ -784,21 +784,21 @@ class PronounCreation(UIWindow):
         )
 
         self.box_labels["self"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Reflexive",game.settings["language"]),
+            translate.tran("windows.Reflexive"),
             ui_scale(pygame.Rect((275, 205), (100, 30))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
             container=self,
         )
         self.checkbox_label["singular_label"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Singular",game.settings["language"]),
+            translate.tran("windows.Singular"),
             ui_scale(pygame.Rect((128, 285), (100, 30))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
             container=self,
         )
         self.checkbox_label["plural_label"] = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Plural",game.settings["language"]),
+            translate.tran("windows.Plural"),
             ui_scale(pygame.Rect((235, 285), (100, 30))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
@@ -844,7 +844,7 @@ class PronounCreation(UIWindow):
 
         # Save Confirmation
         self.pronoun_added = pygame_gui.elements.UITextBox(
-            translate.tran("windows.Pronoun saved and added to presets!",game.settings["language"]),
+            translate.tran("windows.Pronoun saved and added to presets!"),
             ui_scale(pygame.Rect((225, 350), (400, 40))),
             visible=False,
             object_id="#text_box_30_horizleft",
@@ -856,7 +856,7 @@ class PronounCreation(UIWindow):
         self.buttons = {}
         self.buttons["save_pronouns"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 335), (73, 30))),
-            translate.tran("windows.save",game.settings["language"]),
+            translate.tran("windows.save"),
             get_button_dict(ButtonStyles.SQUOVAL, (73, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -912,7 +912,7 @@ class PronounCreation(UIWindow):
 
         self.buttons["test_set"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((60, 237), (104, 30))),
-            translate.tran("windows.Test Set",game.settings["language"]),
+            translate.tran("windows.Test Set"),
             get_button_dict(ButtonStyles.SQUOVAL, (104, 30)),
             object_id="@buttonstyles_squoval",
             starting_height=2,
@@ -1016,35 +1016,29 @@ class PronounCreation(UIWindow):
     def get_sample_text(self, pronouns):
         text = ""
         subject = translate.tran("windows.[subject] are quick.<br>",
-            game.settings["language"],
             [["[subject]",
             translate.tran("pronouns." + str(pronouns['subject']))
             ]])
         if pronouns["conju"] == 2:
             subject = translate.tran("windows.[subject] is quick.<br>",
-            game.settings["language"],
             [["[subject]",
             translate.tran("pronouns." + str(pronouns['subject']))
             ]])
         text += subject.capitalize()
         text += translate.tran("windows.Everyone saw [object]. <br>",
-            game.settings["language"],
             [["[object]",
             translate.tran("pronouns." + str(pronouns['object']))
             ]])
         poss = translate.tran("windows.[poss] paw slipped.<br>",
-            game.settings["language"],
             [["[poss]",
             translate.tran("pronouns." + str(pronouns['poss']))
             ]])
         text += poss.capitalize()
         text += translate.tran("windows.That den is [inposs].<br>",
-            game.settings["language"],
             [["[inposs]",
             translate.tran("pronouns." + str(pronouns['inposs']))
             ]])
         text += translate.tran("windows.This cat hunts by [self].<br>",
-            game.settings["language"],
             [["[self]",
             translate.tran("pronouns." + str(pronouns['self']))
             ]])

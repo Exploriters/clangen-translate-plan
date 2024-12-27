@@ -12,6 +12,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 
+from ..translate import translate
 
 class AllegiancesScreen(Screens):
     allegiance_list = []
@@ -35,7 +36,7 @@ class AllegiancesScreen(Screens):
         super().screen_switches()
         # Heading
         self.heading = pygame_gui.elements.UITextBox(
-            f"<b>{game.clan.name}Clan Allegiances</b>",
+            translate.tran("allegiances.<b>[clanName]Clan Allegiances</b>",[["[clanName]", game.clan.name]]),
             ui_scale(pygame.Rect((0, 115), (400, 40))),
             object_id=get_text_box_theme("#text_box_34_horizcenter_vertcenter"),
             manager=MANAGER,
@@ -113,9 +114,9 @@ class AllegiancesScreen(Screens):
             return output
 
         output += (
-            "\n      APPRENTICE: "
+            translate.tran("allegiances.\n      APPRENTICE: ")
             if len(cat.apprentice) == 1
-            else "\n      APPRENTICES: "
+            else translate.tran("allegiances.\n      APPRENTICES: ")
         )
         output += ", ".join(
             [
@@ -173,22 +174,22 @@ class AllegiancesScreen(Screens):
         outputs = []
         if game.clan.leader and not (game.clan.leader.dead or game.clan.leader.outside):
             outputs.append(
-                ["<b><u>LEADER</u></b>", self.generate_one_entry(game.clan.leader)]
+                [translate.tran("allegiances.<b><u>LEADER</u></b>"), self.generate_one_entry(game.clan.leader)]
             )
 
         # Deputy Box:
         if game.clan.deputy and not (game.clan.deputy.dead or game.clan.deputy.outside):
             outputs.append(
-                ["<b><u>DEPUTY</u></b>", self.generate_one_entry(game.clan.deputy)]
+                [translate.tran("allegiances.<b><u>DEPUTY</u></b>"), self.generate_one_entry(game.clan.deputy)]
             )
 
         # Medicine Cat Box:
         if living_meds:
             _box = ["", ""]
             if len(living_meds) == 1:
-                _box[0] = "<b><u>MEDICINE CAT</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>MEDICINE CAT</u></b>")
             else:
-                _box[0] = "<b><u>MEDICINE CATS</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>MEDICINE CATS</u></b>")
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_meds])
             outputs.append(_box)
@@ -197,9 +198,9 @@ class AllegiancesScreen(Screens):
         if living_mediators:
             _box = ["", ""]
             if len(living_mediators) == 1:
-                _box[0] = "<b><u>MEDIATOR</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>MEDIATOR</u></b>")
             else:
-                _box[0] = "<b><u>MEDIATORS</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>MEDIATORS</u></b>")
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_mediators])
             outputs.append(_box)
@@ -208,9 +209,9 @@ class AllegiancesScreen(Screens):
         if living_warriors:
             _box = ["", ""]
             if len(living_warriors) == 1:
-                _box[0] = "<b><u>WARRIOR</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>WARRIOR</u></b>")
             else:
-                _box[0] = "<b><u>WARRIORS</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>WARRIORS</u></b>")
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_warriors])
             outputs.append(_box)
@@ -219,9 +220,9 @@ class AllegiancesScreen(Screens):
         if living_apprentices:
             _box = ["", ""]
             if len(living_apprentices) == 1:
-                _box[0] = "<b><u>APPRENTICE</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>APPRENTICE</u></b>")
             else:
-                _box[0] = "<b><u>APPRENTICES</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>APPRENTICES</u></b>")
 
             _box[1] = "\n".join(
                 [self.generate_one_entry(i) for i in living_apprentices]
@@ -231,7 +232,7 @@ class AllegiancesScreen(Screens):
         # Queens and Kits Box:
         if queen_dict or living_kits:
             _box = ["", ""]
-            _box[0] = "<b><u>QUEENS AND KITS</u></b>"
+            _box[0] = translate.tran("allegiances.<b><u>QUEENS AND KITS</u></b>")
 
             # This one is a bit different.  First all the queens, and the kits they are caring for.
             all_entries = []
@@ -243,9 +244,18 @@ class AllegiancesScreen(Screens):
                 for k in queen_dict[q]:
                     kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
                 if len(kittens) == 1:
-                    kittens = f" <i>(caring for {kittens[0]})</i>"
+                    kittens = translate.tran("allegiances. <i>(caring for [kittens])</i>",
+                        [
+                            ["[kittens]", kittens[0]]
+                        ]
+                    )
                 else:
-                    kittens = f" <i>(caring for {', '.join(kittens[:-1])}, and {kittens[-1]})</i>"
+                    kittens = translate.tran("allegiances. <i>(caring for [kittens0], and [kittens1])</i>",
+                        [
+                            ["[kittens0]", ', '.join(kittens[:-1])],
+                            ["[kittens1]", kittens[-1]]
+                        ]
+                    )
 
                 all_entries.append(self.generate_one_entry(queen, kittens))
 
@@ -262,9 +272,9 @@ class AllegiancesScreen(Screens):
         if living_elders:
             _box = ["", ""]
             if len(living_elders) == 1:
-                _box[0] = "<b><u>ELDER</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>ELDER</u></b>")
             else:
-                _box[0] = "<b><u>ELDERS</u></b>"
+                _box[0] = translate.tran("allegiances.<b><u>ELDERS</u></b>")
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_elders])
             outputs.append(_box)

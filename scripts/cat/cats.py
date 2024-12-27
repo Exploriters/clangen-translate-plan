@@ -42,6 +42,7 @@ from scripts.utility import (
     leader_ceremony_text_adjust,
 )
 
+from ..translate import translate
 
 class Cat:
     """The cat class."""
@@ -979,7 +980,9 @@ class Cat:
         """
         output = Pelt.describe_appearance(self, short)
         # Add "a" or "an"
-        output = f"an {output}" if output[0].lower() in "aeiou" else f"a {output}"
+        an = translate.tran("pelts.an ")
+        a = translate.tran("pelts.a ")
+        output = f"{an}{output}" if output[0].lower() in "aeiou" else f"{a}{output}"
         return output
 
     def describe_eyes(self):

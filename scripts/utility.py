@@ -27,6 +27,7 @@ from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
 
+from scripts.translate import translate
 
 # ---------------------------------------------------------------------------- #
 #                               Getting Cats                                   #
@@ -1731,7 +1732,7 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     try:
         d = cat_pronouns_dict[inner_details[1]][1]
         if inner_details[0].upper() == "PRONOUN":
-            pro = d[inner_details[2]]
+            pro = translate.tran("pronouns." + d[inner_details[2]])
             if inner_details[-1] == "CAP":
                 pro = pro.capitalize()
             return pro

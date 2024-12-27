@@ -26,6 +26,8 @@ from scripts.utility import (
     get_special_snippet_list,
 )
 
+from scripts.translate import translate
+
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
 # ---------------------------------------------------------------------------- #
@@ -99,7 +101,7 @@ class Patrol:
 
         Patrol.used_patrols.append(self.patrol_event.patrol_id)
 
-        return self.process_text(self.patrol_event.intro_text, None)
+        return self.process_text(translate.tran("patrol." + self.patrol_event.intro_text), None)
 
     def proceed_patrol(self, path: str = "proceed") -> Tuple[str, str, Optional[str]]:
         """Proceed the patrol to the next step.
@@ -110,7 +112,7 @@ class Patrol:
                 print(
                     f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: N/A (did not proceed)"
                 )
-                return self.process_text(self.patrol_event.decline_text, None), "", None
+                return self.process_text(translate.tran("patrol." + self.patrol_event.decline_text), None), "", None
             else:
                 return "Error - no event chosen", "", None
 
@@ -1024,7 +1026,7 @@ class Patrol:
         if stat_cat:
             replace_dict["s_c"] = (str(stat_cat.name), choice(stat_cat.pronouns))
 
-        text = process_text(text, replace_dict)
+        text = process_text(translate.tran("patrol." + text), replace_dict)
         text = adjust_prey_abbr(text)
 
         other_clan_name = self.other_clan.name

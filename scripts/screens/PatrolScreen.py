@@ -26,6 +26,7 @@ from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
 
+from ..translate import translate
 
 class PatrolScreen(Screens):
     current_patrol = []
@@ -429,21 +430,21 @@ class PatrolScreen(Screens):
                 if self.patrol_type == "med":
                     self.patrol_type = "general"
             if self.patrol_type == "general":
-                text = "random patrol type"
+                text = translate.tran("patrol.random patrol type")
             elif self.patrol_type == "training":
-                text = "training"
+                text = translate.tran("patrol.training")
             elif self.patrol_type == "border":
-                text = "border"
+                text = translate.tran("patrol.border")
             elif self.patrol_type == "hunting":
-                text = "hunting"
+                text = translate.tran("patrol.hunting")
             elif self.patrol_type == "med":
                 if self.current_patrol:
-                    text = "herb gathering"
+                    text = translate.tran("patrol.herb gathering")
                     self.elements["mouse"].disable()
                     self.elements["claws"].disable()
                     self.elements["paw"].disable()
                 else:
-                    text = "herb gathering"
+                    text = translate.tran("patrol.herb gathering")
             else:
                 text = ""
 
@@ -539,8 +540,7 @@ class PatrolScreen(Screens):
         self.patrol_screen = "patrol_cats"  # List
 
         self.elements["info"] = pygame_gui.elements.UITextBox(
-            "Choose up to six cats to take on patrol.\n"
-            "Smaller patrols help cats gain more experience, but larger patrols are safer.",
+            translate.tran("patrol.Choose up to six cats to take on patrol.\nSmaller patrols help cats gain more experience, but larger patrols are safer."),
             ui_scale(pygame.Rect((187, 95), (425, 100))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
         )
@@ -570,7 +570,7 @@ class PatrolScreen(Screens):
         # Buttons
         self.elements["add_remove_cat"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 460), (98, 30))),
-            "Add Cat",
+            translate.tran("patrol.Add Cat"),
             get_button_dict(ButtonStyles.SQUOVAL, (98, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -701,7 +701,7 @@ class PatrolScreen(Screens):
         # Start Patrol Button
         self.elements["patrol_start"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 600), (135, 30))),
-            "Go On Patrol",
+            translate.tran("patrol.Go On Patrol"),
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,

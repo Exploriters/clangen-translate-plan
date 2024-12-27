@@ -291,7 +291,7 @@ class SettingsScreen(Screens):
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             tool_tip_text=(
-                translate.tran("setting.This will put the game into [screentext] mode.<br><br><b>Important:</b> This also saves all changed settings!", game.settings["language"], [["[screentext]", screentext]])
+                translate.tran("setting.This will put the game into [screentext] mode.<br><br><b>Important:</b> This also saves all changed settings!", [["[screentext]", screentext]])
             ),
         )
         del screentext
