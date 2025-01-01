@@ -1956,10 +1956,10 @@ def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
                         text = " ".join(modify)
                         break
 
-        text = text.replace("o_c_n", str(other_clan_name))
+        text = text.replace("o_c_n", translate.tran("prefix." + str(other_clan_name).lower()))
 
     if "c_n" in text:
-        text = text.replace("c_n", clan.name)
+        text = text.replace("c_n", translate.tran("prefix." + str(clan.name).lower()))
     if "r_c" in text and other_cat_rc:
         text = selective_replace(text, "r_c", str(other_cat_rc.name))
     return text
@@ -2014,7 +2014,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         else:
             clan_name = str(game.clan.name)
 
-    text = text.replace("c_n", clan_name + "Clan")
+    text = text.replace("c_n", translate.tran("prefix." + clan_name.lower()) + translate.tran("universal.Clan"))
 
     return text
 
@@ -2190,7 +2190,7 @@ def event_text_adjust(
                         text = " ".join(modify)
                         break
 
-        text = text.replace("o_c_n", str(other_clan_name) + "Clan")
+        text = text.replace("o_c_n", translate.tran("prefix." + str(other_clan_name).lower()) + translate.tran("universal.Clan"))
 
     # clan_name
     if "c_n" in text:
@@ -2217,7 +2217,7 @@ def event_text_adjust(
                         text = " ".join(modify)
                         break
 
-        text = text.replace("c_n", str(clan_name) + "Clan")
+        text = text.replace("c_n", translate.tran("prefix." + str(clan_name).lower()) + translate.tran("universal.Clan"))
 
     # prey lists
     text = adjust_prey_abbr(text)
@@ -2273,7 +2273,7 @@ def leader_ceremony_text_adjust(
     if extra_lives:
         text = text.replace("[life_num]", str(extra_lives))
 
-    text = text.replace("c_n", str(game.clan.name) + "Clan")
+    text = text.replace("c_n", translate.tran("prefix." + str(game.clan.name).lower) + translate.tran("universal.Clan"))
 
     return text
 
@@ -2290,7 +2290,7 @@ def ceremony_text_adjust(
     living_parents=(),
     dead_parents=(),
 ):
-    clanname = str(game.clan.name + "Clan")
+    clanname = str(translate.tran("prefix." + str(game.clan.name).lower()) + translate.tran("universal.Clan"))
 
     random_honor = random_honor
     random_living_parent = None

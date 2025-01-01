@@ -2,6 +2,7 @@ import random
 from enum import Enum, Flag, auto
 from typing import Union
 
+from scripts.translate import translate
 
 class SkillPath(Enum):
     TEACHER = ("quick to help", "good teacher", "great teacher", "excellent teacher")
@@ -415,14 +416,14 @@ class CatSkills:
 
         if short:
             if self.primary:
-                output.append(self.primary.get_short_skill())
+                output.append(translate.tran("skill_short." + self.primary.get_short_skill()))
             if self.secondary:
-                output.append(self.secondary.get_short_skill())
+                output.append(translate.tran("skill_short." + self.secondary.get_short_skill()))
         else:
             if self.primary:
-                output.append(self.primary.skill)
+                output.append(translate.tran("skill." + self.primary.skill))
             if self.secondary:
-                output.append(self.secondary.skill)
+                output.append(translate.tran("skill." + self.secondary.skill))
 
         if not output:
             return "???"

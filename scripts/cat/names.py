@@ -11,6 +11,7 @@ import ujson
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 
+from scripts.translate import translate
 
 class Name:
     """
@@ -279,15 +280,15 @@ class Name:
                 adjusted_status = "warrior"
 
             if adjusted_status != "warrior":
-                return self.prefix + self.names_dict["special_suffixes"][adjusted_status]
+                return translate.tran("prefix." + self.prefix.lower()) + translate.tran("suffix." + self.names_dict["special_suffixes"][adjusted_status].lower())
         if (
             self.cat.status in self.names_dict["special_suffixes"]
             and not self.specsuffix_hidden
         ):
-            return self.prefix + self.names_dict["special_suffixes"][self.cat.status]
+            return translate.tran("prefix." + self.prefix.lower()) + translate.tran("suffix." + self.names_dict["special_suffixes"][self.cat.status].lower())
         if game.config["fun"]["april_fools"]:
             return f"{self.prefix}egg"
-        return self.prefix + self.suffix
+        return translate.tran("prefix." + self.prefix.lower()) + translate.tran("suffix." + self.suffix.lower())
 
 
 names = Name()

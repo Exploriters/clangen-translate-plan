@@ -40,6 +40,7 @@ from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.get_arrow import get_arrow
 from ..ui.icon import Icon
 
+from scripts.translate import translate
 
 # ---------------------------------------------------------------------------- #
 #             change how accessory info displays on cat profiles               #
@@ -599,19 +600,21 @@ class ProfileScreen(Screens):
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
         if self.the_cat.dead:
             cat_name += (
-                " (dead)"  # A dead cat will have the (dead) sign next to their name
+                translate.tran("profile. (dead)")  # A dead cat will have the (dead) sign next to their name
             )
         if is_sc_instructor:
             self.the_cat.thought = (
-                "Hello. I am here to guide the dead cats of "
-                + game.clan.name
-                + "Clan into StarClan."
+                translate.tran("profile.Hello. I am here to guide the dead cats of [clanName]Clan into StarClan.",[
+                    ["[clanName]", str(translate.tran("prefix." + str(game.clan.name).lower())).capitalize()]
+                ]
+                )
             )
         if is_df_instructor:
             self.the_cat.thought = (
-                "Hello. I am here to drag the dead cats of "
-                + game.clan.name
-                + "Clan into the Dark Forest."
+                translate.tran("profile.Hello. I am here to drag the dead cats of [clanName]Clan into the Dark Forest.",[
+                    ["[clanName]", translate.tran("prefix." + str(game.clan.name).lower()).capitalize()]
+                ]
+                )
             )
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
@@ -749,42 +752,44 @@ class ProfileScreen(Screens):
     def generate_column1(self, the_cat):
         """Generate the left column information"""
         output = ""
+        if game.settings["language"] != "english":
+            output += translate.tran("profile.orig-Name: ") + str(the_cat.name.prefix) + str(the_cat.name.suffix) + "\n"
         # SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
-            output += str(the_cat.gender)
+            output += translate.tran("gender." + str(the_cat.gender))
         else:
-            output += str(the_cat.genderalign)
+            output += translate.tran("gender." + str(the_cat.genderalign))
         # NEWLINE ----------
         output += "\n"
 
         # AGE
         if the_cat.age == "kitten":
-            output += "young"
+            output += translate.tran("age.young")
         elif the_cat.age == "senior":
-            output += "senior"
+            output += translate.tran("age.senior")
         else:
-            output += the_cat.age
+            output += translate.tran("age." + the_cat.age)
         # NEWLINE ----------
         output += "\n"
 
         # EYE COLOR
-        output += "eyes: " + str(the_cat.describe_eyes())
+        output += translate.tran("profile.eyes: ") + str(the_cat.describe_eyes())
         # NEWLINE ----------
         output += "\n"
 
         # PELT TYPE
-        output += "pelt: " + the_cat.pelt.name.lower()
+        output += translate.tran("profile.pelt: ") + the_cat.pelt.name.lower()
         # NEWLINE ----------
         output += "\n"
 
         # PELT LENGTH
-        output += "fur length: " + the_cat.pelt.length
+        output += translate.tran("profile.fur length: ") + the_cat.pelt.length
         # NEWLINE ----------
 
         # ACCESSORY
         if the_cat.pelt.accessory:
             output += "\n"
-            output += "accessory: " + str(
+            output += translate.tran("profile.accessory: ") + str(
                 ACC_DISPLAY[the_cat.pelt.accessory]["default"]
             )
             # NEWLINE ----------
@@ -794,10 +799,10 @@ class ProfileScreen(Screens):
         if all_parents:
             output += "\n"
             if len(all_parents) == 1:
-                output += "parent: " + str(all_parents[0].name)
+                output += translate.tran("profile.parent: ") + str(all_parents[0].name)
             elif len(all_parents) > 2:
                 output += (
-                    "parents: "
+                    translate.tran("profile.parents: ")
                     + ", ".join([str(i.name) for i in all_parents[:2]])
                     + f", and {len(all_parents) - 2} "
                 )
@@ -806,28 +811,28 @@ class ProfileScreen(Screens):
                 else:
                     output += "others"
             else:
-                output += "parents: " + ", ".join([str(i.name) for i in all_parents])
+                output += translate.tran("profile.parents: ") + ", ".join([str(i.name) for i in all_parents])
 
         # MOONS
         output += "\n"
         if the_cat.dead:
             output += str(the_cat.moons)
             if the_cat.moons == 1:
-                output += " moon (in life)\n"
+                output += translate.tran("profile. moon (in life)\n")
             elif the_cat.moons != 1:
-                output += " moons (in life)\n"
+                output += translate.tran("profile. moons (in life)\n")
 
             output += str(the_cat.dead_for)
             if the_cat.dead_for == 1:
-                output += " moon (in death)"
+                output += translate.tran("profile. moon (in death)")
             elif the_cat.dead_for != 1:
-                output += " moons (in death)"
+                output += translate.tran("profile. moons (in death)")
         else:
             output += str(the_cat.moons)
             if the_cat.moons == 1:
-                output += " moon"
+                output += translate.tran("profile. moon")
             elif the_cat.moons != 1:
-                output += " moons"
+                output += translate.tran("profile. moons")
 
         # MATE
         if len(the_cat.mate) > 0:
@@ -841,20 +846,20 @@ class ProfileScreen(Screens):
                     continue
                 if mate_ob.dead != self.the_cat.dead:
                     if the_cat.dead:
-                        former_indicate = "(living)"
+                        former_indicate = translate.tran("profile.(living)")
                     else:
-                        former_indicate = "(dead)"
+                        former_indicate = translate.tran("profile.(dead)")
 
                     mate_names.append(f"{str(mate_ob.name)} {former_indicate}")
                 elif mate_ob.outside != self.the_cat.outside:
-                    mate_names.append(f"{str(mate_ob.name)} (away)")
+                    mate_names.append(str(str(mate_ob.name) +  translate.tran("profile.(away)")))
                 else:
                     mate_names.append(f"{str(mate_ob.name)}")
 
             if len(the_cat.mate) == 1:
-                output += "mate: "
+                output += translate.tran("profile.mate: ")
             else:
-                output += "mates: "
+                output += translate.tran("profile.mates: ")
 
             output += ", ".join(mate_names)
 
@@ -881,11 +886,11 @@ class ProfileScreen(Screens):
             and not the_cat.exiled
             and the_cat.status not in ["kittypet", "loner", "rogue", "former Clancat"]
         ):
-            output += "<font color='#FF0000'>lost</font>"
+            output += translate.tran("profile.<font color='#FF0000'>lost</font>")
         elif the_cat.exiled:
-            output += "<font color='#FF0000'>exiled</font>"
+            output += translate.tran("profile.<font color='#FF0000'>exiled</font>")
         else:
-            output += the_cat.status
+            output += translate.tran("status." + the_cat.status)
 
         # NEWLINE ----------
         output += "\n"
@@ -893,7 +898,7 @@ class ProfileScreen(Screens):
         # LEADER LIVES:
         # Optional - Only shows up for leaders
         if not the_cat.dead and "leader" in the_cat.status:
-            output += "remaining lives: " + str(game.clan.leader_lives)
+            output += translate.tran("profile.remaining lives: ") + str(game.clan.leader_lives)
             # NEWLINE ----------
             output += "\n"
 
@@ -902,18 +907,18 @@ class ProfileScreen(Screens):
         if the_cat.mentor:
             mentor_ob = Cat.fetch_cat(the_cat.mentor)
             if mentor_ob:
-                output += "mentor: " + str(mentor_ob.name) + "\n"
+                output += translate.tran("profile.mentor: ") + str(mentor_ob.name) + "\n"
 
         # CURRENT APPRENTICES
         # Optional - only shows up if the cat has an apprentice currently
         if the_cat.apprentice:
             app_count = len(the_cat.apprentice)
             if app_count == 1 and Cat.fetch_cat(the_cat.apprentice[0]):
-                output += "apprentice: " + str(
+                output += translate.tran("profile.apprentice: ") + str(
                     Cat.fetch_cat(the_cat.apprentice[0]).name
                 )
             elif app_count > 1:
-                output += "apprentice: " + ", ".join(
+                output += translate.tran("profile.apprentice: ") + ", ".join(
                     [
                         str(Cat.fetch_cat(i).name)
                         for i in the_cat.apprentice
@@ -934,7 +939,7 @@ class ProfileScreen(Screens):
 
             if len(apprentices) > 2:
                 output += (
-                    "former apprentices: "
+                    translate.tran("profile.former apprentices: ")
                     + ", ".join([str(i.name) for i in apprentices[:2]])
                     + ", and "
                     + str(len(apprentices) - 2)
@@ -945,16 +950,16 @@ class ProfileScreen(Screens):
                     output += " other"
             else:
                 if len(apprentices) > 1:
-                    output += "former apprentices: "
+                    output += translate.tran("profile.former apprentices: ")
                 else:
-                    output += "former apprentice: "
+                    output += translate.tran("profile.former apprentice: ")
                 output += ", ".join(str(i.name) for i in apprentices)
 
             # NEWLINE ----------
             output += "\n"
 
         # CHARACTER TRAIT
-        output += the_cat.personality.trait
+        output += translate.tran("trait." + the_cat.personality.trait)
         # NEWLINE ----------
         output += "\n"
 
@@ -964,7 +969,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # EXPERIENCE
-        output += "experience: " + str(the_cat.experience_level)
+        output += translate.tran("profile.experience: ") + str(the_cat.experience_level)
 
         if game.clan.clan_settings["showxp"]:
             output += " (" + str(the_cat.experience) + ")"
@@ -986,7 +991,7 @@ class ProfileScreen(Screens):
                         break
             else:
                 bs_text = "Clanborn"
-        output += f"backstory: {bs_text}"
+        output += translate.tran("profile.backstory:") + translate.tran("backstories." + str(bs_text))
         # NEWLINE ----------
         output += "\n"
 
@@ -1010,7 +1015,7 @@ class ProfileScreen(Screens):
                 if not nutr:
                     game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
-                output += "nutrition: " + nutr.nutrition_text
+                output += translate.tran("profile.nutrition: ") + nutr.nutrition_text
                 if game.clan.clan_settings["showxp"]:
                     output += " (" + str(int(nutr.percentage)) + ")"
                 output += "\n"
@@ -1022,7 +1027,7 @@ class ProfileScreen(Screens):
                     and the_cat.permanent_condition[condition]["moons_until"] != -2
                 ):
                     continue
-                output += "has a permanent condition"
+                output += translate.tran("profile.has a permanent condition")
 
                 # NEWLINE ----------
                 output += "\n"
@@ -1030,18 +1035,18 @@ class ProfileScreen(Screens):
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
-                output += "recovering from birth!"
+                output += translate.tran("profile.recovering from birth!")
             elif "pregnant" in the_cat.injuries:
-                output += "pregnant!"
+                output += translate.tran("profile.pregnant!")
             else:
-                output += "injured!"
+                output += translate.tran("profile.injured!")
         elif the_cat.is_ill():
             if "grief stricken" in the_cat.illnesses:
-                output += "grieving!"
+                output += translate.tran("profile.grieving!")
             elif "fleas" in the_cat.illnesses:
-                output += "flea-ridden!"
+                output += translate.tran("profile.flea-ridden!")
             else:
-                output += "sick!"
+                output += translate.tran("profile.sick!")
 
         return output
 
@@ -1260,20 +1265,26 @@ class ProfileScreen(Screens):
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         bs_blurb = None
         if self.the_cat.backstory:
-            bs_blurb = BACKSTORIES["backstories"][self.the_cat.backstory]
+            bs_blurb = translate.tran("backstories." + BACKSTORIES["backstories"][self.the_cat.backstory])
         if (
             self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]
             and self.the_cat.dead
         ):
-            bs_blurb = f"This cat was a {self.the_cat.status} in life."
+            bs_blurb = translate.tran("backstories.This cat was a [status] in life.",
+            [
+                ["[status]", translate.tran("status." +self.the_cat.status)]
+            ])
         elif self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
-            bs_blurb = f"This cat is a {self.the_cat.status} and currently resides outside of the Clans."
+            bs_blurb = translate.tran("backstories.This cat is a [status] and currently resides outside of the Clans.",
+            [
+                ["[status]", translate.tran("status." +self.the_cat.status)]
+            ])
 
         if bs_blurb is not None:
-            adjust_text = str(bs_blurb).replace("This cat", str(self.the_cat.name))
+            adjust_text = translate.tran("backstories." + str(bs_blurb)).replace("This cat", str(self.the_cat.name))
             text = adjust_text
         else:
-            text = str(self.the_cat.name) + "'s past history is unknown."
+            text = str(self.the_cat.name) + translate.tran("backstories.'s past history is unknown.")
 
         if not self.the_cat.dead and self.the_cat.status not in [
             "kittypet",
@@ -1373,13 +1384,13 @@ class ProfileScreen(Screens):
 
         # First, just list the mentors:
         if self.the_cat.status in ["kitten", "newborn"]:
-            influence_history = "This cat has not begun training."
+            influence_history = translate.tran("history.This cat has not begun training.")
         elif self.the_cat.status in [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
         ]:
-            influence_history = "This cat has not finished training."
+            influence_history = translate.tran("history.This cat has not finished training.")
         else:
             valid_formor_mentors = [
                 Cat.fetch_cat(i)
@@ -1388,19 +1399,19 @@ class ProfileScreen(Screens):
             ]
             if valid_formor_mentors:
                 influence_history += (
-                    "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by "
+                    translate.tran("history.{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by ")
                 )
                 if len(valid_formor_mentors) > 1:
                     influence_history += (
                         ", ".join([str(i.name) for i in valid_formor_mentors[:-1]])
-                        + " and "
+                        + translate.tran("history. and ")
                         + str(valid_formor_mentors[-1].name)
                         + ". "
                     )
                 else:
                     influence_history += str(valid_formor_mentors[0].name) + ". "
             else:
-                influence_history += "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown. "
+                influence_history += translate.tran("history.This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown. ")
 
             # Second, do the facet/personality effect
             trait_influence = []
@@ -1418,21 +1429,24 @@ class ProfileScreen(Screens):
                         continue
 
                     if len(mentor_influence["trait"][_mentor].get("strings")) > 1:
+                        strings = []
+                        for i in range(0, len(mentor_influence["trait"][_mentor].get("strings")[:-1])):
+                            strings.append(translate.tran("influence." + mentor_influence["trait"][_mentor].get("strings")[i]))
                         string_snippet = (
-                            ", ".join(
-                                mentor_influence["trait"][_mentor].get("strings")[:-1]
+                            translate.tran("universal., ").join(
+                                strings
                             )
-                            + " and "
-                            + mentor_influence["trait"][_mentor].get("strings")[-1]
+                            + translate.tran("history. and ")
+                            + translate.tran("influence." + mentor_influence["trait"][_mentor].get("strings")[-1])
                         )
                     else:
-                        string_snippet = mentor_influence["trait"][_mentor].get(
+                        string_snippet = translate.tran("influence." + mentor_influence["trait"][_mentor].get(
                             "strings"
-                        )[0]
+                        )[0])
 
                     trait_influence.append(
                         str(ment_obj.name)
-                        + " influenced {PRONOUN/m_c/object} to be more likely to "
+                        + translate.tran("history. influenced {PRONOUN/m_c/object} to be more likely to ")
                         + string_snippet
                         + ". "
                     )
@@ -1454,21 +1468,24 @@ class ProfileScreen(Screens):
                         continue
 
                     if len(mentor_influence["skill"][_mentor].get("strings")) > 1:
+                        strings = []
+                        for i in len(mentor_influence["skill"][_mentor].get("strings")[:-1]):
+                            strings.append(translate.tran("indluence." + mentor_influence["skill"][_mentor].get("strings")[i]))
                         string_snippet = (
-                            ", ".join(
-                                mentor_influence["skill"][_mentor].get("strings")[:-1]
+                            translate.tran("universal., ").join(
+                                strings
                             )
-                            + " and "
-                            + mentor_influence["skill"][_mentor].get("strings")[-1]
+                            + translate.tran("history. and ")
+                            + translate.tran("influence." + mentor_influence["skill"][_mentor].get("strings")[-1])
                         )
                     else:
-                        string_snippet = mentor_influence["skill"][_mentor].get(
+                        string_snippet = translate.tran("influence." + mentor_influence["skill"][_mentor].get(
                             "strings"
-                        )[0]
+                        )[0])
 
                     skill_influence.append(
                         str(ment_obj.name)
-                        + " helped {PRONOUN/m_c/object} become better at "
+                        + translate.tran("history. helped {PRONOUN/m_c/object} become better at ")
                         + string_snippet
                         + ". "
                     )
@@ -1480,29 +1497,29 @@ class ProfileScreen(Screens):
         graduation_history = ""
         if app_ceremony:
             graduation_history = (
-                "When {PRONOUN/m_c/subject} graduated, {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} "
-                + app_ceremony["honor"]
-                + "."
+                translate.tran("history.When {PRONOUN/m_c/subject} graduated, {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} [honor].",[
+                    ["[honor]", translate.tran("honor." + app_ceremony["honor"])]
+                ])
             )
 
             grad_age = app_ceremony["graduation_age"]
             if int(grad_age) < 11:
                 graduation_history += (
-                    " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at "
+                    translate.tran("history. {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at ")
                     + str(grad_age)
-                    + " moons old."
+                    + translate.tran("history. moons old.")
                 )
             elif int(grad_age) > 13:
                 graduation_history += (
-                    " {PRONOUN/m_c/subject/CAP} graduated late at "
+                    translate.tran("history. {PRONOUN/m_c/subject/CAP} graduated late at ")
                     + str(grad_age)
-                    + " moons old."
+                    + translate.tran("history. moons old.")
                 )
             else:
                 graduation_history += (
-                    " {PRONOUN/m_c/subject/CAP} graduated at "
+                    translate.tran("history. {PRONOUN/m_c/subject/CAP} graduated at ")
                     + str(grad_age)
-                    + " moons old."
+                    + translate.tran("history. moons old.")
                 )
 
             if game.switches["show_history_moons"]:
