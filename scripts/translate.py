@@ -1,4 +1,4 @@
-from scripts.game_structure.game_essentials import game
+import scripts.game_structure.game_essentials
 
 class translate():
     ''' 翻译文本的词典，请按照各自的语言排好。 '''
@@ -142,7 +142,7 @@ class translate():
             "windows.Prevent cat from retiring automatically.": "阻止猫咪自动退休。",
             "windows.Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates.": "阻止猫自动恋爱、分手或与非伴侣进行浪漫互动。",
             #region ====== SYMBOL ======
-            "windows.Show Symbols With:": "按分类显示族徽：",
+            "windows.Show Symbols With: ": "按分类显示族徽：",
             "symbolTag.plant": "植物",
             "symbolTag.flower": "花朵",
             "symbolTag.tree": "树木",
@@ -198,7 +198,7 @@ class translate():
             "profile.former apprentice: ": "昔日学徒：",
             "profile.former apprentices: ": "昔日学徒：",
             "profile.experience: ": "经验：",
-            "profile.backstory:": "背景故事：",
+            "profile.backstory: ": "背景故事：",
             "profile.nutrition: ": "营养状况：",
             "profile.has a permanent condition": "有永久状态",
             "profile.recovering from birth!": "产后恢复！",
@@ -1074,7 +1074,7 @@ class translate():
             'prefix.wisp': '绺',
             'prefix.ibis': '朱鹭',
             'prefix.ghost': '鬼',
-            'prefix.privet': '女贞',
+            'prefix.privet': '女贞子',
             'prefix.cloudy': '阴',
             'prefix.icy': '冰',
             'prefix.ashen': '苍白',
@@ -1087,7 +1087,7 @@ class translate():
             'prefix.scale': '鳞',
             'prefix.crocus': '番红花',
             'prefix.rue': '芸香',
-            'prefix.glint': '闪烁',
+            'prefix.glint': '焽',
             'prefix.gossamer': '蛛丝',
             'prefix.air': '空气',
             'prefix.smoky': '烟',
@@ -1363,7 +1363,7 @@ class translate():
             'prefix.emerald': '翡翠',
             'prefix.rosemary': '迷迭香',
             'prefix.clove': '蒜瓣',
-            'prefix.glow': '浅光',
+            'prefix.glow': '明',
             #endregion
             #endregion
             #endregion
@@ -1484,6 +1484,7 @@ class translate():
             'suffix.bracken' : '蕨',
             'suffix.fern' : '蕨',
             'suffix.moss' : '苔',
+            'suffix.lichen' : '衣',
             #endregion
             #endregion
             #region === Plant Correlation(original)
@@ -1678,7 +1679,7 @@ class translate():
             'suffix.back': '背',
             'suffix.beak': '喙',
             'suffix.bellow': '霆',
-            'suffix.billow': '滔',
+            'suffix.billow': '涌',
             'suffix.bite': '咬',
             'suffix.blink': '眨',
             'suffix.blotch': '污',
@@ -1700,15 +1701,15 @@ class translate():
             'suffix.clash': '争',
             'suffix.crackle': '啪',
             'suffix.crash': '溃',
-            'suffix.crest': '冠',
+            'suffix.crest': '巅',
             'suffix.current': '现',
             'suffix.dart': '投',
-            'suffix.daze': '茫',
+            'suffix.daze': '惚',
             'suffix.dazzle': '眩',
             'suffix.dream': '梦',
             'suffix.drop': '滴',
             'suffix.flare': '旺',
-            'suffix.fleck': '斑',
+            'suffix.fleck': '驳',
             'suffix.flick': '拂',
             'suffix.flight': '翱',
             'suffix.flit': '掠',
@@ -1723,12 +1724,12 @@ class translate():
             'suffix.glare': '瞪',
             'suffix.gleam': '烁',
             'suffix.glide': '滑',
-            'suffix.glint': '烁',
-            'suffix.growl': '咆',
+            'suffix.glint': '焽',
+            'suffix.growl': '哮',
             'suffix.haven': '湾',
             'suffix.hiss': '嘶',
             'suffix.howl': '嚎',
-            'suffix.husk': '荚',
+            'suffix.husk': '糠',
             'suffix.iris': '虹',
             'suffix.joy': '悦',
             'suffix.jumble': '纷',
@@ -1841,7 +1842,7 @@ class translate():
             'suffix.skipper': '跃',
             'suffix.wade': '涉',
             'suffix.bug': '虫',
-            'suffix.glow': '光',
+            'suffix.glow': '明',
             'suffix.mire': '潭',
             #endregion
             #region Desert
@@ -2001,145 +2002,145 @@ class translate():
             #endregion
             #endregion
             #region ========== SKILLS ==========
-            # region TEACHER
+            #region TEACHER
             'skill.quick to help': '善于帮助',
             'skill.good teacher': '良好导师',
             'skill.great teacher': '优秀导师',
             'skill.excellent teacher': '绝妙导师',
-            # endregion
-            # region HUNTER
+            #endregion
+            #region HUNTER
             'skill.moss-ball hunter': '苔藓球猎爪',
             'skill.good hunter': '良好猎爪',
             'skill.great hunter': '优秀猎爪',
             'skill.renowned hunter': '出名猎爪',
-            # endregion
-            # region FIGHTER
+            #endregion
+            #region FIGHTER
             'skill.avid play-fighter': '嬉闹武士',
             'skill.good fighter': '良好武士',
             'skill.formidable fighter': '坚韧武士',
             'skill.unusually strong fighter': '非凡武士',
-            # endregion
-            # region RUNNER
+            #endregion
+            #region RUNNER
             'skill.never sits still': '坐不住的',
             'skill.fast runner': '跑得飞快',
             'skill.incredible runner': '速度惊猫',
             'skill.fast as the wind': '迅捷如风',
-            # endregion
-            # region CLIMBER
+            #endregion
+            #region CLIMBER
             'skill.constantly climbing': '总往上爬',
             'skill.good climber': '善于攀爬',
             'skill.great climber': '优于攀爬',
             'skill.impressive climber': '登峰造极',
-            # endregion
-            # region SWIMMER
+            #endregion
+            #region SWIMMER
             'skill.splashes in puddles': '在水坑里扑棱',
             'skill.good swimmer': '善于游泳',
             'skill.talented swimmer': '花样泳者',
             'skill.fish-like swimmer': '如鱼得水',
-            # endregion
-            # region SPEAKER
+            #endregion
+            #region SPEAKER
             'skill.confident with words': '谈吐自信',
             'skill.good speaker': '良好的演讲者',
             'skill.great speaker': '优秀的演讲者',
             'skill.eloquent speaker': '能言善辩',
-            # endregion
-            # region MEDIATOR
+            #endregion
+            #region MEDIATOR
             'skill.quick to make peace': '善于调解',
             'skill.good mediator': '良好的调解者',
             'skill.great mediator': '优秀的调解者',
             'skill.skilled mediator': '娴熟的调解者',
-            # endregion
-            # region CLEVER
+            #endregion
+            #region CLEVER
             'skill.quick witted': '有小聪明',
             'skill.clever': '聪明',
             'skill.very clever': '非常聪明',
             'skill.incredibly clever': '聪明绝顶',
-            # endregion
-            # region INSIGHTFUL
+            #endregion
+            #region INSIGHTFUL
             'skill.careful listener': '细心倾听',
             'skill.helpful insight': '有益见解',
             'skill.valuable insight': '宝贵见解',
             'skill.trusted advisor': '真知灼见',
-            # endregion
-            # region SENSE
+            #endregion
+            #region SENSE
             'skill.oddly observant': '奇怪的观察力',
             'skill.natural intuition': '自然直觉',
             'skill.keen eye': '敏锐目光',
             'skill.unnatural senses': '超感知',
-            # endregion
-            # region KIT
+            #endregion
+            #region KIT
             'skill.active imagination': '想象丰富',
             'skill.good kitsitter': '良好保育者',
             'skill.great kitsitter': '优秀保育者',
             'skill.beloved kitsitter': '慈爱保育者',
-            # endregion
-            # region STORY
+            #endregion
+            #region STORY
             'skill.lover of stories': '故事爱好者',
             'skill.good storyteller': '良好叙事者',
             'skill.great storyteller': '优秀叙事者',
             'skill.masterful storyteller': '故事大师',
-            # endregion
-            # region LORE
+            #endregion
+            #region LORE
             'skill.interested in Clan history': '趣于族史',
             'skill.learner of lore': '知识学者',
             'skill.lore keeper': '守识者',
             'skill.lore master': '知识大师',
-            # endregion
-            # region AMP
+            #endregion
+            #region AMP
             'skill.picky nest builder': '挑剔的筑巢者',
             'skill.steady paws': '沉稳爪子',
             'skill.den builder': '筑巢者',
             'skill.camp keeper': '营地看守者',
-            # endregion
-            # region HEALER
+            #endregion
+            #region HEALER
             'skill.interested in herbs': '趣于药草',
             'skill.good healer': '良好的治疗者',
             'skill.great healer': '优秀的治疗者',
             'skill.fantastic healer': '妙爪回春',
-            # endregion
-            # region STAR
+            #endregion
+            #region STAR
             'skill.curious about StarClan': '对星族感到好奇',
             'skill.connection to StarClan': '星族联系',
             'skill.deep StarClan bond': '星族牵绊',
             'skill.unshakable StarClan link': '行于群星',
-            # endregion
-            # region DARK
+            #endregion
+            #region DARK
             'skill.interested in the Dark Forest': '对黑森林感有兴趣',
             'skill.Dark Forest affinity': '黑森亲和',
             'skill.deep Dark Forest bond': '黑森牵绊',
             'skill.unshakable Dark Forest link': '行于无星',
-            # endregion
-            # region OMEN
+            #endregion
+            #region OMEN
             'skill.interested in oddities': '趣于怪事',
             'skill.omen seeker': '寻兆者',
             'skill.omen sense': '预兆感知',
             'skill.omen sight': '预兆视线',
-            # endregion
-            # region DREAM
+            #endregion
+            #region DREAM
             'skill.restless sleeper': '睡眠难安',
             'skill.strange dreamer': '奇怪梦境',
             'skill.dream walker': '梦行者',
             'skill.dream shaper': '塑梦者',
-            # endregion
-            # region CLAIRVOYANT
+            #endregion
+            #region CLAIRVOYANT
             'skill.oddly insightful': '奇怪的洞察力',
             'skill.somewhat clairvoyant': '富有洞察力',
             'skill.fairly clairvoyant': '敏锐的洞察力',
             'skill.incredibly clairvoyant': '难以置信的洞察力',
-            # endregion
-            # region PROPHET
+            #endregion
+            #region PROPHET
             'skill.fascinated by prophecies': '预言迷恋',
             'skill.prophecy seeker': '预言探索者',
             'skill.prophecy interpreter': '预言翻译者',
             'skill.prophet': '先知',
-            # endregion
-            # region GHOST
+            #endregion
+            #region GHOST
             'skill.morbid curiosity': '病态好奇',
             'skill.ghost sense': '鬼魂感知',
             'skill.ghost sight': '鬼魂视线',
             'skill.ghost speaker': '鬼语者',
-            # endregion
-            # region SHORT
+            #endregion
+            #region SHORT
             'skill_short.teaching': '教导',
             'skill_short.hunting': '狩猎',
             'skill_short.fighting': '战斗',
@@ -2163,10 +2164,10 @@ class translate():
             'skill_short.prophesying': '预言',
             'skill_short.ghosts': '鬼魂',
             'skill_short.dark forest': '黑森林',
-            # endregion
+            #endregion
             #endregion
             #region ========== TRAITS ==========
-            # region ===== Normal ======
+            #region ===== Normal ======
             'trait.troublesome': '爱惹麻烦的',
             'trait.lonesome': '孤僻的',
             'trait.fierce': '凶猛的',
@@ -2206,8 +2207,8 @@ class translate():
             'trait.sincere': '真诚的',
             'trait.flamboyant': '爱卖弄的',
             'trait.rebellious': '桀骜不驯的',
-            # endregion
-            # region ===== Kit's ======
+            #endregion
+            #region ===== Kit's ======
             'trait.unruly': '任性的',
             'trait.shy': '害羞的',
             'trait.impulsive': '冲动的',
@@ -2224,7 +2225,97 @@ class translate():
             'trait.polite': '有礼貌的',
             'trait.know-it-all': '自以为是的',
             'trait.bossy': '专横的',
-            # endregion
+            #endregion
+            #endregion
+            #region ========== CONDITIONS ==========
+            #region ===== INJURIES =====
+            'condition.claw-wound': '抓伤',
+            'condition.bite-wound': '咬伤',
+            'condition.cat bite': '猫咪咬伤',
+            'condition.beak bite': '鸟类啄伤',
+            'condition.snake bite': '蛇类咬伤',
+            'condition.rat bite': '鼠类咬伤',
+            'condition.tick bites': '蜱虫咬伤',
+            'condition.blood loss': '失血',
+            'condition.broken jaw': '下颚骨折',
+            'condition.broken bone': '骨折',
+            'condition.mangled leg': '破烂的腿',
+            'condition.dislocated joint': '关节脱臼',
+            'condition.joint pain': '关节疼痛',
+            'condition.sprain': '扭伤',
+            'condition.mangled tail': '破烂的尾',
+            'condition.bruises': '淤伤',
+            'condition.cracked pads': '爪垫破裂',
+            'condition.sore': '酸痛',
+            'condition.phantom pain': '幻觉痛苦',
+            'condition.scrapes': '擦伤',
+            'condition.small cut': '小型划伤',
+            'condition.torn pelt': '皮毛撕裂',
+            'condition.torn ear': '耳部撕裂',
+            'condition.frostbite': '冻伤',
+            'condition.recovering from birth': '产后恢复',
+            'condition.water in their lungs': '肺部积水',
+            'condition.burn': '烧伤',
+            'condition.severe burn': '重度烧伤',
+            'condition.shock': '震惊',
+            'condition.lingering shock': '震惊余韵',
+            'condition.shivering': '颤栗',
+            'condition.dehydrated': '脱水',
+            'condition.head damage': '头部创伤',
+            'condition.damaged eyes': '眼部创伤',
+            'condition.quilled by a porcupine': '豪猪刺伤',
+            'condition.broken back': '脊椎骨折',
+            'condition.poisoned': '中毒',
+            'condition.bee sting': '蜜蜂蜇伤',
+            'condition.headache': '头痛',
+            'condition.severe headache': '严重头痛',
+            'condition.pregnant': '怀孕',
+            #endregion
+            #region ===== ILLNESSES =====
+            'condition.seizure': '脑病发作',
+            'condition.diarrhea': '腹泻',
+            'condition.fleas': '跳蚤肆虐',
+            'condition.greencough': '绿咳症',
+            'condition.kittencough': '幼崽感冒',
+            'condition.an infected wound': '一处感染伤口',
+            'condition.carrionplace disease': '褐斑病',
+            'condition.redcough': '红咳症',
+            'condition.running nose': '流鼻涕',
+            'condition.whitecough': '白咳症',
+            'condition.yellowcough': '黄咳症',
+            'condition.a festering wound': '一处溃烂伤口',
+            'condition.heat stroke': '中暑',
+            'condition.heat exhaustion': '热衰竭',
+            'condition.stomachache': '胃痛',
+            'condition.constant nightmares': '噩梦不断',
+            'condition.grief stricken': '悲痛欲绝',
+            'condition.malnourished': '营养不良',
+            'condition.starving': '饥荒',
+            #endregion
+            #region ===== PERMANENT-CONDITIONS =====
+            'condition.crooked jaw': '下颚歪曲',
+            'condition.lost a leg': '单腿丢失',
+            'condition.born without a leg': '天生单腿丢失',
+            'condition.weak leg': '腿部虚弱',
+            'condition.twisted leg': '腿部畸形',
+            'condition.lost their tail': '尾部丢失',
+            'condition.born without a tail': '天生尾部丢失',
+            'condition.paralyzed': '瘫痪',
+            'condition.raspy lungs': '肺粗糙',
+            'condition.wasting disease': '消耗性疾病',
+            'condition.blind': '失明',
+            'condition.one bad eye': '单眼损坏',
+            'condition.failing eyesight': '弱视',
+            'condition.partial hearing loss': '听力衰弱',
+            'condition.deaf': '失聪',
+            'condition.constant joint pain': '持续性关节疼痛',
+            'condition.seizure prone': '癫痫',
+            'condition.allergies': '易于过敏',
+            'condition.constantly dizzy': '持续性头晕',
+            'condition.recurring shock': '创伤后遗症',
+            'condition.lasting grief': '永恒悲痛',
+            'condition.persistent headaches': '持续性头痛',
+            #endregion
             #endregion
             #region ========== HISTORY ==========
             "history.This cat has not begun training.": "这只猫还没开始训练。",
@@ -2240,59 +2331,59 @@ class translate():
             "history. {PRONOUN/m_c/subject/CAP} graduated at ": "{PRONOUN/m_c/subject/CAP}毕业于",
             "history. moons old.": "月大时。",
             #region ===== INFLUENCE =====
-            # region === Traits ===
-            # region = Lawfulness_raise =
+            #region === Traits ===
+            #region = Lawfulness_raise =
             'influence.follow rules': '更为遵守规矩',
             'influence.follow the status quo': '更为遵循现状',
             'influence.heed their inner compass': '更能够遵从祂内心的界限',
             'influence.have strong inner morals': '更拥有强大的内在美德',
-            # endregion
-            # region = Lawfulness_lower =
+            #endregion
+            #region = Lawfulness_lower =
             'influence.bend the rules': '更善于变通规则',
             'influence.break away from the status quo': '更善于打破现状',
             "influence.break rules that don't suit them": '更善于打破那不适用于祂的规则',
             'influence.make their own rules': '更善于制定自己的规则',
-            # endregion
-            # region = Sociability_raise =
+            #endregion
+            #region = Sociability_raise =
             'influence.be friendly towards others': '更为待猫友善',
             'influence.step out of their comfort zone': '更勇于踏出自己的舒适圈',
             'influence.interact with others': '更乐于与其他猫互动',
             'influence.put others at ease': '更能让其他猫对其感到自在',
-            # endregion
-            # region = Sociability_lower =
+            #endregion
+            #region = Sociability_lower =
             'influence.be cold towards others': '更为待猫冷淡',
             'influence.refrain from socializing': '更倾向于避免社交',
             'influence.bicker with others': '更容易与其他猫产生口角',
-            # endregion
-            # region = Aggression_raise =
+            #endregion
+            #region = Aggression_raise =
             'influence.be ready for a fight': '更为作战而做好准备',
             'influence.start a fight': '更无惧于挑起战斗',
             'influence.defend their beliefs': '更勇猛地捍卫自己的信仰',
             'influence.use teeth and claws over words': '更倾向于用爪牙而非言语来解决问题',
             'influence.resort to violence': '更倾向于诉诸暴力',
-            # endregion
-            # region = Aggression_lower =
+            #endregion
+            #region = Aggression_lower =
             'influence.be slow to anger': '更不易急气',
             'influence.avoid a fight': '更倾向于避免打斗',
             'influence.use words over teeth and claws': '更倾向于用言语而非爪牙来解决问题',
             'influence.try to avoid violence': '更尽力于避免暴力',
-            # endregion
-            # region = Stability_raise =
+            #endregion
+            #region = Stability_raise =
             'influence.stay collected': '更能够保持镇定',
             'influence.think things through': '更为谨言慎行',
             'influence.be resilient': '更为坚韧',
             'influence.have a positive outlook': '更为积极乐观',
             'influence.be consistent': '更始终如一',
             'influence.adapt easily': '更善于适应变化',
-            # endregion
-            # region = Stability_lower =
+            #endregion
+            #region = Stability_lower =
             'influence.behave erratically': '更行为无序',
             'influence.make impulsive decisions': '更容易做出冲动的决定',
             'influence.have trouble adapting': '更难以适应变化',
             'influence.dwell on things': '更容易沉湎于已然过去的事物',
-            # endregion
             #endregion
-            # region === Skills ===
+            #endregion
+            #region === Skills ===
             'influence.teaching': '教学',
             'influence.hunting': '狩猎',
             'influence.fighting': '战斗',
@@ -2319,7 +2410,7 @@ class translate():
             #endregion
             #region ===== HONOR =====
             'honor.hard work': '刻苦',
-            # region adventurous
+            #region adventurous
             'honor.fearlessness': '无惧',
             'honor.valiance': '英勇',
             'honor.daring': '敢于冒险',
@@ -2336,8 +2427,8 @@ class translate():
             'honor.versatility': '多才多艺',
             'honor.energy': '活力',
             'honor.risk-taking': '冒险精神',
-            # endregion
-            # region ambitious
+            #endregion
+            #region ambitious
             'honor.initiative': '主动精神',
             'honor.loyalty': '忠诚',
             'honor.determination': '决心',
@@ -2351,8 +2442,8 @@ class translate():
             'honor.enthusiasm': '热忱',
             'honor.stamina': '毅力',
             'honor.intensity': '紧张',
-            # endregion
-            # region altruistic
+            #endregion
+            #region altruistic
             'honor.selflessness': '无私',
             'honor.kindness': '仁慈',
             'honor.compassion': '怜悯',
@@ -2367,8 +2458,8 @@ class translate():
             'honor.good nature': '好性格',
             'honor.patience': '耐心',
             'honor.grace': '慈悲',
-            # endregion
-            # region bloodthirsty
+            #endregion
+            #region bloodthirsty
             'honor.ferocity': '凶猛',
             'honor.strength': '力量',
             'honor.skill': '技能',
@@ -2378,15 +2469,15 @@ class translate():
             'honor.power': '能力',
             'honor.strong will': '坚强意志',
             'honor.fortitude': '坚韧',
-            # endregion
-            # region bold
+            #endregion
+            #region bold
             'honor.dauntlessness': '无畏',
             'honor.integrity': '正直',
             'honor.morals': '品行',
             'honor.vulnerability': '踪迹可循',
             'honor.honesty': '诚实',
-            # endregion
-            # region calm
+            #endregion
+            #region calm
             'honor.serenity': '从容',
             'honor.tranquility': '宁静',
             'honor.forethought': '预言',
@@ -2400,8 +2491,8 @@ class translate():
             'honor.equanimity': '平和',
             'honor.diligence': '勤勉',
             'honor.endurance': '耐力',
-            # endregion
-            # region careful
+            #endregion
+            #region careful
             'honor.mindfulness': '留心',
             'honor.intelligence': '聪颖',
             'honor.stealth': '行动慎密',
@@ -2412,8 +2503,8 @@ class translate():
             'honor.perspective': '权衡力',
             'honor.prudence': '精明',
             'honor.wisdom': '智慧',
-            # endregion
-            # region charismatic
+            #endregion
+            #region charismatic
             'honor.warmth': '温和',
             'honor.gregariousness': '合群',
             'honor.sociability': '善于交际',
@@ -2422,108 +2513,108 @@ class translate():
             'honor.amity': '和睦',
             'honor.charisma': '魅力',
             'honor.friendliness': '友善',
-            # endregion
-            # region childish
+            #endregion
+            #region childish
             'honor.resilience': '恢复力',
             'honor.zeal': '热心',
             'honor.humor': '幽默',
             'honor.self-respect': '自爱',
             'honor.audacity': '鲁莽',
             'honor.tenacity': '韧性',
-            # endregion
-            # region cold
+            #endregion
+            #region cold
             'honor.cleverness': '聪明',
             'honor.candor': '坦率',
             'honor.independence': '独立',
             'honor.steadfastness': '坚定',
             'honor.assurance': '担当',
             'honor.evenness': '平等',
-            # endregion
-            # region compassionate
+            #endregion
+            #region compassionate
             'honor.altruism': '利他主义',
             'honor.empathy': '同情',
             'honor.heart': '爱心',
             'honor.understanding': '善解猫意',
             'honor.gentleness': '和善',
-            # endregion
-            # region confident
+            #endregion
+            #region confident
             'honor.confidence': '自信',
             'honor.morale': '富有士气',
-            # endregion
-            # region empathetic
+            #endregion
+            #region empathetic
             'honor.tenderness': '亲切',
             'honor.sensitivity': '敏感',
-            # endregion
-            # region faithful
+            #endregion
+            #region faithful
             'honor.faithfulness': '忠心',
             'honor.transparency': '清廉',
             'honor.obedience': '顺从',
             'honor.dutifulness': '尽职',
-            # endregion
-            # region fierce
+            #endregion
+            #region fierce
             'honor.devotion': '忠挚',
-            # endregion
-            # region insecure
+            #endregion
+            #region insecure
             'honor.strategy': '策略',
             'honor.unpredictability': '不可预测',
             'honor.guardedness': '谨慎',
             'honor.planning': '计划',
             'honor.vigilance': '警惕',
-            # endregion
-            # region loving
+            #endregion
+            #region loving
             'honor.support': '支持',
             'honor.nurturing presence': '养育精神',
             'honor.cherish': '珍爱心',
             'honor.appreciation': '欣赏力',
             'honor.care': '关注',
-            # endregion
-            # region loyal
+            #endregion
+            #region loyal
             'honor.enterprise': '事业心',
             'honor.ambition': '志向',
             'honor.dependability': '可信赖',
             'honor.honor': '荣耀',
-            # endregion
-            # region nervous
+            #endregion
+            #region nervous
             'honor.realism': '务实作风',
             'honor.efficiency': '做事效率',
             'honor.logic': '逻辑',
             'honor.attention': '注意力',
-            # endregion
-            # region patient
+            #endregion
+            #region patient
             'honor.humility': '谦逊',
-            # endregion
-            # region playful
+            #endregion
+            #region playful
             'honor.liveliness': '活泼',
             'honor.perseverance': '不屈不挠',
-            # endregion
-            # region responsible
+            #endregion
+            #region responsible
             'honor.levelheadedness': '清醒',
             'honor.maturity': '成熟',
-            # endregion
-            # region shameless
+            #endregion
+            #region shameless
             'honor.vitality': '生命力',
             'honor.foolhardiness': '蛮勇',
-            # endregion
-            # region sneaky
+            #endregion
+            #region sneaky
             'honor.swiftness': '迅捷',
             'honor.foresight': '深谋远虑',
             'honor.shrewdness': '机灵',
-            # endregion
-            # region strange
+            #endregion
+            #region strange
             'honor.bluntness': '率直',
             'honor.character': '与众不同',
             'honor.individuality': '个性',
-            # endregion
-            # region strict
+            #endregion
+            #region strict
             'honor.guidance': '指导力',
-            # endregion
-            # region troublesome
+            #endregion
+            #region troublesome
             'honor.zest': '有趣',
             'honor.flexibility': '柔韧',
-            # endregion
-            # region vengeful
+            #endregion
+            #region vengeful
             'honor.resolve': '坚定信念',
-            # endregion
+            #endregion
             #endregion
             #endregion
             #region ========== CLAN TEMPER ==========
@@ -2552,6 +2643,766 @@ class translate():
             "relation.hostile": "敌对",
             "relation.welcoming": "友好",
             #endregion
+            #region ========== THOUGHTS ===========
+            #region ===== ALIVE =====
+            #region === General ===
+            #region = gen =
+            "thought.Is feeling quite lazy": "感觉有些懒洋洋的",
+            "thought.Is spending a considerable amount of time grooming": "花了大把时间来梳理自己",
+            "thought.Is looking forward to today": "期待着今日",
+            "thought.Is feeling down...": "感觉情绪低落……",
+            "thought.Is feeling excited": "感觉很兴奋",
+            "thought.Is feeling nervous": "感觉有些焦虑",
+            "thought.Is feeling content": "感觉满足",
+            "thought.Is feeling silly": "感觉有些蠢蠢的",
+            "thought.Is feeling a bit ill": "感觉有点病恹恹的",
+            "thought.Is feeling motivated": "感觉动力满满",
+            "thought.Is feeling perplexed": "感觉有些困惑",
+            "thought.Is relaxing in camp": "在营地里放松",
+            "thought.Is daydreaming": "在做白日梦",
+            "thought.Is napping": "正在打盹",
+            "thought.Is feeling gloomy": "感到很沮丧",
+            "thought.Is looking around camp": "环顾着营地",
+            "thought.Is feeling happy!": "感觉很开心！",
+            "thought.Is curious about the other Clans": "对其他族群感到好奇",
+            "thought.Is feeling sassy today": "感觉自己今天很时髦",
+            "thought.Wants to spend time alone today": "想在今天独处一会儿",
+            "thought.Is eating some fresh-kill": "正在吃些新鲜猎物",
+            "thought.Is heading to the dirtplace": "正走向肮脏的地方",
+            "thought.Is rethinking their life choices": "正重新审视着祂的猫生抉择",
+            "thought.Is in the medicine den": "在巫医巢穴里",
+            "thought.Is having a good day": "度过了愉快的一天",
+            "thought.Is having a hard day": "度过了艰难的一天",
+            "thought.Is talking to {PRONOUN/m_c/self}": "正在自言自语",
+            "thought.Is basking in the sun": "正在晒太阳",
+            "thought.Feels a sense of dread": "感到某种难以言喻的恐惧",
+            "thought.Is worried others are judging {PRONOUN/m_c/object}": "担心别的猫会对{PRONOUN/m_c/object}评头论足",
+            "thought.Almost choked on {PRONOUN/m_c/poss} prey": "差点被{PRONOUN/m_c/poss}猎物噎死了",
+            "thought.Is chattering at the birds in the trees above": "对着树上的鸟儿发出咪叽声",
+            "thought.Was recently caught humming to {PRONOUN/m_c/self}": "在近期被发现独自哼着歌儿",
+            "thought.Regrets not eating the bird on the fresh-kill pile earlier": "后悔没有早点吃掉猎物堆上的那只鸟",
+            "thought.Had a nightmare involving the rushing river nearby": "近期做了一个关于附近湍急河流的噩梦",
+            "thought.Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} still in {PRONOUN/m_c/poss} nest sleeping": "希望{PRONOUN/m_c/subject}仍在{PRONOUN/m_c/poss}的窝里睡觉",
+            "thought.Is craving the taste of mouse": "渴望着老鼠的味道",
+            "thought.Is craving the taste of rabbit": "渴望着兔子的味道",
+            "thought.Is craving the taste of vole": "渴望着田鼠的味道",
+            "thought.Is craving the taste of frog": "渴望着青蛙的味道",
+            "thought.Is craving the taste of shrew": "渴望着鼩鼱的味道",
+            "thought.Is craving the taste of bird": "渴望着鸟的味道",
+            "thought.Is craving the taste of fish": "渴望着鱼的味道",
+            "thought.Is wondering just how good at swimming {PRONOUN/m_c/subject} really {VERB/m_c/are/is}": "想知道{PRONOUN/m_c/subject}到底有多擅长游泳",
+            "thought.Is feeling underappreciated...": "感到自己不受重视……",
+            "thought.Woke up on the wrong side of the nest": "在错误的窝上醒来了",
+            "thought.Is staring off into space": "凝视着星空",
+            "thought.Is picking the burrs from {PRONOUN/m_c/poss} pelt": "正在把苍耳从{PRONOUN/m_c/poss}皮毛上挑下来",
+            "thought.Is batting at {PRONOUN/m_c/poss} tail": "正在和{PRONOUN/m_c/poss}尾巴搏斗",
+            "thought.Spends time watching fish in the nearby river": "花时间去了附近的河流赏鱼",
+            "thought.Is batting at a beam of sunlight": "与日光所降下的光束搏斗",
+            "thought.Didn't get enough sleep": "没睡够",
+            "thought.Is stretching out": "正在伸懒腰",
+            "thought.Is watching cats come and go from camp": "看着猫从营地进进出出",
+            "thought.Thinks about StarClan": "思索着关于星族的事儿",
+            "thought.Is watching the sky for hawks": "望着天上的飞鹰",
+            "thought.Is watching the sky for rain": "望着雨自天上落",
+            "thought.Is cloudwatching": "在看云",
+            "thought.Is debating on which prey to take from the fresh-kill pile": "正因应该从新鲜猎物堆上拿走哪个猎物而争论不休",
+            "thought.Sits quietly, watching cats go about their day": "静静坐着，看着猫们过着自己的日子",
+            "thought.Is wondering if there are Clans other than the ones around {PRONOUN/m_c/poss} area": "想知道在{PRONOUN/m_c/poss}族群周围一圈之外是否还有其他的族",
+            "thought.Is wondering if StarClan is watching over cats outside the Clans": "",
+            "thought.Lets out a big yawn!": "打了一个大——哈——欠！",
+            "thought.Is wondering if clouds are as soft as they look": "想知道云朵是否和它们看起来一样柔软",
+            "thought.Is enjoying the sounds of nature": "享受着自然之声",
+            "thought.Is feeling anxious": "感到焦虑",
+            "thought.Is feeling restless": "感到疲惫",
+            "thought.Is dozing off": "正在打瞌睡",
+            "thought.Is a bit annoyed today": "今天感觉有点烦躁",
+            "thought.Today is just not m_c's day...": "今天可不是m_c的幸运日……",
+            "thought.Is regretting not going to sleep earlier...": "正在后悔没早点睡觉……",
+            "thought.Is tidying up camp": "在整理营地",
+            "thought.Just can't find anything appetizing on the fresh-kill pile": "没有在新鲜猎物堆上找到任何能开胃的东西",
+            "thought.Has more energy than {PRONOUN/m_c/subject} {VERB/m_c/know/knows} what to do with at the moment": "有着比{PRONOUN/m_c/subject}现在所知所做需求的更旺盛的精力",
+            "thought.Got caught in a sudden downpour and is not happy about it": "因和一场倾盆大雨撞了个正着而闷闷不乐",
+            "thought.Is feeling peckish": "感觉饿瘪了",
+            "thought.Is complaining about an itch {PRONOUN/m_c/subject} can't quite reach": "正因为{PRONOUN/m_c/subject}挠不到的瘙痒而报怨不止",
+            "thought.Is looking up, watching the clouds roll by": "抬头仰望，看那白云滚滚而过",
+            "thought.Is watching the breeze blow around the camp": "看着微风在营地周围吹拂",
+            "thought.Is waiting to watch the sunrise": "等着看日出",
+            "thought.Is waiting to watch the sunset": "等着看日落",
+            "thought.Is grooming, grooming, grooming away...": "在舔毛，舔毛，舔翻了……",
+            #endregion
+            #region = aaa =
+            
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #region = aaa =
+
+            #endregion
+            #endregion
+            #region === Kitten ===
+            #region = gen_kit =
+            "thought.Plays moss ball by {PRONOUN/m_c/self}": "在自己玩苔藓球",
+            "thought.Wonders who {PRONOUN/m_c/poss} mentor will be": "想知道{PRONOUN/m_c/poss}导师会是谁",
+            "thought.Wants to take a nap": "想要小憩一会",
+            "thought.Tries to sneak out of camp": "试着溜出营地",
+            "thought.Is rolling around on the ground": "在地上滚来滚去",
+            "thought.Is chasing {PRONOUN/m_c/poss} tail": "在追{PRONOUN/m_c/poss}尾巴",
+            "thought.Is playing with a stick": "正在摆弄棍棍",
+            "thought.Is nervous for {PRONOUN/m_c/poss} apprentice ceremony": "正为{PRONOUN/m_c/poss}学徒仪式感到焦虑",
+            "thought.Is excited for {PRONOUN/m_c/poss} apprentice ceremony": "正为{PRONOUN/m_c/poss}学徒仪式感到兴奋",
+            "thought.Is scared after having a nightmare": "被噩梦吓着了",
+            "thought.Wants to snuggle": "想要贴贴",
+            "thought.Is bouncing around in excitement": "兴奋地蹦来蹦去",
+            "thought.Whines about being hungry": "发出了饿啊的悲鸣",
+            "thought.Is whining for milk": "吵着要吃奶",
+            "thought.Is whimpering in {PRONOUN/m_c/poss} sleep": "边睡觉边呜咽",
+            "thought.Is trying to growl menacingly": "想要发出威胁地咆哮",
+            "thought.Is adamantly refusing to take {PRONOUN/m_c/poss} nap": "坚决不肯午睡",
+            "thought.Is batting pebbles across the camp clearing": "正在营地空地上敲打卵石",
+            "thought.Is crying after rough-housing too hard with the older cats": "跟大猫打闹的太激烈被弄哭了",
+            "thought.Is regretting eating the bug that {PRONOUN/m_c/subject} caught": "后悔吃了{PRONOUN/m_c/subject}抓的虫子",
+            "thought.Recently took a tumble off of a log": "刚刚从一根木头上掉下来",
+            "thought.Is busy mastering a battle move {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} performing incorrectly": "忙着掌握{PRONOUN/m_c/subject}不正确的战斗动作",
+            "thought.Is hatching a plan to sneak out of camp and play": "决定制定一个计划偷偷溜出营地玩",
+            "thought.Is running like a whirlwind around the camp": "像旋风一样在营地奔跑",
+            "thought.Is pretending to be the Clan leader": "假装自己是群族的族长",
+            "thought.Doesn't want to grow up yet...": "还不想长大",
+            "thought.Got in trouble for bringing thorns into the nest": "因为把荆棘带回家而闯祸了",
+            "thought.Is hunting bugs": "正在抓虫子",
+            "thought.Is hiding in the nursery": "躲在育婴室里",
+            "thought.Has tiny little paws": "有个小爪爪",
+            "thought.Is extra fluffy today": "今天特别蓬松",
+            "thought.Dreams about being a warrior": "梦想自己长大了当武士",
+            "thought.Is frightened after hearing a scary story": "听了恐怖故事后感觉害怕",
+            "thought.Wants to be big someday": "希望有天变成大猫物",
+            "thought.Wants to have fun": "想要玩",
+            "thought.Is playing pretend": "正在玩伪装游戏",
+            "thought.Is going through an angsty phase, much to {PRONOUN/m_c/poss} Clanmates chagrin": "正在经历一个让族伴们烦恼的焦虑阶段",
+            "thought.Is fighting sleep... and failing": "在抵抗睡意……然后输了",
+            "thought.Knocked {PRONOUN/m_c/self} over with a sneeze": "被{PRONOUN/m_c/self}的一个喷嚏击倒了",
+            "thought.Wants a badger ride": "想要一场獾骑行",
+            "thought.Falls asleep in the elders' den while listening to a story": "听长老讲故事时在对方的巢里睡着了",
+            "thought.Wonders what {PRONOUN/m_c/poss} warrior name will be": "想知道{PRONOUN/m_c/poss}武士名号会是什么",
+            "thought.Wants to join the hunting patrol but can't": "想加入狩猎巡逻但不可以",
+            "thought.Is learning how to use {PRONOUN/m_c/poss} claws": "正在学习如何去使用{PRONOUN/m_c/poss}爪子",
+            "thought.Tried climbing r_c": "试着爬到r_c身上",
+            "thought.Is eating grass, pretending to be prey": "正在吃草，以假装自己是个猎物",
+            "thought.Starts whining when r_c ignores {PRONOUN/m_c/object}": "在r_c忽视{PRONOUN/m_c/object}后开始哭哭",
+            "thought.Can't wait to be a warrior": "等不及要成为一名武士了",
+            "thought.Pricked {PRONOUN/m_c/self} on the brambles protecting camp": "在用来保护营地的荆棘丛中扎伤了自己",
+            "thought.Pounces on a shred of moss": "扑向一片苔藓",
+            "thought.Is wondering if {PRONOUN/m_c/subject} would be a good swimmer": "想知道自己将来是否能游得如鱼得水",
+            #endregion
+            #region = kit_to_kit =
+            "thought.Is telling on r_c for climbing a bit too high": "正告诉r_c{PRONOUN/r_c/subject}爬得有点太高了",
+            "thought.Is telling on r_c for doing something bad": "告发r_c做了坏事",
+            "thought.Is inviting r_c to play": "正邀请r_c来一起玩",
+            "thought.Doesn't want to play with r_c": "不想和r_c一起玩",
+            "thought.Is pretending to be prey for r_c to hunt and chase": "正在追猎游戏中为r_c扮演一只猎物",
+            #endregion
+            #region = kit_older_cats =
+            "thought.Is asking older cats how kits are born": "向年长的猫咪询问幼崽是怎么诞生的",
+            "thought.Wishes other cats would stop babying {PRONOUN/m_c/object}": "希望其他猫不要把{PRONOUN/m_c/object}当幼崽了",
+            "thought.Is hiding from other cats": "躲着其他猫",
+            "thought.Is annoying older cats": "在打扰大猫",
+            "thought.Is asking the older cats about how kittens are made": "问大猫怎么才能生小猫",
+            "thought.Is pestering older cats to play with {PRONOUN/m_c/object}": "缠着大猫要陪玩",
+            #endregion
+            #region = kit_alive_med_cat =
+            "thought.Refuses to eat the herbs the medicine cat has given {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} tummy": "不肯吃巫医开的治胃病药草",
+            "thought.Hides in the medicine cat's herb stores": "藏在巫医的药草库里",
+            "thought.Is asking the medicine cat about StarClan": "向巫医问关于星族的事情",
+            "thought.Is asking the medicine cat why all the herbs have to be stinky and gross": "问为什么所有药草都是又臭又难吃的",
+            "thought.Wants to follow the medicine cat everywhere": "想要跟着巫医溜达",
+            "thought.Is asking r_c what every herb does but isn't retaining a word of it": "向r_c询问每种药草都有什么作用，但问完就全忘球了",
+            "thought.Won't stay still while r_c tries to treat {PRONOUN/m_c/object}": "在r_c试着治疗{PRONOUN/m_c/object}时动个不停",
+            #endregion
+            #region = kit_alive_elder =
+            "thought.Was nipped on the rump by an elder for being naughty": "因为淘气被长老咬了屁股",
+            "thought.Was hissed at by r_c for being too noisy": "因为太吵被r_c要求收声",
+            "thought.Asks r_c what it is like to be so old": "问r_c这么老的感觉怎么样",
+            "thought.Hopes r_c has a new story to tell {PRONOUN/m_c/object}": "希望r_c能给{PRONOUN/m_c/object}讲一个新故事",
+            "thought.Hopes {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old": "希望{PRONOUN/m_c/subject}老了之后不会像r_c那样暴脾气",
+            #endregion
+            #region = gen_greenleaf_kit =
+            "thought.Is whining about the heat": "被热得嗷嗷叫",
+            "thought.Is buzzing after swallowing a cicada": "在吞下一只蝉后发出了嗡嗡声",
+            #endregion
+            #region = gen_leafbare_kit =
+            "thought.Is whining about the cold": "被冻得嗷嗷叫",
+            "thought.Is whining about having caught frostbite, despite having just stepped outside": "正在抱怨自己被冻伤了，尽管才刚刚踏出巢外",
+            #endregion
+            #region = attention-seeker_kit =
+            "thought.Wakes r_c in the middle of the night to ask a question about snails": "半夜叫醒r_c问一个关于蜗牛的问题",
+            "thought.Wakes up early to say hello to the dawn patrol": "早早起床，向早上的巡逻队问好",
+            "thought.Follows r_c around so closely that {PRONOUN/m_c/subject} {VERB/m_c/step/steps} on {PRONOUN/r_c/poss} paw": "紧跟着r_c走，以至于踩到了{PRONOUN/r_c/poss}爪",
+            "thought.Says hello to r_c at least 10 times in a row, until {PRONOUN/r_c/subject} finally {VERB/r_c/say/says} hello back": "对着r_c说了十次你好，直到{PRONOUN/r_c/subject}最后回应你好为止",
+            "thought.Is showing everyone the bug {PRONOUN/m_c/subject} caught earlier": "在向每只猫展示{PRONOUN/m_c/subject}之前发现的虫子",
+            "thought.Is in r_c's way... again": "又挡住了r_c的路……",
+            "thought.Yowls loudly in the middle of the clearing for absolutely no reason": "在空地中间无缘无故地大声嚎叫",
+            "thought.Begs for life-saving herbs to cure {PRONOUN/m_c/poss} minor scrape": "祈求用救命的药草来治疗{PRONOUN/m_c/poss}小擦伤",
+            "thought.Is calling a Clan meeting, before r_c rudely interrupts {PRONOUN/m_c/object}": "正在进行群族会议，然后r_c粗鲁的打断了{PRONOUN/m_c/object}",
+            "thought.Is demanding r_c's attention even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} busy": "正在苛求r_c的关注，即使{PRONOUN/r_c/subject}正在忙",
+            "thought.Is waiting by the camp entrance to see what the patrol brings back": "在营地入口等着好看见巡逻队都带回来了什么",
+            #endregion
+            #region = guarding_kit =
+            "thought.Has taken up the role of guarding the fresh-kill pile from cats wanting an extra piece and is taking {PRONOUN/m_c/poss} job very seriously": "承担起了保护新鲜猎物堆、避免猫咪想要多贪嘴一块的角色，并且在超级认真地对待{PRONOUN/m_c/poss}工作",
+            "thought.Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp": "正试着强行进入营地并保护它",
+            "thought.Wants to guard the nursery": "想要守护育婴室",
+            #endregion
+            #region = tattletale_kit =
+            "thought.Is telling on r_c for something m_c was told {PRONOUN/m_c/subject} couldn't do": "告发r_c做了某些自己曾被告知不能做的事情",
+            #endregion
+            #region = bossy_kit =
+            "thought.Can't wait to be deputy so {PRONOUN/m_c/subject} can assign patrols": "想赶紧成为副族长，这样{PRONOUN/m_c/subject}就可以分配巡逻任务了",
+            "thought.Tells r_c to catch {PRONOUN/m_c/object} some fresh prey": "让r_c去捕捉一些新鲜的猎物",
+            "thought.Wants to be leader so everycat will have to listen to {PRONOUN/m_c/object} all the time": "想要当族长，这样每只猫就都必须一直听{PRONOUN/m_c/poss}",
+            "thought.Tells r_c to change the bedding in the nursery": "让r_c更换育婴室的被褥",
+            "thought.Tells r_c to play with {PRONOUN/m_c/object}": "让r_c和{PRONOUN/m_c/object}一起玩",
+            "thought.Is mad no one will listen to {PRONOUN/m_c/object}": "因为没猫听{PRONOUN/m_c/poss}而生气",
+            "thought.Is in trouble for ordering cats around again": "又一次因为使唤其他猫而摊上事了",
+            "thought.Never says please or thank you": "从不说请和谢谢",
+            "thought.Is rushing r_c": "正在催促r_c",
+            "thought.Tells r_c to hurry up already": "告诉r_c要快点",
+            #endregion
+            #region = bouncy_kit =
+            "thought.Is pretending to be a rabbit and hopping about": "假装自己是兔兔跳来跳去",
+            "thought.Is pawing at r_c's tail from behind {PRONOUN/r_c/object}": "在r_c后面抓的尾巴",
+            "thought.Wants to play forever": "想要一直玩到永远",
+            "thought.Is running circles around r_c": "绕着r_c转圈",
+            "thought.Is trying to catch {PRONOUN/m_c/poss} tail": "试图抓住自己的尾巴",
+            "thought.Vows to never take another nap": "发誓再也不午睡了",
+            "thought.Is racing around the camp... again... and again": "在营地周围赛跑……一次又一次",
+            "thought.Is running in circles": "正在转圈跑",
+            "thought.Wants r_c to see how fast {PRONOUN/m_c/subject} can run": "想让r_c看看{PRONOUN/m_c/subject}能跑多快",
+            "thought.Wants r_c to see how far {PRONOUN/m_c/subject} can jump": "想让r_c看看{PRONOUN/m_c/subject}能跳多高",
+            "thought.Wants to race with r_c": "想和r_c比赛",
+            "thought.Doesn't like naps": "不想午睡",
+            "thought.Claims {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the fastest cat ever": "说自己是这世界上跑的最快的猫",
+            "thought.Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} faster than a rabbit": "认为自己比兔子跑得快",
+            "thought.Is begging r_c to play with {PRONOUN/m_c/object}": "求着r_c陪{PRONOUN/m_c/object}玩",
+            "thought.Pounced on r_c": "扑向了r_c",
+            "thought.Runs out of energy for several seconds... then hops back up, fully re-energized!": "精疲力尽了几秒钟……然后一跃而起，满血复活！",
+            "thought.Nips at r_c, then runs away giggling": "咬了r_c一口，然后咯咯笑着跑了",
+            "thought.Is trying to climb r_c": "试着爬上r_c",
+            #endregion
+            #region = bullying_kit =
+            "thought.Knocks over r_c": "撞翻了r_c",
+            "thought.Makes fun of r_c's insecurities": "取笑r_c的不放心",
+            "thought.Is making a mean face at r_c": "在对r_c做鬼脸",
+            "thought.Says r_c is boring and no fun": "说r_c一点都不好玩",
+            "thought.Teases r_c all day long": "整天都在戏弄r_c",
+            "thought.Calls r_c stinky": "管r_c叫做臭臭",
+            "thought.Nips r_c": "在咬r_c",
+            "thought.Is thinking about taking r_c's fresh-kill": "在考虑拿走r_c的新鲜猎物",
+            "thought.Is trying to look tough": "试图表现得强硬",
+            "thought.Says kittypets can't be real warriors": "说小猫不能当武士",
+            "thought.Says r_c's 'real' parents were rogues": "说r_c是泼皮生的",
+            "thought.Is starting rumors about r_c": "正在开始关于r_c的谣言",
+            "thought.Tells r_c that nobody likes {PRONOUN/r_c/object}": "告诉r_c没猫喜欢{PRONOUN/r_c/object}",
+            "thought.Is scratching everything {PRONOUN/m_c/subject} can get {PRONOUN/m_c/poss} claws on": "正在挠一切爪子能碰到的东西",
+            "thought.Is making r_c pretend to be prey for {PRONOUN/m_c/object} to hunt": "正让r_c去扮演一只猎物来让{PRONOUN/m_c/object}抓",
+            "thought.Is in time out": "没得玩了",
+            #endregion
+            #region = bullying_kit_to_other =
+            "thought.Shoved r_c out of the nest": "把r_c推出了巢外",
+            "thought.Is scolding another kit": "在责骂另一只幼崽",
+            #endregion
+            #region = charming_kit =
+            "thought.Is rolling around cutely while warriors look upon {PRONOUN/m_c/object}": "在众武士的注视下可爱的翻肚皮",
+            "thought.Is rubbing up against the warriors' legs": "蹭武士们的腿",
+            "thought.Is hoping the patrol will come back with a special gift for {PRONOUN/m_c/object} like usual": "希望大猫巡逻回来能带来点特别的东西",
+            "thought.Is trying to purr {PRONOUN/m_c/poss} way out of trouble with the medicine cat": "试图通过呼噜声摆脱巫医的困扰",
+            "thought.Is absolutely adorable": "巨特喵可爱",
+            "thought.Is purring softly": "轻轻地呼噜呼噜",
+            "thought.Is waiting patiently for {PRONOUN/m_c/poss} turn": "耐心的等待轮到自己",
+            "thought.Is always on {PRONOUN/m_c/poss} best behavior": "总是表现得最好",
+            "thought.Likes to help others": "喜欢帮别的猫",
+            "thought.Wants to be everycat's friend": "想跟每只猫都做朋友",
+            "thought.Is asking r_c about {PRONOUN/r_c/poss} day": "询问r_c今天感觉如何",
+            "thought.Is squeaky clean": "超干净",
+            #endregion
+            #region = daydreamer_kit =
+            "thought.Thinks {PRONOUN/m_c/subject} saw a StarClan cat in {PRONOUN/m_c/poss}": "认为自己梦到了星族猫",
+            "thought.Is mesmerized by the night sky": "痴迷于星空",
+            "thought.Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the leader of {PRONOUN/m_c/poss} own Clan": "认为自己是{PRONOUN/m_c/subject}自创的族群的族长",
+            "thought.Bosses around imaginary cats as deputy": "像个副族长一样对想象中的猫猫发号施令",
+            "thought.Wonders what it would be like to be leader": "想知道当族长爽不爽",
+            "thought.Sorts blades of grass like a medicine cat would": "像巫医一样对草叶进行分类",
+            "thought.Stares into nothing in particular": "凝视着虚空",
+            "thought.Makes up a tale on the spot for the other kits": "给其他小猫讲现编的故事",
+            "thought.Is annoying the elders for more tales": "向长老要更多的故事听",
+            "thought.Wonders what the ancient Clans were like": "想知道古代的族群都是什么样的",
+            "thought.Wonders what it would be like to live in a different Clan": "想知道生活在别的族群里会是什么感觉",
+            "thought.Is pretending to be a twoleg kit": "假装自己是两脚兽幼崽",
+            "thought.Wants r_c to pretend to be {PRONOUN/m_c/poss} apprentice": "假装r_c是{PRONOUN/m_c/poss}徒弟",
+            "thought.Is pretending to be a rock": "假装自己是石头",
+            "thought.Is going everywhere backwards today": "整天都在倒着走",
+            "thought.Asks r_c if {PRONOUN/r_c/subject} like to daydream too": "问r_c喜不喜欢愣神",
+            "thought.Is telling r_c another story, and another, and another, and...": "给r_c讲另一个故事，还有另一个，和另一个以及另一个之外还有另一个与另一个",
+            "thought.Wonders what it would be like to have a fish for a tail": "想知道如果自己屁股上长的不是尾巴而是鱼会怎么样",
+            "thought.Wants to learn everything {PRONOUN/m_c/subject} can and more": "想学习一切能学到的知识，如果可行，甚至想比一切还多",
+            "thought.Tells the best stories": "讲述最精彩的故事",
+            #endregion
+            #region = fearless_kit =
+            "thought.Is attempting to pounce on the tail of r_c": "试图扑向r_c的尾巴",
+            "thought.Tries to sneak out of camp with a patrol": "试图混进巡逻的队伍溜出去",
+            "thought.Is boldly walking out of camp": "大胆地走出营地",
+            "thought.Is taking the biggest piece of fresh-kill": "在抢最大的猎物",
+            "thought.Demands to be on the next border patrol": "想跟着一起去下一次的巡逻",
+            "thought.Isn't scared of anything": "什么都不怕",
+            "thought.Is climbing way too high": "爬的太高了",
+            "thought.Is telling other cats that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the deputy now": "告诉其他猫现在{PRONOUN/m_c/subject}是副族长",
+            "thought.Wants to taste a toad": "想尝尝蛤蟆的味道",
+            "thought.Thinks {PRONOUN/m_c/subject} can outsmart a fox": "觉得自己比狐狸还精",
+            "thought.Is sure {PRONOUN/m_c/subject} could fight a badger": "觉着自己能打败獾",
+            "thought.Is sneaking into the leader's nest": "偷偷溜进族长的窝",
+            "thought.Sticks {PRONOUN/m_c/poss} paw into an old snake hole": "把爪子伸进旧蛇洞",
+            "thought.Isn't afraid of the dark at all": "一点都不怕黑",
+            "thought.Is demanding others spar with {PRONOUN/m_c/object}": "在要求别的猫和{PRONOUN/m_c/object}斗嘴",
+            #endregion
+            #region = fearless_kit_to_apprentice =
+            "thought.Picks a fight with an apprentice so {PRONOUN/m_c/subject} can show {PRONOUN/m_c/poss} skills": "挑起了与一名学徒的战斗，这样{PRONOUN/m_c/subject}就能展示{PRONOUN/m_c/poss}技能了",
+            #endregion
+            #region = fearless_kit_to_leader =
+            "thought.Is trying to challenge the leader but isn't being taken very seriously": "试着挑战族长，不过没被当真",
+            #endregion
+            #region = impulsive_kit =
+            "thought.Is streaking across the clearing": "正在跑过空地",
+            "thought.Is stuck in a tree... again": "又双叒叕被困在树上了",
+            "thought.Is complaining of a tummy ache after eating too much": "吃饱了撑得肚子疼",
+            "thought.Is awfully close to getting a nip on the rump for misbehaving": "差点因为太作妖而被咬屁股",
+            "thought.Is waiting for an opportunity to sprint out of sight": "等待消失于其他猫视野的时机",
+            "thought.Is tired of waiting to be an apprentice": "不想再等着当学徒了",
+            "thought.Doesn't think twice about anything": "做什么事都很莽撞",
+            "thought.Speaks without thinking and gets scolded for being rude": "嘴筒子没把门，谁见了谁都说没礼貌",
+            "thought.Doesn't have time to listen to rules": "没时间听规矩",
+            "thought.Is rushing off without listening again": "没听猫说完话就又走了",
+            "thought.Asks for forgiveness, not permission": "做事从来都是先斩后奏",
+            "thought.Isn't listening at all": "根本什么话都不听",
+            "thought.Wasn't paying attention and tripped": "溜了个号就摔地上了",
+            "thought.Ate a bug": "在吃虫虫",
+            "thought.Has SO much energy": "精力廿足",
+            "thought.Is zooming around": "正在四处飞奔",
+            "thought.Is practicing {PRONOUN/m_c/poss} pounce on r_c's tail": "正在拿r_c的尾巴练习扑击",
+            "thought.Is complaining of a tummyache after sneaking into the medicine cat den's herb storage and eating something {PRONOUN/m_c/subject} shouldn't have": "偷偷溜进了巫医巢穴的药草储存点，然后在吃了不该吃的东西后抱怨肚子疼",
+            "thought.Picked up something nobody else got a good look at and is now running from several cats": "趁别的猫没看稳顺了个东西走，现在正在被几只猫追着跑",
+            "thought.Is pretending to be a mouse and trying to get others to chase {PRONOUN/m_c/object}": "正在假装自己是个老鼠并让别的猫来追{PRONOUN/m_c/object}",
+            "thought.Nips at r_c and runs away giggling": "咬了r_c一口，然后咯咯笑着跑了",
+            "thought.Rearranges all of the herbs as a prank": "恶作剧般地重新排列了所有药草",
+            #endregion
+            #region = know-it-all_kit =
+            "thought.Has already learned the hunter's crouch": "已经学会了猎手蹲伏",
+            "thought.Doesn't need r_c to tell {PRONOUN/m_c/object} anything": "不需要r_c告诉{PRONOUN/m_c/object}任何事情",
+            "thought.Tells r_c a fact about snails, and another, and another...": "告诉r_c一个关于蜗牛的事，还有另一个，另一个……",
+            "thought.Is able to name 20 kinds of bird": "能说出20种鸟的名字",
+            "thought.Memorized the Warrior Code ages ago": "很早以前就记住了武士守则",
+            "thought.Corrects r_c on something trivial": "纠正r_c的一些小问题",
+            "thought.Swears {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} never, EVER, wrong about ANYTHING": "发誓{PRONOUN/m_c/subject}永远，<b>绝对</b>，没在<b>任何事上</b>犯过错",
+            "thought.Is reciting facts about different kinds of beetles in the middle of camp": "在营地中背诵有关不同种类甲虫的知识",
+            "thought.Tells r_c that {PRONOUN/r_c/subject} should really know more about different kinds of moss by now": "告诉r_c{PRONOUN/r_c/subject}现在对不同种类的苔藓有更多了解",
+            "thought.Is shocked r_c doesn't know more about slugs": "很惊讶r_c竟然对蛞蝓了解不多",
+            "thought.Is practicing identifying different types of leaves": "正在练习识别不同类型的叶子",
+            "thought.Thinks {PRONOUN/m_c/subject} {VERB/m_c/are/is} smarter than r_c": "认为自己比r_c更有脑子",
+            #endregion
+            #region = noisy_kit =
+            "thought.Is practicing a mighty roar": "正在练习强大的咆哮",
+            "thought.Yowls as loud as {PRONOUN/m_c/subject} can": "大声喵喵",
+            "thought.Challenges r_c to a yowl-off": "向r_c发起嚎叫挑战",
+            "thought.Loudly explains why being quiet is super boring": "大声解释为什么安静很无聊",
+            "thought.Meow meow meow meow meow meow meow meow meow meow meow meow": "在喵喵喵 喵 喵 喵 喵 口苗  口苗  口苗  口苗",
+            "thought.Was asked many times to please, please be quiet": "被其他猫多次请求安静点",
+            "thought.Is purring loudly": "发出震耳欲聋的呼噜声",
+            "thought.Wakes r_c from a perfectly good nap with {PRONOUN/m_c/poss} incessant mewling": "不停的喵喵喵，以至于把r_c的美好午睡给破坏掉了",
+            "thought.Doesn't know why everycat wants to be quiet all the time. No fun!": "不知道为什么每只猫都想保持安静，没劲！",
+            "thought.Wakes up early to sing with the birds": "早起和鸟儿一起合唱",
+            "thought.Is practicing bird calls": "正在学鸟叫",
+            "thought.Is screaming because {PRONOUN/m_c/subject} can": "大声尖叫，因为{PRONOUN/m_c/subject}做得到！",
+            "thought.Is being told to be quiet again": "又被要求安静了",
+            #endregion
+            #region = noisy_kit_to_elder =
+            "thought.Asked r_c for a story but keeps interrupting {PRONOUN/r_c/object}": "请求r_c讲个故事，但一直在打断{PRONOUN/r_c/object}",
+            #endregion
+            #region = polite_kit =
+            "thought.Always says please and thank you": "张口就是请和谢谢",
+            "thought.Is making sure not to be in anycat's way": "确保自己不妨碍任何猫猫",
+            "thought.Asks r_c if {PRONOUN/m_c/subject} can help with something": "询问r_c是否能帮忙",
+            "thought.Is keeping their {PRONOUN/m_c/poss} nice and clean": "在保持皮毛干净整洁",
+            "thought.Would never dream of being in trouble": "做梦也不会想到自己会陷入困境",
+            "thought.Is quiet when other cats are talking": "当其他猫说话时会保持安静",
+            "thought.Is being very patient today": "今天非常有耐心",
+            "thought.Wants to always do the right thing": "希望自己永远做正确的事情",
+            "thought.Is extra quiet during Clan meetings... even though {PRONOUN/m_c/subject} should be in the nursery": "在族群大会期间格外安静……即使{PRONOUN/m_c/subject}应该在育婴室里",
+            "thought.Is helping clean out the nursery": "帮助清理育婴室",
+            "thought.Is tidying up shreds of old moss": "正在整理旧苔藓的碎片",
+            #endregion
+            #region = quiet_kit =
+            "thought.Is too good at playing hide-and-seek": "太擅长玩捉迷藏了",
+            "thought.Is asked to speak up": "被要求说话",
+            "thought.Plays quietly alone with a feather in front of the nursery": "安静地在育婴室前独自玩着羽毛",
+            "thought.Is very excited for {PRONOUN/m_c/poss} nap": "因为有小觉睡而感到兴奋",
+            "thought.Doesn't have much to say": "没啥可说的地方",
+            "thought.Is happy being alone sometimes": "有时候一猫呆着也挺快活",
+            "thought.Thinks r_c is too loud": "觉得r_c动静太大了",
+            "thought.Mews quietly to {PRONOUN/m_c/self}": "在静静的喵喵喵",
+            "thought.Doesn't make a sound today": "今天一点声都没出",
+            "thought.Is acting very shy": "表现得很腼腆",
+            "thought.Is playing by {PRONOUN/m_c/self}": "在跟自己玩",
+            "thought.Is yawning again": "又打了个哈欠",
+            "thought.Is hiding behind r_c": "躲在r_c后面",
+            "thought.Doesn't want to play right now": "现在不想玩",
+            "thought.Is very sleepy": "昏昏欲睡",
+            "thought.Doesn't like to yowl": "不喜欢叫唤",
+            "thought.Finds somewhere comfy to nap": "找了个舒适地来打盹",
+            "thought.Was forgotten about...": "被遗忘了……",
+            "thought.Is feeling at peace sitting alone watching the other kits play": "对独自坐在一边看着其他幼崽玩耍感到平静",
+            "thought.Doesn't want to play": "不想玩",
+            "thought.Is saying sorry for being loud when {PRONOUN/m_c/subject} barely even spoke up": "在{PRONOUN/m_c/subject}几乎不吱声的情况下为自己说话太大声了而道歉",
+            #endregion
+            #region = self-conscious_kit =
+            "thought.Doesn't think {PRONOUN/m_c/subject} will ever be an apprentice": "认为自己永远也当不成学徒",
+            "thought.Thinks r_c doesn't like {PRONOUN/m_c/object}": "觉得r_c不喜欢自己",
+            "thought.Is too shy to go to the fresh-kill pile alone": "很内向，不敢自己去猎物堆",
+            "thought.Hides sheepishly behind r_c": "羞怯地躲在r_c后面",
+            "thought.Is afraid other cats will think {PRONOUN/m_c/subject} {VERB/m_c/are/is} silly": "害怕其他猫觉得{PRONOUN/m_c/subject}很蠢",
+            "thought.Doesn't want to be an apprentice because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} afraid of disappointing the Clan": "不想当学徒，因为{PRONOUN/m_c/subject}害怕自己让群族失望",
+            "thought.Hates making mistakes": "讨厌犯错",
+            "thought.Is afraid of being in the way": "怕自己碍事",
+            "thought.Stays at the edges of camp to avoid getting taken by a hawk": "待在营地一角已避免被鹰抓走",
+            "thought.Is intimidated by the warriors": "被武士们吓到了",
+            "thought.Is trying to be brave": "试着鼓起勇气",
+            "thought.Is worried about making mistakes": "担忧犯错",
+            #endregion
+            #region = shy_kit =
+            "thought.Feeling alone": "感觉到孤独",
+            "thought.Wishes {PRONOUN/m_c/subject} had friends": "希望能有朋友",
+            "thought.Wants somecat to talk to": "想要跟猫聊天",
+            "thought.Doesn't understand why {PRONOUN/m_c/subject} {VERB/m_c/are/is} always left out": "不明白自己为什么总是被其他猫排挤",
+            "thought.Hopes to make a friend today": "希望今天能有朋友",
+            "thought.Is talking to some bugs": "正在跟虫子说话",
+            "thought.Is sitting all alone": "在独自坐着",
+            "thought.Wants to be friends with r_c but doesn't know how": "想跟r_c交朋友，但不知该怎么做",
+            "thought.Wonders what it's like to be a loner": "想知道当个独行猫会怎么样",
+            "thought.Wants to stay in {PRONOUN/m_c/poss} nest today": "今天想待在自己窝里",
+            "thought.Thought about talking to r_c but changed {PRONOUN/m_c/poss} mind": "想和r_c聊聊，但欲言又止",
+            "thought.Is watching cats go about their day": "看着猫们过着各自的生活",
+            #endregion
+            #region = skittish_kit =
+            "thought.Was startled by a croaking frog": "被一只大嗓门青蛙吓一跳",
+            "thought.Is doing {PRONOUN/m_c/poss} best not to get stepped on": "尽量让自己不被踩到",
+            "thought.Is trying to stop {PRONOUN/m_c/poss} paws from shaking": "试图阻止爪子的颤抖",
+            "thought.Is nervous about leaving {PRONOUN/m_c/poss} siblings": "担心离开自己的手足",
+            "thought.Doesn't want to be an apprentice yet": "还不想当学徒",
+            "thought.Is thinking about how nervous {PRONOUN/m_c/subject} {VERB/m_c/are/is}": "正在思考自己有多紧张",
+            "thought.Is worrying about {PRONOUN/m_c/poss} family and friends": "担心家猫和朋友们",
+            "thought.Is feeling shaky": "感觉有些摇晃",
+            "thought.Is worried that {PRONOUN/m_c/subject} won't do a good enough job": "担心自己做的不够好",
+            "thought.Is trying not to shake with nerves": "尽量让自己不紧张",
+            "thought.Is trying to stay calm": "试图淡定下来",
+            "thought.Wants to stay in {PRONOUN/m_c/poss} den a little longer": "想在窝里多呆一会",
+            "thought.Is reminding {PRONOUN/m_c/self} that it will be okay": "告诉自己一切都会好起来",
+            "thought.Is scared of r_c": "害怕r_c",
+            "thought.Recently jumped at the sight of {PRONOUN/m_c/poss} own shadow": "最近一见自己影子就害怕",
+            "thought.Is having trouble falling asleep": "睡不着觉",
+            "thought.Is crying quietly": "哭的一点声都不出",
+            "thought.Is too overwhelmed lately": "最近忙的爪不沾地",
+            "thought.Is hiding from everycat": "躲着每一只猫",
+            "thought.Has tears in {PRONOUN/m_c/poss} eyes": "快哭出来了",
+            "thought.Never wants to leave the camp when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} older": "长大后不想离开营地",
+            "thought.Asks r_c if it's safe": "问r_c安全了吗",
+            "thought.Is checking on r_c": "正在检查r_c",
+            "thought.Hopes there is enough fresh-kill for everycat": "希望每只猫都能分到新鲜的猎物",
+            "thought.Has a lot on {PRONOUN/m_c/poss} mind": "有很多事情要考虑",
+            "thought.Waits by the camp entrance for r_c to come back safe": "在营地入口等着r_c安全归来",
+            "thought.Is scrambling to hide from a loud noise": "正因一声巨响而慌忙奔逃",
+            "thought.Is creeped out by the faces of the prey on the fresh kill pile": "被新鲜猎物堆上那猎物的脸给搞得毛骨悚然",
+            #endregion
+            #region = sweet_kit =
+            "thought.Is pretending to be the medicine cat": "在假扮巫医",
+            "thought.Plucks feathers from a fresh-kill bird to add to nests": "拔掉刚被弄死鸟的羽毛，放进巢里面",
+            "thought.Offers to leave camp to collect moss, but can't, because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a kit": "提议离开营地去收集苔藓，但不行，因为{PRONOUN/m_c/subject}是一只小猫",
+            "thought.Compliments an older cat on how their fur looks today": "赞美一只大猫的今天的毛发状态",
+            "thought.Wants to help others": "想要帮别的猫",
+            "thought.Is so very cute": "简直是超超超可爱",
+            "thought.Has a cute little nose": "有个可爱小鼻子",
+            "thought.Twitches {PRONOUN/m_c/poss} whiskers": "抖动{PRONOUN/m_c/poss}胡须",
+            "thought.Is checking on other cats": "正在检查其他猫",
+            "thought.Wants r_c to be happy": "希望r_c能开心",
+            "thought.Purrs all day long": "呼噜呼噜了一整天",
+            "thought.Has soft paws": "有个软软的爪爪",
+            "thought.Wouldn't hurt a fly": "都不会欺负一只苍蝇",
+            "thought.Wonders how r_c is feeling today": "想知道r_c今天过得好不好",
+            "thought.Cheers r_c on": "在给r_c打气",
+            "thought.Is the cutest kit in the Clan": "应该是群族中最可爱的小猫力",
+            "thought.Loves to be helpful": "乐于助猫",
+            "thought.Is tidying up the nursery": "在整理育婴室",
+            "thought.Picks flowers and offers them to anyone who will take them": "捡起花儿并将其赠给任何愿意接受它们的猫",
+            "thought.Is asking cats how they are doing": "在询问其他猫祂们在做什么",
+            "thought.Practices {PRONOUN/m_c/poss} grooming on r_c": "用r_c来练习梳洗",
+            "thought.Offers what {PRONOUN/m_c/subject} {VERB/m_c/have/has} to r_c": "和r_c交换{PRONOUN/m_c/subject}拥有的玩意儿",
+            "thought.Is listening to r_c's problems earnestly": "认真倾听r_c的问题",
+            "thought.Wants to be as helpful as possible": "想要尽可能地变得有用",
+            "thought.Is helping r_c feel better": "帮助r_c感觉好些了",
+            #endregion
+            #region = unruly_kit =
+            "thought.Thinks about mischief": "正在琢磨恶作剧",
+            "thought.Wonders what trouble {PRONOUN/m_c/subject} can create": "想知道自己能整个什么大活",
+            "thought.Wonders about the unknown": "对未知事物感到疑惑",
+            "thought.Is planning to be naughty": "打算皮一下",
+            "thought.Is thinking about being in trouble": "正在寻思如何惹麻烦",
+            "thought.Is trying to get out of trouble": "正在试图摆脱困境",
+            "thought.Is scrambling the medicine cat's herbs": "正在搞乱巫医的药草",
+            "thought.Is thinking of how to cause trouble": "想着怎么搞事",
+            "thought.Is planning to annoy an elder": "打算惹恼一位长老",
+            "thought.Is trying very hard to look innocent": "努力装出一副无辜样",
+            "thought.Is thinking about play-fighting with {PRONOUN/m_c/poss} littermates": "考虑和同窝的小伙伴干一仗",
+            "thought.Is putting thorns in r_c's bedding": "在r_c的床上放荆棘",
+            "thought.Is thinking about stealing herbs from the medicine den": "想着从药草库里偷药草",
+            "thought.Is sneaking out of camp": "偷偷溜出营地",
+            "thought.Is saying bad words": "在说脏话",
+            "thought.Is tripping other cats": "在绊倒其他猫",
+            "thought.Jumps out of a hiding spot, startling r_c": "藏起来然后突然窜出来吓r_c一激灵",
+            "thought.Is taking the bedding from other cats nests": "正在从其他猫的窝里偷被褥",
+            "thought.Is up to no good... again": "又在行不轨之事了",
+            "thought.Splashes around in a puddle, getting r_c all wet": "跳进了水坑，把r_c溅成了落汤猫",
+            "thought.Is not allowed to leave the nursery for the rest of the day after pranking r_c": "在熊完之后今天剩下的时间都不许离开育婴室了",
+            "thought.Is trying to scare r_c": "试图吓唬r_c",
+            "thought.Is covered in mud": "被泥土包裹",
+            "thought.Tried to sneak out of camp last night but got caught": "试着在夜晚偷溜出营地，但是被逮着了",
+            "thought.Sneakily nips at r_c and runs away": "偷偷咬了r_c一口然后溜了",
+            #endregion
+            #region = kit_med_parent =
+            "thought.Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c": "拜访了巫医巢穴去看望{PRONOUN/m_c/poss}父母，r_c",
+            "thought.Is wondering why r_c became a medicine cat and not a warrior": "想知道r_c为什么成为了一名巫医而非武士",
+            "thought.Wonders if {PRONOUN/m_c/subject}'ll receive prophecies like r_c": "想知道{PRONOUN/m_c/subject}是否能像r_c一样接收预言",
+            "thought.Is pretending to be r_c": "假装和r_c一样",
+            "thought.Is watching r_c work": "在看着r_c工作",
+            "thought.Is teaching the other kits about herbs": "在教其他幼崽关于药草的知识",
+            "thought.Wonders if {PRONOUN/m_c/subject} should be a medicine cat like r_c": "想知道{PRONOUN/m_c/subject}是否应该和r_c一样成为一名巫医",
+            #endregion
+            #region = kit_dead_kit =
+            "thought.Is wondering if r_c would have been {PRONOUN/m_c/poss} friend": "想知道若是r_c能成为{PRONOUN/m_c/poss}朋友",
+            #endregion
+            #region = kit_dead_kit2 =
+            "thought.Is missing seeing r_c in the nursery": "怀念育婴室内r_c的身影",
+            "thought.Is asking when r_c is coming back": "询问r_c何时才能回来",
+            "thought.Is promising to grow up big and strong for r_c": "承诺自己将会为了r_c而茁壮成长",
+            "thought.Is sleeping where r_c used to sleep": "在r_c经常睡觉的地方睡着了",
+            "thought.Went to ask r_c to play only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...": "去找r_c玩，却想起{PRONOUN/r_c/subject}已经不在了……",
+            "thought.Is crying for r_c": "为了r_c而嚎啕大哭",
+            "thought.Doesn't understand why r_c won't wake up": "不理解为什么r_c不会再醒来了",
+            #endregion
+            #endregion
+            #region === Newborn ===
+            #region = gen_newborn =
+            "thought.Mewls pitifully for milk": "可怜地喵喵叫着要喝奶",
+            "thought.Tries to figure out all of the smells around {PRONOUN/m_c/object}": "试着弄清楚{PRONOUN/m_c/object}身边所围绕的所有气味",
+            "thought.Snoozes peacefully": "平静地打盹",
+            "thought.Tries to open {PRONOUN/m_c/poss} eyes, but it's all blurry": "试着睁开{PRONOUN/m_c/poss}眼睛，但目之所及一片朦胧",
+            "thought.Head empty": "脑袋空空",
+            "thought.Almost rolled out of the nest": "差点儿滚到窝外边去了",
+            "thought.Tried suckling on a piece of bedding": "试着吮吸床上一角",
+            "thought.Is squealing loudly": "震耳欲聋的凄厉尖啸",
+            "thought.Mewls at someone nudging {PRONOUN/m_c/object}": "对推了{PRONOUN/m_c/object}的猫喵喵叫",
+            "thought.Hisses at all the strange new smells": "对传来的所有新怪味儿嘶嘶叫",
+            #endregion
+            #region = gen_newborn_to_parent =
+            "thought.Snuggles closer to r_c": "向r_c依偎得更紧了些",
+            "thought.Smells r_c and immediately perks up": "闻到了r_c并立即打起了精神",
+            "thought.Mews at r_c as {PRONOUN/r_c/subject} {VERB/r_c/shift/shifts} in the nest": "当r_c在窝里移动时对{PRONOUN/r_c/subject}喵喵叫",
+            "thought.Squeaks pitifully as r_c checks on {PRONOUN/m_c/object}": "在r_c检查{PRONOUN/m_c/object}时可怜地吱吱叫了起来",
+            "thought.Nuzzles up to r_c with a purr": "呼噜呼噜地亲昵r_c",
+            "thought.Squeaks pitifully as r_c grooms {PRONOUN/m_c/object}": "在r_c为{PRONOUN/m_c/object}梳洗时可怜地吱吱叫了起来",
+            #endregion
+            #region = gen_newborn_to_sibling =
+            "thought.Tried suckling on r_c's tail": "试着吮吸r_c的尾巴",
+            "thought.Is being buried under r_c": "被埋在r_c身下",
+            "thought.Was almost shoved out of the nest by r_c": "差点被r_c给推出窝外去了",
+            #endregion
+            #endregion
+            #endregion
+            #endregion
+            #region ========== EVENTS ===========
+            #region ===== MISC =====
+            #region === General ===
+            "event.m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.": "m_c再也无法保守这个秘密了，{PRONOUN/m_c/subject/CAP}请求召开了一次族群大会，会上{PRONOUN/m_c/subject}透露了{PRONOUN/m_c/subject}曾死守的可怕秘密：{PRONOUN/m_c/subject}杀害了mur_c。",
+            "event.r_c is stunned when {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.": "当r_c撞见m_c不慎向一名独行猫吹嘘{PRONOUN/m_c/subject}杀害了mur_c一事时，r_c立时因震惊而呆愣在地。",
+            "event.m_c is truthful when r_c questions {PRONOUN/m_c/object} about mur_c's strange death. m_c claims that mur_c deserved to die after what {PRONOUN/mur_c/subject} did to m_c.": "在r_c质疑mur_c那离奇的死亡时，m_c坦诚了一切，且声称mur_c在对{PRONOUN/m_c/object}做了那些事情之后，{PRONOUN/mur_c/subject}活该去死。",
+            "event.m_c boldly confesses to the entire Clan that {PRONOUN/m_c/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN/mur_c/subject} did.": "m_c大胆地向整个族群坦白{PRONOUN/m_c/subject}杀害了mur_c，并声称mur_c应为{PRONOUN/mur_c/subject}所做的一切而付出代价。",
+            "event.m_c's cold eyes don't blink when {PRONOUN/m_c/subject} {VERB/m_c/are/is} accused of murdering mur_c, and only simply states that the Clan is better off without mur_c anyways.": "当m_c被指控杀害了mur_c时，{PRONOUN/m_c/subject}冰冷的双眸未眨一下，只是简单地声明道，反正，族群没有mur_c会更好。",
+            "event.m_c doesn't change expressions in the slightest when r_c accuses {PRONOUN/m_c/object} of murdering mur_c. Who cares?": "m_c面不改色地面对r_c对{PRONOUN/m_c/subject}谋杀了mur_c一事的指责，谁在乎？",
+            "event.r_c avoids m_c at all costs after accidentally witnessing mur_c's murder. r_c knows {PRONOUN/r_c/subject} can't keep it a secret but is terrified of what m_c might do.": "r_c在意外目睹mur_c遇害后不惜一切代价地避开m_c。r_c知道{PRONOUN/r_c/subject}不能保守秘密，但{PRONOUN/r_c/subject}恐惧m_c在被揭发后会做什么。",
+            "event.r_c gathers all the courage {PRONOUN/r_c/subject} {VERB/r_c/have/has} and quietly tells m_c {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what {PRONOUN/m_c/subject} did to mur_c. m_c glares menacingly and threatens r_c with the same fate if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} keep {PRONOUN/r_c/poss} mouth shut.": "r_c鼓起了所有的勇气去悄悄告诉m_c{PRONOUN/r_c/subject}知道{PRONOUN/m_c/subject}对mur_c做了什么。m_c恶狠狠地瞪着r_c，威胁{PRONOUN/r_c/subject}如果不能对此守口如瓶，那{PRONOUN/r_c/subject}将落得一样下场。",
+            "event.m_c laughs menacingly as r_c accuses {PRONOUN/m_c/object} of murdering mur_c. So what if {PRONOUN/m_c/subject} did? What is r_c going to do about it?": "当r_c指责m_c谋杀了mur_c时，m_c爆发出了一阵威胁般的狂笑。所以{PRONOUN/m_c/subject}杀了mur_c又怎样？r_c又会做什么呢？",
+            "event.m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} the story of mur_c's death.": "m_c再也无法保守这个秘密了。当{PRONOUN/m_c/subject}与r_c独处时，{PRONOUN/m_c/subject}讲述起了mur_c遇害的故事。",
+            "event.r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.": "r_c无意中听见了m_c在{PRONOUN/m_c/poss}睡梦中的喃喃自语，而{PRONOUN/m_c/poss}爪子在空中胡乱挥砍着。{PRONOUN/m_c/poss}呢喃证实了r_c所一直怀疑的事情——m_c才是导致mur_c死亡的罪魁祸首。",
+            "event.r_c wasn't even suspecting {PRONOUN/m_c/object}. But as soon as r_c mentions mur_c's death, m_c breaks down, telling how {PRONOUN/m_c/subject} didn't intend to do it, that it was all just an accident. Between wails, m_c desperately begs for r_c to understand {PRONOUN/m_c/subject} never wanted mur_c to die.": "r_c甚至从未怀疑过{PRONOUN/m_c/object}，但当r_c一提到mur_c的死，m_c就崩溃了，哭诉着{PRONOUN/m_c/subject}是如何无意，说这一切都只是一场意外。哭喊间，m_c拼命哀求r_c理解{PRONOUN/m_c/subject}，{PRONOUN/m_c/subject}从不想mur_c死去。",
+            "event.c_n is surprised when m_c gathers everyone to say something important. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} decided it's time to make something clear: {PRONOUN/m_c/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN/m_c/subject} needed to act quickly before it was too late.": "c_n对m_c召集了所有猫来说一件重要的事情感到惊讶，{PRONOUN/m_c/subject/CAP}决定是时候把事情说清楚了：{PRONOUN/m_c/subject}杀了mur_c，但不是出于猫们普遍认为的原因。m_c知道mur_c计划做一些会严重伤害到c_n的事情，而{PRONOUN/m_c/subject}需要在一切为时已晚前迅速采取行动。",
+            "event.r_c quietly takes m_c aside and tells {PRONOUN/m_c/object} {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what {PRONOUN/m_c/subject} did to mur_c. Before m_c has time to defend {PRONOUN/m_c/self}, r_c eerily smiles and assures {PRONOUN/m_c/object} {PRONOUN/r_c/subject} won't tell anyone, that {PRONOUN/r_c/subject} {VERB/r_c/agree/agrees} with what m_c did. m_c squints {PRONOUN/m_c/poss} eyes, not sure if {PRONOUN/m_c/subject} should trust r_c's words.": "r_c悄悄地把m_c拉到了一边，并告诉{PRONOUN/m_c/object}{PRONOUN/r_c/subject}知道{PRONOUN/m_c/subject}对mur_c做了什么，抢在m_c得以有时间为{PRONOUN/m_c/self}辩护前，r_c诡异地笑着，保证{PRONOUN/r_c/subject}不会告诉任何猫，因为{PRONOUN/r_c/subject}赞同m_c的所作所为。m_c斜眼避视，不知{PRONOUN/m_c/subject}是否该相信r_c的话。",
+            "event.One day, when m_c and r_c are alone together, r_c gathers the courage to finally tell m_c what {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been holding off for so long: {PRONOUN/r_c/subject} {VERB/r_c/know/knows} m_c was the one who killed mur_c, and has been waiting for {PRONOUN/m_c/object} to do the right thing and confess, but if {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} do it, then r_c will have to be the one to tell the Clan. m_c is shocked, but also kind of admires r_c's guts to tell {PRONOUN/m_c/object} that when they're all alone together.": "有一天，当m_c与r_c独处时，r_c终于鼓起勇气告诉m_c{PRONOUN/r_c/subject}憋了许久的话：{PRONOUN/r_c/subject}知道m_c就是杀害mur_c的凶手，并一直在等候m_c走回正道、坦白一切。但如果{PRONOUN/m_c/subject}没有，r_c将会成为那只将这一切昭告族群的猫。m_c怔住了，但也为r_c在他们独处时将这一事告诉{PRONOUN/m_c/object}的勇气感到些许敬佩。",
+            "event.r_c sighs. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} unintentionally walking into one of {PRONOUN/r_c/poss} Clanmates' dreams again. It could have been just another boring or nonsensical dream, but r_c is horrified to discover this dream is m_c's recollection of murdering mur_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wake/wakes} up in shock, wondering what to do with this new knowledge.": "r_c叹息着，{PRONOUN/r_c/subject/CAP}再次发现{PRONOUN/r_c/self}无意中走进了{PRONOUN/r_c/subject}某个族伴的梦境当中。这本可能只是又一个无聊或没有意义的梦境，但r_c惊恐地发现这个梦竟是m_c对谋杀mur_c的回忆。{PRONOUN/r_c/subject/CAP}猛然惊醒，不知该如何处理自己这新的所知。",
+            "event.m_c went for a long walk this morning, deep in thought.": "m_c在早晨长途漫步，思绪深沉。",
+            "event.m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN/m_c/poss} neck.": "m_c消失了几天，后来脖子上戴着一个acc_singular回到了营地。",
+            "event.m_c accidentally trespasses onto o_c_n's territory.": "m_c意外入侵了o_c_n的领地。",
+            "event.m_c spends the evening regaling the Clan with stories of story_list.": "m_c一整个早上都在用story_list的故事来取悦族群。",
+            "event.m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} saw a thorn inside of {PRONOUN/m_c/poss} bedding. Another prank, but it could not fool {PRONOUN/m_c/object}!": "m_c试着把{PRONOUN/m_c/poss}窝变得松软时，{PRONOUN/m_c/subject}看见了一根荆棘刺横在{PRONOUN/m_c/poss}床中。又一个恶作剧，但{PRONOUN/m_c/object}不吃这套！",
+            "event.m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, but came out of it with only {PRONOUN/m_c/poss} pride bruised.": "m_c走路没看路被一个小树干绊倒了，起身时只带上了{PRONOUN/m_c/subject}那受挫的自尊心。",
+            "event.m_c misstepped and slipped from a rock, but landed on {PRONOUN/m_c/poss} feet nimbly, {PRONOUN/m_c/poss} Clanmates commenting on the show of dexterity.": "m_c失足从一块岩石上滑了下来，但{PRONOUN/m_c/poss}四脚灵活落地，引得{PRONOUN/m_c/poss}族伴对这灵巧的表现评论不休。",
+            "event.m_c tossed a snake out of the camp before it could bite someone.": "在某条蛇咬到任何猫之前，m_c把它给扔出了营地。",
+            "event.m_c tries to convince r_c to run away with {PRONOUN/m_c/object}.": "m_c试图说服r_c和{PRONOUN/m_c/object}一起逃走。",
+            "event.m_c believes {PRONOUN/m_c/subject}'{VERB/m_c/re/s} meant for something greater.": "m_c相信{PRONOUN/m_c/subject}有了更伟大的目标。",
+            "event.m_c believes {PRONOUN/m_c/subject} {VERB/m_c/are/is} part of a new prophecy.": "",
+            "event.m_c went missing for a few days.": "m_c失踪了几天。",
+            "event.m_c is caught breaking the Warrior Code.": "m_c被逮着破坏了武士守则。",
+            "event.m_c is caught outside of the Clan's territory.": "m_c被逮着身在族群的领地之外。",
+            "event.m_c considers, as {PRONOUN/m_c/subject} {VERB/m_c/look/looks} out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.": "当m_c看着这个族群时，{PRONOUN/m_c/subject}思考着这也许不是{PRONOUN/m_c/poss}归宿。",
+            "event.The world around {PRONOUN/m_c/object} feels smaller lately; m_c looks out at the horizon and yearns for something unnameable.": "{PRONOUN/m_c/object}感觉周围的世界最近变小了；m_c凝望着地平线，向往着某些说不上来的东西。",
+            "event.m_c's dreams are filled with flashing teeth and blood-scent. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} up screaming.": "m_c的梦境被血腥气息与爪光齿影充斥，{PRONOUN/m_c/subject/CAP}尖叫着醒来了。",
+            "event.m_c thought {PRONOUN/m_c/subject} saw a familiar wispy form lingering at the edge of camp, but the ghost disappeared before {PRONOUN/m_c/subject} could be sure.": "m_c认为{PRONOUN/m_c/subject}看见了一个熟悉的纤瘦身影在营地的边缘徘徊，但在{PRONOUN/m_c/subject}能够确认见闻前，那幽灵便消失了。",
+            "event.The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp.": "大猫们深情地看着在营地边缘的树叶堆里跑进跑出的幼崽们。",
+            "event.m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.": "m_c和r_c在站岗时发起了一场小型的营地打雪仗，最终让整个族群都参与了进来。",
+            "event.m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.": "m_c鼓动r_c在巡逻时和{PRONOUN/m_c/object}一起去雪地里玩。",
+            "event.m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.": "似乎总有acc_plural插在m_c的皮毛上。",
+            "event.r_c finds acc_plural while out on a walk and decides to give them to m_c.": "r_c在散步时发现了acc_plural并决定将它们赠给m_c。",
+            "event.m_c finds acc_plural while out on a walk and decides to keep them.": "m_c在散步时发现了acc_plural并决定佩戴它们。",
+            "event.m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.": "m_c被赠予了acc_plural以当做祝贺，r_c旁观着，一丝嫉妒的光芒在{PRONOUN/r_c/poss}眼中闪过。",
+            "event.m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.": "m_c收到了一份来自r_c的礼物，acc_plural，并决定将其佩戴在{PRONOUN/m_c/poss}皮毛上。",
+            "event.m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.": "m_c决定挑选一些东西装饰{PRONOUN/m_c/poss}皮毛来庆祝。",
+            "event.r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.": "r_c赠予了m_c一些东西装饰{PRONOUN/m_c/poss}皮毛作为祝贺。",
+            "event.m_c found a mysterious acc_singular growing in the frost and decided to wear it.": "m_c发现了一株神秘的acc_singular在冰霜中生长，并决定佩戴上它。",
+            "event.The war with o_c_n is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves.": "与o_c_n的战争正开始打乱c_n的日常生活，迫使祂们适应新的日程和生活情境，以便更好地保护自己。",
+            "event.The tension between c_n and o_c_n is palpable, with even the smallest actions potentially leading to violence.": "c_n与o_c_n之间的紧张是显而易见的，甚至连最微不足道的行为都可能导致暴力冲突。",
+            "event.m_c and r_c are so cuddled up and cozy in their nest they almost miss the dawn patrol.": "m_c与r_c紧紧的依偎在祂们的小窝中，如此舒适，以至于祂们几乎错过了黎明巡逻。",
+            "event.m_c listens bashfully as r_c tells the story of how {PRONOUN/r_c/subject} fell in love with {PRONOUN/r_c/poss} mate to a group of starry-eyed kits.": "当r_c向一群眼睛亮闪闪的幼崽讲述{PRONOUN/r_c/subject}是如何爱上{PRONOUN/r_c/poss}伴侣时，m_c害羞地听着。",
+            "event.m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate.": "m_c看着r_c给了长老那猎物堆中最好的一份猎物，有这么一位善良的猫作为{PRONOUN/m_c/poss}伴侣，{PRONOUN/m_c/subject}是多么幸运啊。",
+            #"event.m_c and r_c watch the Clan's kits play and daydream about having their own one day.": "",
+            #"event.m_c and r_c take a late night patrol out of camp to watch the sun rise.": "",
+            #"event.m_c and r_c take an early evening patrol out of camp to watch the moon rise.": "",
+            #"event.m_c sits still as r_c helps remove some leftover leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.": "",
+            #"event.It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade.": "",
+            #"event.m_c gives r_c a acc_singular to make up for a bad fight between them.": "",
+            #"event.r_c gifts {PRONOUN/r_c/poss} beloved m_c with a acc_singular to wear in {PRONOUN/m_c/poss} pelt.": "",
+            "event.m_c and r_c spend the evening chasing cicadas around camp. m_c keeps a trophy of {PRONOUN/m_c/poss} catch on {PRONOUN/m_c/poss} pelt.": "m_c与r_c整个晚上都在营地周围抓蝉。m_c在{PRONOUN/m_c/poss}皮毛上戴了一个战利品。",
+            "event.r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride.": "r_c赠予了m_c{PRONOUN/r_c/subject}能找到的最漂亮的落叶，m_c骄傲地戴上了它。",
+            "event.m_c thinks about retiring.": "m_c在考虑退休。",
+            "event.m_c picks some flowers around the camp to bring back to the medicine cat den.": "m_c在营地周围摘了些花并将它们带去了巫医巢穴。",
+            "event.m_c chases fireflies around the camp, while the older warriors sleep.": "m_c在年长的武士睡觉时在营地的周围抓萤火虫。",
+            "event.m_c and r_c try to sneak out of camp, but are caught and returned to the nursery.": "m_c和r_c试着偷溜出营地，但是被逮回了育婴室。",
+            "event.m_c and r_c sneak out of camp to chase butterflies.": "m_c与r_c偷溜出了营地去抓蝴蝶。",
+            "event.m_c and r_c chase fireflies around the camp, while the older warriors try to sleep.": "m_c与r_c在年长的武士试着睡觉时在营地周围抓萤火虫。",
+            "event.m_c and r_c lead a small leaf-gathering hunt, which the adult cats watch with amused purrs.": "m_c与r_c带领了一个小小的树叶收集狩猎，成年猫们饶有兴致地看着，被逗乐出了呼噜声。",
+            "event.m_c and r_c play with the leaves around the camp.": "m_c与r_c在营地周围玩着叶子。",
+            "event.m_c and r_c make little snow lumps at the entrance to the camp.": "m_c与r_c在营地入口堆起了小雪堆。",
+            "event.m_c and r_c flick snow at the older warriors, giggling as they hide behind the nursery.": "m_c与r_c把雪向年长的武士挥洒而去，并躲在育婴室后面咯咯笑着。",
+            #endregion
+            #endregion
+            #endregion
+            #region ========== HERBS ===========
+            "herbs.elder_leaves": "接骨木叶",
+            "herbs.cobwebs": "蜘蛛网",
+            "herbs.daisy": "雏菊",
+            "herbs.horsetail": "马尾草",
+            "herbs.juniper": "杜松",
+            "herbs.lungwort": "疗肺草",
+            "herbs.mallow": "锦葵",
+            "herbs.marigold": "金盏花",
+            "herbs.moss": "苔藓",
+            "herbs.oak_leaves": "像树叶",
+            "herbs.ragwort": "千里光",
+            "herbs.raspberry": "覆盆子",
+            "herbs.tansy": "艾菊",
+            "herbs.thyme": "百里香",
+            "herbs.wild_garlic": "野生大蒜",
+            "herbs.dandelion": "蒲公英",
+            "herbs.mullein": "毛蕊花",
+            "herbs.rosemary": "迷迭香",
+            "herbs.burdock": "牛蒡",
+            "herbs.blackberry": "黑莓",
+            "herbs.betony": "药水苏",
+            "herbs.goldenrod": "一枝黄花",
+            "herbs.poppy": "罂粟",
+            "herbs.plantain": "车前草",
+            "herbs.catmint": "猫薄荷",
+            #endregions
         }
     }
 
@@ -2562,7 +3413,7 @@ class translate():
         :param rep: 【可选】由替换文本组成的数组，格式为：[[替换词1, 目标词1],[替换词2, 目标词2]]
         :return: 返回翻译后的文本为字符串。
         '''
-        language = game.settings["language"]
+        language = scripts.game_structure.game_essentials.game.settings["language"]
         if language == "english":
             return str(self)[str(self).index('.')+1:]
         else:

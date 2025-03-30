@@ -3,6 +3,7 @@ from random import choice
 
 import ujson
 
+from scripts.translate import translate
 
 class Thoughts:
     @staticmethod
@@ -322,7 +323,7 @@ class Thoughts:
                 return "Never going to give r_c up, never going to let {PRONOUN/r_c/object} down, never going to run around and desert {PRONOUN/r_c/object}."
             else:
                 chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
-                chosen_thought = choice(chosen_thought_group["thoughts"])
+                chosen_thought = translate.tran("thought." + choice(chosen_thought_group["thoughts"]))
         except Exception:
             traceback.print_exc()
             chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."

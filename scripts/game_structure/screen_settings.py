@@ -289,10 +289,10 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
     if game.settings["language"] != "english":
         manager.add_font_paths(
             font_name="notosans",
-            regular_path="resources_" + str(game.settings["language"]) + "/fonts/NotoSans-Medium.ttf",
-            bold_path="resources_" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBold.ttf",
-            italic_path="resources_" + str(game.settings["language"]) + "/fonts/NotoSans-MediumItalic.ttf",
-            bold_italic_path="resources_" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBoldItalic.ttf",
+            regular_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-Medium.ttf",
+            bold_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBold.ttf",
+            italic_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-MediumItalic.ttf",
+            bold_italic_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBoldItalic.ttf",
         )
     else:
         manager.add_font_paths(
@@ -313,7 +313,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
     )
     from scripts.game_structure.game_essentials import game
     if game.settings["language"] != "english":
-        manager.get_theme().load_theme("resources_" + str(game.settings["language"]) + "/theme/generated/screen_scale.json")
+        manager.get_theme().load_theme("resources/" + str(game.settings["language"]) + "/theme/generated/screen_scale.json")
     else:
         manager.get_theme().load_theme("resources/theme/generated/screen_scale.json")
     manager.get_theme().load_theme("resources/theme/themes/dark.json")

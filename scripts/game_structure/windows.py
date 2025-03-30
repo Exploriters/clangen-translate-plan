@@ -600,10 +600,12 @@ class ChangeCatName(UIWindow):
                 self.the_cat.name.specsuffix_hidden = self.specsuffic_hidden
 
                 # Note: Prefixes are not allowed be all spaces or empty, but they can have spaces in them.
-                if sub(r"[^A-Za-z0-9 ]+", "", self.prefix_entry_box.get_text()) != "":
-                    self.the_cat.name.prefix = sub(
-                        r"[^A-Za-z0-9 ]+", "", self.prefix_entry_box.get_text()
-                    )
+                #if sub(r"[^A-Za-z0-9 ]+", "", self.prefix_entry_box.get_text()) != "":
+                #    self.the_cat.name.prefix = sub(
+                #        r"[^A-Za-z0-9 ]+", "", self.prefix_entry_box.get_text()
+                #    )
+                if self.prefix_entry_box.get_text() != "":
+                    self.the_cat.name.prefix = self.prefix_entry_box.get_text()
 
                 # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden
                 # by a special suffix.
@@ -612,9 +614,10 @@ class ChangeCatName(UIWindow):
                     not in self.the_cat.name.names_dict["special_suffixes"]
                     or self.the_cat.name.specsuffix_hidden
                 ):
-                    self.the_cat.name.suffix = sub(
-                        r"[^A-Za-z0-9 ]+", "", self.suffix_entry_box.get_text()
-                    )
+                    #self.the_cat.name.suffix = sub(
+                    #    r"[^A-Za-z0-9 ]+", "", self.suffix_entry_box.get_text()
+                    #)
+                    self.the_cat.name.suffix = self.suffix_entry_box.get_text()
                     self.name_changed.show()
 
                 if old_name != str(self.the_cat.name):

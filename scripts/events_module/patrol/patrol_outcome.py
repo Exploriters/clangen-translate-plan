@@ -694,16 +694,16 @@ class PatrolOutcome:
         plural_herbs_list = ["cobwebs", "oak leaves"]
 
         if len(specific_herbs) == 1 and specific_herbs[0] not in plural_herbs_list:
-            insert = f"{specific_herbs[0]} was"
+            insert = translate.tran("herbs." + specific_herbs[0]) +  " was"
         elif len(specific_herbs) == 1 and specific_herbs[0] in plural_herbs_list:
-            insert = f"{specific_herbs[0]} were"
+            insert = translate.tran("herbs." + specific_herbs[0]) + " were"
         elif len(specific_herbs) == 2:
             if str(specific_herbs[0]) == str(specific_herbs[1]):
-                insert = f"{specific_herbs[0]} was"
+                insert = translate.tran("herbs." + specific_herbs[0]) +  " was"
             else:
-                insert = f"{specific_herbs[0]} and {specific_herbs[1]} were"
+                insert = translate.tran("herbs." + specific_herbs[0]) + " and " + translate.tran("herbs." + specific_herbs[1]) + " were"
         else:
-            insert = f"{', '.join(specific_herbs[:-1])}, and {specific_herbs[-1]} were"
+            insert = ', '.join(translate.tran("herbs." + specific_herbs)[:-1]) + ", and " + translate.tran("herbs." + specific_herbs[-1]) + " were"
 
         insert = re.sub("[_]", " ", insert)
 

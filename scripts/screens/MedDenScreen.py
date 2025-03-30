@@ -25,6 +25,7 @@ from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 from ..ui.icon import Icon
 
+from scripts.translate import translate
 
 class MedDenScreen(Screens):
     cat_buttons = {}
@@ -578,7 +579,7 @@ class MedDenScreen(Screens):
         herb_list = []
         for herb in herbs_stored:
             amount = str(herb[1])
-            type = str(herb[0].replace("_", " "))
+            type = str(translate.tran("herbs." + herb[0]).replace("_", " "))
             herb_list.append(f"{amount} {type}")
         if not herbs_stored:
             herb_list.append("Empty")

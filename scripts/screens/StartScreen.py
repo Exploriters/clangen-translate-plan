@@ -172,7 +172,7 @@ class StartScreen(Screens):
 
         bg_path = "resources/images/menu.png"
         if game.settings["language"] != "english":
-            bg_path = "resources_" + str(game.settings["language"]) + "/images/menu.png"
+            bg_path = "resources/" + str(game.settings["language"]) + "/images/menu.png"
 
         bg = pygame.image.load(bg_path).convert()
         if game.settings["dark mode"]:

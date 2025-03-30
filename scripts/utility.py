@@ -2236,7 +2236,7 @@ def event_text_adjust(
 
     if "given_herb" in text:
         if "_" in chosen_herb:
-            chosen_herb = chosen_herb.replace("_", " ")
+            chosen_herb = translate.tran("herbs." + chosen_herb).replace("_", " ")
         text = text.replace("given_herb", str(chosen_herb))
 
     return text
@@ -2273,7 +2273,7 @@ def leader_ceremony_text_adjust(
     if extra_lives:
         text = text.replace("[life_num]", str(extra_lives))
 
-    text = text.replace("c_n", translate.tran("prefix." + str(game.clan.name).lower) + translate.tran("universal.Clan"))
+    text = text.replace("c_n", translate.tran("prefix." + str(game.clan.name).lower()) + translate.tran("universal.Clan"))
 
     return text
 

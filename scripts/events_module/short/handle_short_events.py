@@ -29,6 +29,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 
+from scripts.translate import translate
 
 # ---------------------------------------------------------------------------- #
 #                               Death Event Class                              #
@@ -172,7 +173,7 @@ class HandleShortEvents:
             )
             return
 
-        self.text = self.chosen_event.text
+        self.text = translate.tran("event." + self.chosen_event.text)
 
         self.additional_event_text = ""
 
@@ -200,7 +201,7 @@ class HandleShortEvents:
             # we're doing this here to make sure rel logs get adjusted text
             self.text = event_text_adjust(
                 Cat,
-                self.chosen_event.text,
+                translate.tran("event." + self.chosen_event.text),
                 main_cat=self.main_cat,
                 random_cat=self.random_cat,
                 victim_cat=self.victim_cat,
@@ -282,7 +283,7 @@ class HandleShortEvents:
         # adjust text again to account for info that wasn't available when we do rel changes
         self.text = event_text_adjust(
             Cat,
-            self.chosen_event.text,
+            translate.tran("event." + self.chosen_event.text),
             main_cat=self.main_cat,
             random_cat=self.random_cat,
             victim_cat=self.victim_cat,

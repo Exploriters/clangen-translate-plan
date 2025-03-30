@@ -5,8 +5,6 @@ TODO: Docs
 
 
 """
-
-
 # pylint: enable=line-too-long
 class Single_Event:
     """A class to hold info regarding a single event"""

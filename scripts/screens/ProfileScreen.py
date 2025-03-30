@@ -1906,7 +1906,8 @@ class ProfileScreen(Screens):
             )
 
             self.condition_data[f"name_{con}"] = UITextBoxTweaked(
-                con[0],
+                #con[0],
+                translate.tran("condition." + con[0]),
                 ui_scale(pygame.Rect((0, 0), (120, -1))),
                 line_spacing=0.90,
                 object_id="#text_box_30_horizcenter",
