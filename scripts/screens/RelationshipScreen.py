@@ -28,6 +28,7 @@ from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 from ..ui.icon import Icon
 
+from scripts.translate import translate
 
 class RelationshipScreen(Screens):
     checkboxes = {}  # To hold the checkboxes.
@@ -250,13 +251,13 @@ class RelationshipScreen(Screens):
         )
 
         self.show_dead_text = pygame_gui.elements.UITextBox(
-            "Show Dead",
-            ui_scale(pygame.Rect((110, 505), (100, 30))),
+            translate.tran("relationScreen.Show Dead"),
+            ui_scale(pygame.Rect((110, 505), (120, 30))),
             object_id="#text_box_30_horizleft",
         )
         self.show_empty_text = pygame_gui.elements.UITextBox(
-            "Show Empty",
-            ui_scale(pygame.Rect((110, 550), (100, 30))),
+            translate.tran("relationScreen.Show Empty"),
+            ui_scale(pygame.Rect((110, 550), (120, 30))),
             object_id="#text_box_30_horizleft",
         )
 
@@ -424,16 +425,16 @@ class RelationshipScreen(Screens):
             self.all_relations = list(self.the_cat.relationships.values()).copy()
 
         self.focus_cat_elements["header"] = pygame_gui.elements.UITextBox(
-            str(self.the_cat.name) + "'s Relationships",
+            str(self.the_cat.name) + translate.tran("relationScreen.'s Relationships"),
             ui_scale(pygame.Rect((75, 75), (400, 50))),
             object_id=get_text_box_theme("#text_box_34_horizleft"),
         )
         self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(
-            self.the_cat.genderalign
+            translate.tran("gender." + self.the_cat.genderalign)
             + " - "
             + str(self.the_cat.moons)
-            + " moons - "
-            + self.the_cat.personality.trait,
+            + translate.tran("relationScreen. moons - ")
+            + translate.tran("trait." + self.the_cat.personality.trait),
             ui_scale(pygame.Rect((80, 105), (400, 30))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
         )
@@ -546,13 +547,14 @@ class RelationshipScreen(Screens):
             # Column One Details:
             col1 = ""
             # Gender-Align
-            col1 += self.inspect_cat.genderalign + "\n"
+            col1 += translate.tran("gender." + self.inspect_cat.genderalign) + "\n"
 
             # Age
-            col1 += f"{self.inspect_cat.moons} moons\n"
+            col1 += str(self.inspect_cat.moons)
+            col1 += translate.tran("relationScreen.moons\n")
 
             # Trait
-            col1 += f"{self.inspect_cat.personality.trait}\n"
+            col1 += translate.tran("trait." + self.inspect_cat.personality.trait) + "\n"
 
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(
                 col1,
@@ -570,13 +572,13 @@ class RelationshipScreen(Screens):
                 len(self.inspect_cat.mate) > 0
                 and self.the_cat.ID not in self.inspect_cat.mate
             ):
-                col2 += "has a mate\n"
+                col2 += translate.tran("relationScreen.has a mate\n")
             elif (
                 len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate
             ):
-                col2 += f"{self.the_cat.name}'s mate\n"
+                col2 += str(self.the_cat.name) + translate.tran("relationScreen.'s mate\n")
             else:
-                col2 += "mate: none\n"
+                col2 += translate.tran("relationScreen.mate: none\n")
 
             # Relation info:
             if related:

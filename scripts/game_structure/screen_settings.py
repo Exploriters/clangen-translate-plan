@@ -306,12 +306,20 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
-    generate_screen_scale(
-        "resources/theme/master_screen_scale.json",
-        "resources/theme/generated/screen_scale.json",
-        screen_scale,
-    )
     from scripts.game_structure.game_essentials import game
+    if game.settings["language"] != "english":
+        generate_screen_scale(
+            "resources/" + str(game.settings["language"]) + "/theme/master_screen_scale.json",
+            "resources/" + str(game.settings["language"]) + "/theme/generated/screen_scale.json",
+            screen_scale,
+        )
+    else:
+        generate_screen_scale(
+            "resources/theme/master_screen_scale.json",
+            "resources/theme/generated/screen_scale.json",
+            screen_scale,
+        )
+    
     if game.settings["language"] != "english":
         manager.get_theme().load_theme("resources/" + str(game.settings["language"]) + "/theme/generated/screen_scale.json")
     else:

@@ -167,10 +167,72 @@ class translate():
             "symbolTag.miscellaneous": "杂项",
             #endregion
             #endregion
+            #region ========== SCREEN CORE ==========
+            "screen.Events": "事件",
+            "screen.Camp": "营地",
+            "screen.Cat List": "猫物",
+            "screen.Patrol": "巡逻",
+            "screen. Main Menu": "主页",
+            "screen.Allegiances": "效忠页",
+            "screen.Settings": "设定",
+            "screen.Dens": "巢穴",
+            "screen.leader's den": "族长巢穴",
+            "screen.medicine cat den": "巫医巢穴",
+            "screen.warriors' den": "武士巢穴",
+            "screen.clearing": "营地空地",
+            #endregion
+            #region ========== EVENT SCREEN ==========
+            "eventScreen.<center>See which events are currently happening in the Clan.</center>": "<center>查看族群中当前都发生了什么事件</center>",
+            "eventScreen.Timeskip to progress your Clan's life.": "跳过时间来延续你族群的生涯",
+            "eventScreen.Current season: [current_season]": "当前季节：[current_season]",
+            "eventScreen.Timeskip One Moon": "时间跳过一月",
+            "eventScreen.all events": "所有事件",
+            "eventScreen.ceremonies": "仪式",
+            "eventScreen.births & deaths": "生死",
+            "eventScreen.relationships": "关系",
+            "eventScreen.health": "健康",
+            "eventScreen.other clans": "其他族群",
+            "eventScreen.miscellaneous": "杂项",
+            "eventScreen.Clan age: [clanAge] moon": "族群年龄：[clanAge]月",
+            "eventScreen.Clan age: [clanAge] moons": "族群年龄：[clanAge]月",
+            #endregion
+            #region ========== RELATION SCREEN ==========
+            "relationScreen.Show Dead": "显示亡者关系",
+            "relationScreen.Show Empty": "显示无关系",
+            "relationScreen.'s Relationships": "的关系",
+            "relationScreen. moons - ": "月 - ",
+            "relationScreen.moons\n": "月\n",
+            "relationScreen.has a mate\n": "有伴侣",
+            "relationScreen.'s mate\n": "的伴侣",
+            "relationScreen.mate: none\n": "无伴侣",
+            #endregion
             #region ========== PROFILE SCREEN ==========
+            "profile.relations": "关系",
+            "profile.roles": "身份",
+            "profile.personal": "个猫",
+            "profile.dangerous": "危险",
+            "profile.history": "历史",
+            "profile.conditions": "状态",
+            "profile.This cannot be reversed.": "此操作不能被撤回。",
+            "profile.change to trans\nfemale": "修改为\n雌性",
+            "profile.change to trans\nmale": "修改为\n雄性",
+            "profile.change to\nnonbinary": "修改为\n非二元性别",
+            "profile.change to \ncisgender": "修改为\n顺性别",
+            "profile.This will open a confirmation window and allow you to input a death reason": "这会展开一个确认窗口并允许你输入死因",
+            "profile.family tree": "家族树",
+            "profile.adoptive parents": "领养关系",
+            "profile.see relationships": "查看关系",
+            "profile.choose mate": "选择伴侣",
+            "profile.manage roles": "管理身份",
+            "profile.change mentor": "修改导师",
+            "profile.change name": "修改名字",
+            "profile.specify gender": "指定性别",
+            "profile.cat toggles": "猫咪选项",
+            "profile.destroy accessory": "摧毁饰品",
             "profile. (dead)": "（已故）",
             "profile.Hello. I am here to guide the dead cats of [clanName]Clan into StarClan.": "你好，我于此地来将[clanName]族中亡故的猫带入星族。",
             "profile.Hello. I am here to drag the dead cats of [clanName]Clan into the Dark Forest.": "你好，我于此地来将[clanName]族中亡故的猫拖入黑森林。",
+            "profile.Changing where this cat resides will change \nwhere your Clan goes after death. ": "修改这只猫所居住之地将会改变你的族猫们死后所去往的地方。",
             "profile.orig-Name: ": "实际名：",
             "profile.eyes: ": "瞳色：",
             "profile.pelt: ": "花纹：",
@@ -259,6 +321,15 @@ class translate():
             "allegiances. <i>(caring for [kittens0], and [kittens1])</i>": "\n      <i>(正在照料[kittens0]，以及[kittens1])</i>",
             "allegiances.<b><u>ELDER</u></b>": "<b><u>长老</u></b>",
             "allegiances.<b><u>ELDERS</u></b>": "<b><u>长老</u></b>",
+            #endregion
+            #region ========== CLAN SCREEN ==========
+            "clan.warriors' den": "武士巢穴",
+            "clan.leader's den": "族长巢穴",
+            "clan.medicine cat den": "巫医巢穴",
+            "clan.elders' den": "长老巢穴",
+            "clan.nursery": "育婴室",
+            "clan.clearing": "营地空地",
+            "clan.apprentices' den": "学徒巢穴",
             #endregion
             #region ========== LEADER DEN ==========
             "leaderDen.This screen allows you to check on the other cats who live nearby, both Outsiders and <br>other Clan cats.  You can control how the leader of your Clan will treat other leaders at <br>Gatherings, but keep in mind that you can only determine one interaction each moon!  <br>Likewise, you can consider whether to drive out or invite in Outsider cats.  If you drive <br>out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite <br>in a cat, they might join your Clan!": "此页面允许你检查居住在附近的猫们，包括非族群猫和其他的<br>族群猫。你可以控制你的族长在森林大会中将会如何去威胁其他<br>族长，但记住你每个月只能决定一种互动方式！<br>同样地，你可以考虑驱赶或者邀请非族群猫们。如果你驱赶了<br>一只猫，祂将不会再出现在“族群外的猫”列表中。<br>如果你邀请了一只猫，祂可能会加入你的族群！",
@@ -365,7 +436,7 @@ class translate():
             "pelts. cat": "猫咪",
             "pelts.vitiligo": "患有白癜风",
             "pelts. with[details0], and[details1]": "，[details0]，且[details1]",
-            "pelts. with[details0]": "，[details0]的",
+            "pelts. with[details0]": "，[details0]",
             'pelts. and ': "且",
             "pelts.no tail": "没有尾巴",
             "pelts.half a tail": "只有半截尾巴",
@@ -463,7 +534,7 @@ class translate():
             'prefix.ant' : '蚁',
             'prefix.bee' : '蜂',
             'prefix.beetle' : '甲虫',
-            'prefix.bumble' : '熊峰',
+            'prefix.bumble' : '熊蜂',
             'prefix.cricket' : '蟋蟀',
             'prefix.dragonfly' : '蜻蜓',
             'prefix.maggot' : '蛆',
@@ -1853,7 +1924,94 @@ class translate():
             'suffix.aloe': '荟',
             #endregion
             #endregion
+            'suffix.bumble' : '蜂',
+            'suffix.swirl' : '漩',
             #endregion
+            #endregion
+            #region =====LONER-NAME=====
+            "prefix.Translate to Death": "翻译到死",
+            "prefix.Su Shi": "苏轼",
+            "prefix.Abby": "阿比",
+            "prefix.Abigail": "阿比盖尔",
+            "prefix.Abuko": "阿布科",
+            "prefix.Abyss": "深渊",
+            "prefix.Acacia": "金合欢",
+            "prefix.Ace": "杰出",
+            "prefix.Adaliz": "阿达利兹",
+            "prefix.Adam": "亚当",
+            "prefix.Admiral": "舰队司令",
+            "prefix.Adora": "阿多拉",
+            "prefix.Aether": "埃忒尔",
+            "prefix.Agatha": "阿加莎",
+            "prefix.Agent Smith": "特工史密斯",
+            "prefix.Agnes": "艾格尼丝",
+            "prefix.Ah ha": "啊哈",
+            "prefix.Ah": "啊",
+            "prefix.Aidan": "艾丹",
+            "prefix.Aiden": "艾登",
+            "prefix.Akila": "阿基拉",
+            "prefix.Akilah": "阿基拉厄",
+            "prefix.Alaska": "阿拉斯加",
+            "prefix.Alastair": "阿拉斯凯尔",
+            "prefix.Alba": "阿尔巴",
+            "prefix.Albedo": "阿贝多",
+            "prefix.Albert": "阿尔伯特",
+            "prefix.Alberto": "阿尔佩托",
+            "prefix.Alcina": "阿琪娜",
+            "prefix.Alcor": "阿尔科尔",
+            "prefix.Alcyone": "阿尔库俄涅",
+            "prefix.Aldrich": "奥德里奇",
+            "prefix.Alec": "亚历克",
+            "prefix.Alex": "艾利克斯",
+            "prefix.Alexa": "阿莱夏",
+            "prefix.Alfie": "阿尔菲",
+            "prefix.Alfred": "阿尔弗烈德",
+            "prefix.Alfredo": "阿尔弗雷多",
+            "prefix.Algernon": "阿尔杰农",
+            "prefix.Alice": "爱丽丝",
+            "prefix.Alien": "外星喵",
+            "prefix.Alma": "阿尔玛",
+            "prefix.Alonzo": "阿隆佐",
+            "prefix.Alphonse": "阿方斯",
+            "prefix.Alphys": "艾菲斯",
+            "prefix.Altair": "阿尔泰尔",
+            "prefix.Alvin": "阿尔文",
+            "prefix.Amanda": "阿曼达",
+            "prefix.Amani": "阿玛尼",
+            "prefix.Amaretto": "苦杏酒",
+            "prefix.Amari": "阿玛里",
+            "prefix.Amaya": "阿玛亚",
+            "prefix.Amber": "琥珀",
+            "prefix.Amelia": "阿米莉亚",
+            "prefix.Amethyst": "紫水晶",
+            "prefix.Amigo": "阿美高",
+            "prefix.Amir": "埃米尔",
+            "prefix.Amity": "和睦",
+            "prefix.Amongus": "间吾中",
+            "prefix.Amor": "埃莫",
+            "prefix.Amy": "艾米",
+            "prefix.Ana": "阿娜",
+            "prefix.Anais": "阿纳伊斯",
+            "prefix.Ananya": "安纳亚",
+            "prefix.Andrew": "安德鲁",
+            "prefix.Andromeda": "仙女座",
+            "prefix.Angel": "天使",
+            "prefix.Anita": "安尼塔",
+            "prefix.Anju": "安珠",
+            "prefix.Ankha": "安卡",
+            "prefix.Antares": "心宿二",
+            "prefix.Anubis": "安努毕斯",
+            "prefix.Anya": "安雅",
+            "prefix.Apex": "顶点",
+            "prefix.Aphrodite": "阿佛洛狄忒",
+            "prefix.Apple Cider": "苹果醋",
+            "prefix.Apple Pencil": "苹果铅笔",
+            "prefix.April": "四月",
+            "prefix.Apu": "阿普",
+            "prefix.Aquarius": "水瓶座",
+            "prefix.Arch": "拱",
+            "prefix.Archibald": "阿奇博尔德",
+            "prefix.Archie": "阿奇",
             #endregion
             #endregion
             #region ========== STATUS ==========
@@ -1892,7 +2050,7 @@ class translate():
             #region ========== BACKSTORIES ==========
             #region ===== SPECIAL BLUR =====
             "backstories.This cat was a [status] in life.": "This cat在世时曾是一名[status]。",
-            "backstories.This cat is a [status] and currently resides outside of the Clans.": "This cat是一名[status]，而现在居住在族群之外。",
+            "backstories.This cat is a [status] and currently resides outside of the Clans.": "This cat是一名[status]，现在居住在族群之外。",
             "backstories.'s past history is unknown.": "的过去是未知的。",
             #endregion
             #region ===== BASIC BACKSTORIES =====
@@ -3376,6 +3534,12 @@ class translate():
             #endregion
             #endregion
             #endregion
+            #region ========== SEASONS ===========
+            "season.Newleaf": "新叶季",
+            "season.Greenleaf": "绿叶季",
+            "season.Leaf-fall": "落叶季",
+            "season.Leaf-bare": "秃叶季",
+            #endregion
             #region ========== HERBS ===========
             "herbs.elder_leaves": "接骨木叶",
             "herbs.cobwebs": "蜘蛛网",
@@ -3415,10 +3579,10 @@ class translate():
         '''
         language = scripts.game_structure.game_essentials.game.settings["language"]
         if language == "english":
-            return str(self)[str(self).index('.')+1:]
+            result = str(self)[str(self).index('.')+1:]
         else:
             result = translate.dicts.get(language).get(self,str(self)[str(self).index('.')+1:])
-            if len(rep) > 0 :
-                for i in range(0, len(rep), 1):
-                    result = result.replace(str(rep[i][0]), str(rep[i][1]))
-            return result
+        if len(rep) > 0 :
+            for i in range(0, len(rep), 1):
+                result = result.replace(str(rep[i][0]), str(rep[i][1]))
+        return result

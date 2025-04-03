@@ -37,6 +37,7 @@ default_fullscreen_bgs = None
 version_number = None
 dev_watermark = None
 
+from scripts.translate import translate
 
 def rebuild_core(*, should_rebuild_bgs=True):
     global menu_buttons
@@ -51,7 +52,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     # they have to be added individually as some of them rely on others in anchors
     menu_buttons["events_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((246, 60), (82, 30))),
-        "Events",
+         translate.tran("screen.Events"),
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
         manager=MANAGER,
@@ -60,7 +61,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["camp_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (58, 30))),
-        "Camp",
+         translate.tran("screen.Camp"),
         get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
         manager=MANAGER,
@@ -70,7 +71,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["catlist_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (88, 30))),
-        "Cat List",
+         translate.tran("screen.Cat List"),
         get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
         visible=False,
         object_id="@buttonstyles_menu_middle",
@@ -79,7 +80,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["patrol_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (80, 30))),
-        "Patrol",
+         translate.tran("screen.Patrol"),
         get_button_dict(ButtonStyles.MENU_RIGHT, (80, 30)),
         visible=False,
         manager=MANAGER,
@@ -89,7 +90,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["main_menu"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),
-        get_arrow(3) + " Main Menu",
+        get_arrow(3) +  translate.tran("screen. Main Menu"),
         get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
         visible=False,
         manager=MANAGER,
@@ -102,7 +103,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     scale_rect.topright = ui_scale_offset((-25, 25))
     menu_buttons["allegiances"] = UISurfaceImageButton(
         scale_rect,
-        "Allegiances",
+        translate.tran("screen.Allegiances"),
         get_button_dict(ButtonStyles.SQUOVAL, (118, 30)),
         visible=False,
         manager=MANAGER,
@@ -116,7 +117,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     scale_rect.topright = ui_scale_offset((-25, 5))
     menu_buttons["clan_settings"] = UISurfaceImageButton(
         scale_rect,
-        "Settings",
+         translate.tran("screen.Settings"),
         get_button_dict(ButtonStyles.SQUOVAL, (85, 30)),
         visible=False,
         manager=MANAGER,
@@ -189,7 +190,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["dens"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 5), (71, 30))),
-        "Dens",
+        translate.tran("screen.Dens"),
         get_button_dict(ButtonStyles.SQUOVAL, (71, 30)),
         visible=False,
         manager=MANAGER,
@@ -199,7 +200,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["lead_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 100), (112, 28))),
-        "leader's den",
+        translate.tran("screen.leader's den"),
         get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
         visible=False,
         manager=MANAGER,
@@ -208,7 +209,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["med_cat_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 140), (151, 28))),
-        "medicine cat den",
+        translate.tran("screen.medicine cat den"),
         get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
         object_id="@buttonstyles_rounded_rect",
         visible=False,
@@ -217,7 +218,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["warrior_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 180), (121, 28))),
-        "warriors' den",
+        translate.tran("screen.warriors' den"),
         get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
         object_id="@buttonstyles_rounded_rect",
         visible=False,
@@ -226,7 +227,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["clearing"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 220), (81, 28))),
-        "clearing",
+        translate.tran("screen.clearing"),
         get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
         visible=False,
         manager=MANAGER,

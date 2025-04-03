@@ -34,26 +34,48 @@ from ..ui.icon import Icon
 
 class MakeClanScreen(Screens):
     # UI images
-    ui_images = {
-        "clan_frame": pygame.image.load(
-            "resources/images/pick_clan_screen/clan_name_frame.png"
-        ).convert_alpha(),
-        "name_clan": pygame.image.load(
-            "resources/images/pick_clan_screen/name_clan_light.png"
-        ).convert_alpha(),
-        "leader": pygame.image.load(
-            "resources/images/pick_clan_screen/leader_light.png"
-        ).convert_alpha(),
-        "deputy": pygame.image.load(
-            "resources/images/pick_clan_screen/deputy_light.png"
-        ).convert_alpha(),
-        "medic": pygame.image.load(
-            "resources/images/pick_clan_screen/med_light.png"
-        ).convert_alpha(),
-        "pick_clan": pygame.image.load(
-            "resources/images/pick_clan_screen/clan_light.png"
-        ).convert_alpha(),
-    }
+    if game.settings["language"] != "english":
+        ui_images = {
+            "clan_frame": pygame.image.load(
+                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/clan_name_frame.png"
+            ).convert_alpha(),
+            "name_clan": pygame.image.load(
+                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/name_clan_light.png"
+            ).convert_alpha(),
+            "leader": pygame.image.load(
+                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/leader_light.png"
+            ).convert_alpha(),
+            "deputy": pygame.image.load(
+                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/deputy_light.png"
+            ).convert_alpha(),
+            "medic": pygame.image.load(
+                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/med_light.png"
+            ).convert_alpha(),
+            "pick_clan": pygame.image.load(
+                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/clan_light.png"
+            ).convert_alpha(),
+        }
+    else:
+        ui_images = {
+            "clan_frame": pygame.image.load(
+                "resources/images/pick_clan_screen/clan_name_frame.png"
+            ).convert_alpha(),
+            "name_clan": pygame.image.load(
+                "resources/images/pick_clan_screen/name_clan_light.png"
+            ).convert_alpha(),
+            "leader": pygame.image.load(
+                "resources/images/pick_clan_screen/leader_light.png"
+            ).convert_alpha(),
+            "deputy": pygame.image.load(
+                "resources/images/pick_clan_screen/deputy_light.png"
+            ).convert_alpha(),
+            "medic": pygame.image.load(
+                "resources/images/pick_clan_screen/med_light.png"
+            ).convert_alpha(),
+            "pick_clan": pygame.image.load(
+                "resources/images/pick_clan_screen/clan_light.png"
+            ).convert_alpha(),
+        }
 
     classic_mode_text = (
         "This mode is Clan Generator at it's most basic. "

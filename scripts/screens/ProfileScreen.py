@@ -472,28 +472,28 @@ class ProfileScreen(Screens):
         )
         self.relations_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 420), (176, 30))),
-            "relations",
+            translate.tran("profile.relations"),
             get_button_dict(ButtonStyles.PROFILE_LEFT, (176, 30)),
             object_id="@buttonstyles_profile_left",
             manager=MANAGER,
         )
         self.roles_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 420), (176, 30))),
-            "roles",
+            translate.tran("profile.roles"),
             get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
             object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
         )
         self.personal_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 420), (176, 30))),
-            "personal",
+            translate.tran("profile.personal"),
             get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
             object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
         )
         self.dangerous_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((576, 420), (176, 30))),
-            "dangerous",
+            translate.tran("profile.dangerous"),
             get_button_dict(ButtonStyles.PROFILE_RIGHT, (176, 30)),
             object_id="@buttonstyles_profile_right",
             manager=MANAGER,
@@ -501,7 +501,7 @@ class ProfileScreen(Screens):
 
         self.backstory_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 622), (176, 30))),
-            "history",
+            translate.tran("profile.history"),
             get_button_dict(ButtonStyles.PROFILE_LEFT, (176, 30)),
             object_id="@buttonstyles_profile_left",
             manager=MANAGER,
@@ -509,7 +509,7 @@ class ProfileScreen(Screens):
 
         self.conditions_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 622), (176, 30))),
-            "conditions",
+            translate.tran("profile.conditions"),
             get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
             object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
@@ -2033,7 +2033,7 @@ class ProfileScreen(Screens):
             self.open_tab = "relations"
             self.family_tree_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 450), (172, 36))),
-                "family tree",
+                translate.tran("profile.family tree"),
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
                 starting_height=2,
@@ -2041,7 +2041,7 @@ class ProfileScreen(Screens):
             )
             self.change_adoptive_parent_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 486), (172, 36))),
-                "adoptive parents",
+                translate.tran("profile.adoptive parents"),
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
                 object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
@@ -2049,7 +2049,7 @@ class ProfileScreen(Screens):
             )
             self.see_relationships_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 522), (172, 36))),
-                "see relationships",
+                translate.tran("profile.see relationships"),
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
                 object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
@@ -2057,7 +2057,7 @@ class ProfileScreen(Screens):
             )
             self.choose_mate_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 558), (172, 36))),
-                "choose mate",
+                translate.tran("profile.choose mate"),
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -2080,7 +2080,7 @@ class ProfileScreen(Screens):
 
             self.manage_roles = UISurfaceImageButton(
                 ui_scale(pygame.Rect((226, 450), (172, 36))),
-                "manage roles",
+                translate.tran("profile.manage roles"),
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
                 starting_height=2,
@@ -2088,7 +2088,7 @@ class ProfileScreen(Screens):
             )
             self.change_mentor_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((226, 486), (172, 36))),
-                "change mentor",
+                translate.tran("profile.change mentor"),
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -2110,7 +2110,7 @@ class ProfileScreen(Screens):
             self.open_tab = "personal"
             self.change_name_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 450), (172, 36))),
-                "change name",
+                translate.tran("profile.change name"),
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
                 starting_height=2,
@@ -2129,7 +2129,7 @@ class ProfileScreen(Screens):
             )
             self.specify_gender_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 0), (172, 36))),
-                "specify gender",
+                translate.tran("profile.specify gender"),
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
                 object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
@@ -2138,7 +2138,7 @@ class ProfileScreen(Screens):
             )
             self.cat_toggles_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 0), (172, 36))),
-                "cat toggles",
+                translate.tran("profile.cat toggles"),
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -2164,7 +2164,7 @@ class ProfileScreen(Screens):
                 ui_scale(pygame.Rect((578, 450), (172, 36))),
                 "",
                 object_id="#exile_cat_button",
-                tool_tip_text="This cannot be reversed.",
+                tool_tip_text=translate.tran("profile.This cannot be reversed."),
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -2172,13 +2172,13 @@ class ProfileScreen(Screens):
                 ui_scale(pygame.Rect((578, 486), (172, 36))),
                 "",
                 object_id="#kill_cat_button",
-                tool_tip_text="This will open a confirmation window and allow you to input a death reason",
+                tool_tip_text=translate.tran("profile.This will open a confirmation window and allow you to input a death reason"),
                 starting_height=2,
                 manager=MANAGER,
             )
             self.destroy_accessory_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((578, 0), (172, 36))),
-                "destroy accessory",
+                translate.tran("profile.destroy accessory"),
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -2232,28 +2232,28 @@ class ProfileScreen(Screens):
         elif self.open_tab == "personal":
             # Button to trans or cis the cats.
             if self.the_cat.gender == "male" and self.the_cat.genderalign == "male":
-                self.cis_trans_button.set_text("change to trans\nfemale")
+                self.cis_trans_button.set_text(translate.tran("profile.change to trans\nfemale"))
             elif (
                 self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
             ):
-                self.cis_trans_button.set_text("change to trans\nmale")
+                self.cis_trans_button.set_text(translate.tran("profile.change to trans\nmale"))
             elif self.the_cat.genderalign in ["trans female", "trans male"]:
-                self.cis_trans_button.set_text("change to\nnonbinary")
+                self.cis_trans_button.set_text(translate.tran("profile.change to\nnonbinary"))
             elif self.the_cat.genderalign not in [
                 "female",
                 "trans female",
                 "male",
                 "trans male",
             ]:
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text(translate.tran("profile.change to \ncisgender"))
             elif self.the_cat.gender == "male" and self.the_cat.genderalign == "female":
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text(translate.tran("profile.change to \ncisgender"))
             elif self.the_cat.gender == "female" and self.the_cat.genderalign == "male":
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text(translate.tran("profile.change to \ncisgender"))
             elif self.the_cat.genderalign:
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text(translate.tran("profile.change to \ncisgender"))
             else:
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text(translate.tran("profile.change to \ncisgender"))
                 self.cis_trans_button.disable()
 
         # Dangerous Tab
@@ -2266,7 +2266,7 @@ class ProfileScreen(Screens):
                     ui_scale(pygame.Rect((578, 450), (172, 36))),
                     "",
                     object_id="#exile_cat_button",
-                    tool_tip_text="This cannot be reversed.",
+                    tool_tip_text=translate.tran("profile.This cannot be reversed."),
                     starting_height=2,
                     manager=MANAGER,
                 )
@@ -2281,8 +2281,7 @@ class ProfileScreen(Screens):
                         ui_scale(pygame.Rect((578, 450), (172, 46))),
                         "",
                         object_id=object_id,
-                        tool_tip_text="Changing where this cat resides will change "
-                        "where your Clan goes after death. ",
+                        tool_tip_text=translate.tran("profile.Changing where this cat resides will change \nwhere your Clan goes after death. "),
                         starting_height=2,
                         manager=MANAGER,
                     )

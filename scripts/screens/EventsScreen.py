@@ -15,6 +15,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     CatButton,
 )
+import scripts.game_structure.game_essentials
 from scripts.game_structure.windows import GameOver
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import BoxStyles, get_box
@@ -31,6 +32,8 @@ from scripts.utility import (
     ui_scale_offset,
 )
 
+from ..translate import translate
+
 
 class EventsScreen(Screens):
     current_display = "all events"
@@ -44,7 +47,7 @@ class EventsScreen(Screens):
     other_clans_events = ""
     misc_events = ""
     display_text = (
-        "<center>See which events are currently happening in the Clan.</center>"
+        translate.tran("eventScreen.<center>See which events are currently happening in the Clan.</center>")
     )
     display_events = []
     tabs = [
@@ -253,7 +256,7 @@ class EventsScreen(Screens):
         )
 
         self.clan_info["heading"] = pygame_gui.elements.UITextBox(
-            "Timeskip to progress your Clan's life.",
+            translate.tran("eventScreen.Timeskip to progress your Clan's life."),
             ui_scale(pygame.Rect((340, 155), (250, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             starting_height=1,
@@ -262,7 +265,7 @@ class EventsScreen(Screens):
         )
 
         self.clan_info["season"] = pygame_gui.elements.UITextBox(
-            f"Current season: {game.clan.current_season}",
+            translate.tran("eventScreen.Current season: [current_season]",[["[current_season]", translate.tran("season." + game.clan.current_season)]]),
             ui_scale(pygame.Rect((340, 102), (600, 40))),
             object_id=get_text_box_theme("#text_box_30"),
             starting_height=1,
@@ -280,13 +283,13 @@ class EventsScreen(Screens):
 
         # Set text for Clan age
         if game.clan.age == 1:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moon")
+            self.clan_info["age"].set_text(translate.tran("eventScreen.Clan age: [clanAge] moon",[["[clanAge]", game.clan.age]]))
         if game.clan.age != 1:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
+            self.clan_info["age"].set_text(translate.tran("eventScreen.Clan age: [clanAge] moons",[["[clanAge]", game.clan.age]]))
 
         self.timeskip_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((310, 218), (180, 30))),
-            "Timeskip One Moon",
+            translate.tran("eventScreen.Timeskip One Moon"),
             get_button_dict(ButtonStyles.SQUOVAL, (180, 30)),
             object_id="@buttonstyles_squoval",
             starting_height=1,
@@ -313,7 +316,7 @@ class EventsScreen(Screens):
         for event_type in self.tabs:
             self.event_buttons[f"{event_type}"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((16, 19 + y_pos), (150, 30))),
-                event_type,
+                translate.tran("eventScreen." + event_type),
                 get_button_dict(ButtonStyles.VERTICAL_TAB, (150, 30)),
                 object_id="@buttonstyles_vertical_tab",
                 starting_height=1,
@@ -345,7 +348,7 @@ class EventsScreen(Screens):
 
         # Draw and disable the correct menu buttons.
         self.set_disabled_menu_buttons(["events_screen"])
-        self.update_heading_text(f"{game.clan.name}Clan")
+        self.update_heading_text(translate.tran("prefix." + str(game.clan.name).lower()) + translate.tran("universal.Clan"))
         self.show_menu_buttons()
 
     def display_change_save(self) -> Dict:
@@ -562,11 +565,11 @@ class EventsScreen(Screens):
         """
 
         # UPDATE CLAN INFO
-        self.clan_info["season"].set_text(f"Current season: {game.clan.current_season}")
+        self.clan_info["season"].set_text(translate.tran("eventScreen.Current season: [current_season]",[["[current_season]", translate.tran("season." + game.clan.current_season)]]))
         if game.clan.age == 1:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moon")
+            self.clan_info["age"].set_text(translate.tran("eventScreen.Clan age: [clanAge] moon",[["[clanAge]", game.clan.age]]))
         else:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
+            self.clan_info["age"].set_text(translate.tran("eventScreen.Clan age: [clanAge] moons",[["[clanAge]", game.clan.age]]))
 
         self.make_event_scrolling_container()
 

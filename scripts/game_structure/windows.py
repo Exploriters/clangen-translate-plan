@@ -410,7 +410,8 @@ class GameOver(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        self.clan_name = str(game.clan.name + "Clan")
+        #self.clan_name = str(game.clan.name + "Clan")
+        self.clan_name = str(translate.tran("prefix." + game.clan.name.lower()) + translate.tran("universal.Clan"))
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
             translate.tran("windows.[clanName] has died out. For now, this is where their story ends. Perhaps it's time to tell a new tale?",[["[clanName]",self.clan_name]]),
