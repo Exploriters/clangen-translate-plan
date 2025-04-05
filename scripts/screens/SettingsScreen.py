@@ -749,7 +749,7 @@ class SettingsScreen(Screens):
             )
             self.checkboxes["chinese"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "chinese", # chinese
+                translate.tran("language.Chinese"), # chinese
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
                 object_id="@buttonstyles_ladder_middle",
                 manager=MANAGER,

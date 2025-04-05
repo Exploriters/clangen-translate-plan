@@ -703,7 +703,12 @@ class PatrolOutcome:
             else:
                 insert = translate.tran("herbs." + specific_herbs[0]) + " and " + translate.tran("herbs." + specific_herbs[1]) + " were"
         else:
-            insert = ', '.join(translate.tran("herbs." + specific_herbs)[:-1]) + ", and " + translate.tran("herbs." + specific_herbs[-1]) + " were"
+            herbList = []
+            herbStr = ""
+            for i in specific_herbs[:-1]:
+                herbList.append(translate.tran("herbs." + specific_herbs[i]))
+            herbStr = ', '.join(herbList)
+            insert =  herbStr + ", and " + translate.tran("herbs." + specific_herbs[-1]) + " were"
 
         insert = re.sub("[_]", " ", insert)
 

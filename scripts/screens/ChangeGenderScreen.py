@@ -182,12 +182,14 @@ class ChangeGenderScreen(Screens):
         new_gender_identity = [""]
 
         if (
-            sub(r"[^A-Za-z0-9 ]+", "", self.selected_cat_elements["gender"].get_text())
+            #sub(r"[^A-Za-z0-9 ]+", "", self.selected_cat_elements["gender"].get_text())
+            self.selected_cat_elements["gender"].get_text()
             != ""
         ):
-            new_gender_identity = sub(
-                r"[^A-Za-z0-9 ]+", "", self.selected_cat_elements["gender"].get_text()
-            )
+            new_gender_identity = self.selected_cat_elements["gender"].get_text()
+            #new_gender_identity = sub(
+            #    r"[^A-Za-z0-9 ]+", "", self.selected_cat_elements["gender"].get_text()
+            #)
 
         return new_gender_identity
 

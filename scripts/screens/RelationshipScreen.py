@@ -584,39 +584,39 @@ class RelationshipScreen(Screens):
             if related:
                 if self.the_cat.is_uncle_aunt(self.inspect_cat):
                     if self.inspect_cat.genderalign in ["female", "trans female"]:
-                        col2 += "related: niece"
+                        col2 += translate.tran("relationScreen.related: niece")
                     elif self.inspect_cat.genderalign in ["male", "trans male"]:
-                        col2 += "related: nephew"
+                        col2 += translate.tran("relationScreen.related: nephew")
                     else:
-                        col2 += "related: sibling's child\n"
+                        col2 += translate.tran("relationScreen.related: sibling's child\n")
                 elif self.inspect_cat.is_uncle_aunt(self.the_cat):
                     if self.inspect_cat.genderalign in ["female", "trans female"]:
-                        col2 += "related: aunt"
+                        col2 += translate.tran("relationScreen.related: aunt")
                     elif self.inspect_cat.genderalign in ["male", "trans male"]:
-                        col2 += "related: uncle"
+                        col2 += translate.tran("relationScreen.related: uncle")
                     else:
-                        col2 += "related: parent's sibling"
+                        col2 += translate.tran("relationScreen.related: parent's sibling")
                 elif self.inspect_cat.is_grandparent(self.the_cat):
-                    col2 += "related: grandparent"
+                    col2 += translate.tran("relationScreen.related: grandparent")
                 elif self.the_cat.is_grandparent(self.inspect_cat):
-                    col2 += "related: grandchild"
+                    col2 += translate.tran("relationScreen.related: grandchild")
                 elif self.inspect_cat.is_parent(self.the_cat):
-                    col2 += "related: parent"
+                    col2 += translate.tran("relationScreen.related: parent")
                 elif self.the_cat.is_parent(self.inspect_cat):
-                    col2 += "related: child"
+                    col2 += translate.tran("relationScreen.related: child")
                 elif self.inspect_cat.is_sibling(
                     self.the_cat
                 ) or self.the_cat.is_sibling(self.inspect_cat):
                     if self.inspect_cat.is_littermate(
                         self.the_cat
                     ) or self.the_cat.is_littermate(self.inspect_cat):
-                        col2 += "related: sibling (littermate)"
+                        col2 += translate.tran("relationScreen.related: sibling (littermate)")
                     else:
-                        col2 += "related: sibling"
+                        col2 += translate.tran("relationScreen.related: sibling")
                 elif not game.clan.clan_settings[
-                    "first cousin mates"
+                    translate.tran("relationScreen.first cousin mates")
                 ] and self.inspect_cat.is_cousin(self.the_cat):
-                    col2 += "related: cousin"
+                    col2 += translate.tran("relationScreen.related: cousin")
 
             col2_rect = ui_scale(pygame.Rect((0, 0), (90, 70)))
             col2_rect.topright = ui_scale_offset((-15, 185))
@@ -838,9 +838,9 @@ class RelationshipScreen(Screens):
             display_romantic = the_relationship.romantic_love
 
         if display_romantic > 49:
-            text = "romantic love:"
+            text = translate.tran("relationScreen.romantic love:")
         else:
-            text = "romantic like:"
+            text = translate.tran("relationScreen.romantic like:")
 
         # determine placing on screen
         barbar = 22
@@ -883,9 +883,9 @@ class RelationshipScreen(Screens):
 
         # PLANTONIC
         if the_relationship.platonic_like > 49:
-            text = "platonic love:"
+            text = translate.tran("relationScreen.platonic love:")
         else:
-            text = "platonic like:"
+            text = translate.tran("relationScreen.platonic like:")
         self.relation_list_elements[
             f"plantonic_text{i}"
         ] = pygame_gui.elements.UITextBox(
@@ -914,9 +914,9 @@ class RelationshipScreen(Screens):
 
         # DISLIKE
         if the_relationship.dislike > 49:
-            text = "hate:"
+            text = translate.tran("relationScreen.hate:")
         else:
-            text = "dislike:"
+            text = translate.tran("relationScreen.dislike:")
         self.relation_list_elements[f"dislike_text{i}"] = pygame_gui.elements.UITextBox(
             text,
             ui_scale(
@@ -940,9 +940,9 @@ class RelationshipScreen(Screens):
 
         # ADMIRE
         if the_relationship.admiration > 49:
-            text = "admiration:"
+            text = translate.tran("relationScreen.admiration:")
         else:
-            text = "respect:"
+            text = translate.tran("relationScreen.respect:")
         self.relation_list_elements[
             f"admiration_text{i}"
         ] = pygame_gui.elements.UITextBox(
@@ -971,9 +971,9 @@ class RelationshipScreen(Screens):
 
         # COMFORTABLE
         if the_relationship.comfortable > 49:
-            text = "security:"
+            text = translate.tran("relationScreen.security:")
         else:
-            text = "comfort:"
+            text = translate.tran("relationScreen.comfort:")
         self.relation_list_elements[
             f"comfortable_text{i}"
         ] = pygame_gui.elements.UITextBox(
@@ -1002,9 +1002,9 @@ class RelationshipScreen(Screens):
 
         # JEALOUS
         if the_relationship.jealousy > 49:
-            text = "resentment:"
+            text = translate.tran("relationScreen.resentment:")
         else:
-            text = "jealousy:"
+            text = translate.tran("relationScreen.jealousy:")
         self.relation_list_elements[f"jealous_text{i}"] = pygame_gui.elements.UITextBox(
             text,
             ui_scale(
@@ -1031,9 +1031,9 @@ class RelationshipScreen(Screens):
 
         # TRUST
         if the_relationship.trust > 49:
-            text = "reliance:"
+            text = translate.tran("relationScreen.reliance:")
         else:
-            text = "trust:"
+            text = translate.tran("relationScreen.trust:")
         self.relation_list_elements[f"trust_text{i}"] = pygame_gui.elements.UITextBox(
             text,
             ui_scale(

@@ -1,9 +1,11 @@
 import scripts.game_structure.game_essentials
+from pathlib import Path
 
 class translate():
     ''' 翻译文本的词典，请按照各自的语言排好。 '''
     dicts = {
         "chinese": {
+            "language.Chinese": "简体中文",
             #region ========== UNIVERSAL ==========
             "universal.Clan": "族",
             "universal.clan": "族",
@@ -205,6 +207,34 @@ class translate():
             "relationScreen.has a mate\n": "有伴侣",
             "relationScreen.'s mate\n": "的伴侣",
             "relationScreen.mate: none\n": "无伴侣",
+            "relationScreen.related: niece": "关系：侄女",
+            "relationScreen.related: nephew": "关系：侄子",
+            "relationScreen.related: sibling's child\n": "关系：手足的幼崽",
+            "relationScreen.related: aunt": "关系：姑姑",
+            "relationScreen.related: uncle": "关系：叔叔",
+            "relationScreen.related: parent's sibling": "关系：父母的手足",
+            "relationScreen.related: grandparent": "关系：祖父母",
+            "relationScreen.related: grandchild": "关系：孙辈",
+            "relationScreen.related: parent": "关系：父母",
+            "relationScreen.related: child": "关系：幼崽",
+            "relationScreen.related: sibling (littermate)": "关系：同窝手足",
+            "relationScreen.related: sibling": "关系：手足",
+            "relationScreen.first cousin mates": "同辈的伴侣",
+            "relationScreen.related: cousin": "关系：同辈",
+            "relationScreen.romantic love:": "浪漫爱意",
+            "relationScreen.romantic like:": "浪漫好感",
+            "relationScreen.platonic love:": "柏拉图爱意",
+            "relationScreen.platonic like:": "柏拉图好感",
+            "relationScreen.hate:": "憎恨",
+            "relationScreen.dislike:": "厌恶",
+            "relationScreen.admiration:": "敬佩",
+            "relationScreen.respect:": "尊重",
+            "relationScreen.security:": "安心",
+            "relationScreen.comfort:": "舒适",
+            "relationScreen.resentment:": "怨恨",
+            "relationScreen.jealousy:": "嫉妒",
+            "relationScreen.reliance:": "依赖",
+            "relationScreen.trust:": "信任",
             #endregion
             #region ========== PROFILE SCREEN ==========
             "profile.relations": "关系",
@@ -1229,7 +1259,7 @@ class translate():
             'prefix.burnt': '灼',
             'prefix.coal': '煤',
             'prefix.ink': '墨',
-            'prefix.inky': '墨·',
+            'prefix.inky': '墨',
             'prefix.charred': '焦黑',
             'prefix.mulberry': '桑葚',
             'prefix.evening': '晚',
@@ -2167,7 +2197,7 @@ class translate():
             'skill.excellent teacher': '绝妙导师',
             #endregion
             #region HUNTER
-            'skill.moss-ball hunter': '苔藓球猎爪',
+            'skill.moss ball hunter': '苔藓球猎爪',
             'skill.good hunter': '良好猎爪',
             'skill.great hunter': '优秀猎爪',
             'skill.renowned hunter': '出名猎爪',
@@ -3458,6 +3488,87 @@ class translate():
             #endregion
             #endregion
             #endregion
+            #region ===== DEATH =====
+            #region === Dark forest ===
+            #region = Newborn =
+            #region gen_dead_newborn
+            "thought.Wobbles around the Dark Forest":"在黑暗的森林里摇晃",
+            "thought.Is crying for milk to no avail":"哭着要吃奶，但什么都没来",
+            "thought.Attempts to snarl but can only manage a tiny mewl":"试图咆哮，但最后只发出了轻微的呜咽声",
+            "thought.Is crying for {PRONOUN/m_c/poss} parents, but no one comforts {PRONOUN/m_c/object}":"哭泣着寻找父母，但没有猫管{PRONOUN/m_c/subject}",
+            "thought.Doesn't know why {PRONOUN/m_c/subject}'s suddenly so cold":"不知道为什么突然这么冷",
+            "thought.Wishes to feel warmth at least once":"希望能再温暖一回",
+            "thought.Hears menacing whispers around {PRONOUN/m_c/object}":"听到周围有威胁的低语声",
+            "thought.Is clouded in confusion and fear":"被笼罩于困惑与恐惧之中",
+            "thought.Feels trapped in the sticky mud":"感觉被困在了粘稠的泥浆里",
+            "thought.Is feeling incredibly lonely":"感觉异常孤独",
+            #endregion
+            #region gen_dead_newborn_to_alive_parent
+            "thought.Desperately misses r_c":"非常想念r_c",
+            "thought.Misses the fleeting feeling of warmth at r_c's belly":"怀念在r_c肚子上那短暂而温暖的感觉",
+            "thought.Wishes that r_c could bathe {PRONOUN/m_c/object} again":"希望r_c能回来给{PRONOUN/m_c/subject}洗澡",
+            #endregion
+            #endregion
+            #endregion
+            #region === Unknown residence ===
+            "thought.Is chasing ghost rabbits":"正追逐着兔子的灵魂",
+            "thought.Is thinking about {PRONOUN/m_c/poss} life":"正回忆着{PRONOUN/m_c/poss}猫生",
+            "thought.Is curled up in a tight ball, snoring and dozing away":"打着轻鼾在睡梦中蜷成了一团",
+            "thought.Is wondering how {PRONOUN/m_c/poss} kin is doing":"想知道{PRONOUN/m_c/poss}血亲怎么样了",
+            "thought.Is thinking that {PRONOUN/m_c/subject} saw a figure in the distance":"觉着{PRONOUN/m_c/subject}在远处瞧见个猫影",
+            "thought.Is waving happily with {PRONOUN/m_c/poss} tail at another ghost cat when {PRONOUN/m_c/subject} cross paths":"欢快地摇着尾巴与另一只猫的灵魂穿过水池",
+            "thought.Is leisurely strolling around, taking in the scenery":"闲适地四处逛着，欣赏风景",
+            "thought.Wonders if there are other places that cats go in the afterlife":"好奇在猫咪们死后会不会去往另一个世界",
+            "thought.Is floating around, exploring the world in this new point of view":"四处飘着，用全新的视角探索世界",
+            "thought.Is in awe at the creations {PRONOUN/m_c/subject} are making with the smoke surrounding {PRONOUN/m_c/object}":"惊叹于{PRONOUN/m_c/subject}身边那环绕着由烟气构成的造物",
+            "thought.Is intrigued by this new afterlife {PRONOUN/m_c/subject} were never told about":"好奇于这从未有猫同他提起过的死后生活",
+            "thought.Thought {PRONOUN/m_c/subject} found the scent of a cat {PRONOUN/m_c/subject} knows, but can't seem to find the source of the scent":"总觉得{PRONOUN/m_c/subject}找到了似曾相识的旧猫气味，但就是找不到哪来的",
+            "thought.Is unable to pick up any scents through the fog":"在雾中分辨不出任何气味",
+            "thought.Visits {PRONOUN/m_c/poss} old haunts, remembering the good times":"拜访了{PRONOUN/m_c/poss}老相识，回忆着从前的美好时光",
+            "thought.Tries to remember something that happened long ago":"努力想回忆起从前的事",
+            "thought.Wonders if the living can ever sense {PRONOUN/m_c/object} nearby":"好奇活着的猫咪能否感受到附近的{PRONOUN/m_c/subject}",
+            "thought.Watches a living cat hunt, silently giving them tips and hoping somehow that they can hear":"瞧着一只猫咪捕猎，沉默地给了些小提示希望祂能发现",
+            "thought.Follows a living cat around for a bit, curious about {PRONOUN/m_c/poss} life":"因好奇而尾随了一只猫咪，观察着{PRONOUN/m_c/poss}猫生",
+            "thought.Is reflecting on the good memories of {PRONOUN/m_c/poss} previous life":"沉浸于从前猫生中的美好回忆",
+            "thought.Takes a deep breath, savoring the scent of the flora around {PRONOUN/m_c/object}":"深呼吸，嗅着周围植物的香气",
+            "thought.Naps in a cozy ball, grateful for the peace of the moment":"舒适地团成球小憩一下，感激这片刻安宁",
+            "thought.Is chatting with other ghost cats, enjoying {PRONOUN/m_c/poss} company":"正和别的猫的灵魂聊天，满足于祂们的陪伴",
+            "thought.Is marvelling at the beauty of the night sky":"对那美丽的夜空连连赞叹",
+            "thought.Ponders about the vast, endless possibilities of this afterlife":"考虑着{PRONOUN/m_c/subject}死后生活带来的巨大而又无尽的可能性",
+            "thought.Is eagerly exploring realms {PRONOUN/m_c/subject} hadn't in life":"迫切地探索着{PRONOUN/m_c/subject}猫生中未曾去过的领域",
+            "thought.Is savoring the thrill of hunting ghostly prey":"正享受着狩猎幽灵猎物的刺激感",
+            "thought.Is sending positive energy to the living, hoping they can feel it somehow":"向生者传递正能量，希望{PRONOUN/m_c/subject}无论如何能感觉到一下",
+            "thought.Is observing the living cats from afar, appreciating the beauty of {PRONOUN/m_c/poss} existence":"远远观察着活着的猫们，欣赏着祂们存在本身的美",
+            "thought.Catches a slight whiff of {PRONOUN/m_c/poss} favorite flower in life":"捕捉到了轻微的，来自{PRONOUN/m_c/subject}喜欢花的气味",
+            "thought.Gazes at the hazy sunrise as cool mist wreathes {PRONOUN/m_c/poss} paws":"凝视着朦胧的朝阳，清冷的雾气绕着{PRONOUN/m_c/poss}爪子",
+            "thought.Is drifting through the fog, weightless and carefree":"在雾中飘然，无拘无束，无忧无虑",
+            "thought.Is watching the world go by, content to be a quiet observer":"望着世界徐徐向前，知足地当一名沉默的观察者",
+            "thought.Is admiring the intricate details of a spiderweb":"钦佩于一张蛛网啥错综复杂的细节",
+            "thought.Is lost in thought, daydreaming about the past":"迷失于回忆中，清醒却又梦着过往",
+            "Is enjoying the sensation of the cool earth beneath {PRONOUN/m_c/poss} paws":"正享受{PRONOUN/m_c/subject}爪子下清凉的土地触感",
+            "thought.Is entranced by the soft glow of the moon":"痴迷于那温婉月光",
+            "thought.Is watching the world pass by in a hazy, peaceful daze":"恍惚望着那世界朦胧而又平和地前进",
+            "thought.Is following a ghostly butterfly, watching it flutter in the soft breeze":"追着一只幽灵蝴蝶，望它在微风中轻柔振翅",
+            "thought.Is listening to the gentle hum of the wind":"低鸣的风声传入耳中",
+            "thought.Is cocooned within a serene silence":"被包裹于无声宁静中",
+            "thought.Is mesmerized by the way the light dapples the ground through the foliage":"被穿过枝叶洒在地面的光斑紧紧吸引了",
+            "thought.Is pleased to no longer be burdened by the limitations of a physical body":"满足于不受肉身拘束的现状",
+            "thought.Is watching a storm rage on in the distance":"望着远方风暴肆虐",
+            "thought.Is chasing after the flickering light of a ghostly firefly":"追着一只光亮明灭不定的幽灵萤火虫",
+            "thought.Is overwhelmed with a wave of nostalgia as {PRONOUN/m_c/subject} watches a living cat nuzzle {PRONOUN/m_c/poss} newborn litter":"{PRONOUN/m_c/subject}望着一只用鼻子蹭着新生幼崽的在世猫咪，怀旧感浪潮般汹涌狠狠拍在心头",
+            "thought.Is watching a group of living cats mourn a departed friend":"观察着一群在世猫咪为已故的朋友哀悼",
+            "thought.Is comforted by the knowledge that {PRONOUN/m_c/subject} are not alone in this afterlife":"因得知{PRONOUN/m_c/subject}在这死后世界并非孤身一猫而舒心许多",
+            "thought.Is grateful for moments of solitude":"感激于独处时刻",
+            "thought.Is watching a living cat bask in the sun, feeling a sense of warmth":"看一只在世猫咪晒着太阳，竟也觉出些许温暖",
+            "thought.Is yearning for something {PRONOUN/m_c/subject} can't quite put {PRONOUN/m_c/poss} paw on":"渴求些{PRONOUN/m_c/subject}无法企及的东西",
+            "thought.Is momentarily haunted by the memory of {PRONOUN/m_c/poss} own death":"立刻被{PRONOUN/m_c/self}的死讯占据脑海",
+            "thought.Is giving a group of ghost kittens a badger ride":"为一帮幼崽的魂魄提供了一次獾骑行",
+            "thought.Is purring as {PRONOUN/m_c/subject} watches fellow ghost cats frolic and play":"在看着幽灵猫咪朋友们嬉戏玩耍时呼噜着",
+            "thought.Is listening attentively as other ghost cats tell tales of {PRONOUN/m_c/poss} own past lives":"细细倾听别的幽灵猫咪们讲着祂们生前的故事",
+            "thought.Comforts a newly arrived ghost cat that feels lost and bewildered within this afterlife":"安抚着一只因初到死后世界而孤独无措的幽灵猫咪",
+            "thought.Feels a sense of melancholy as {PRONOUN/m_c/subject} watches a living cat struggle with {PRONOUN/m_c/poss} health":"望着那在世猫咪与病魔斗争时生出一股子哀伤",
+            #endregion
+            #endregion
             #endregion
             #region ========== EVENTS ===========
             #region ===== MISC =====
@@ -3578,11 +3689,18 @@ class translate():
         :return: 返回翻译后的文本为字符串。
         '''
         language = scripts.game_structure.game_essentials.game.settings["language"]
-        if language == "english":
-            result = str(self)[str(self).index('.')+1:]
-        else:
-            result = translate.dicts.get(language).get(self,str(self)[str(self).index('.')+1:])
-        if len(rep) > 0 :
-            for i in range(0, len(rep), 1):
-                result = result.replace(str(rep[i][0]), str(rep[i][1]))
-        return result
+        try:
+            if language == "english":
+                result = str(self)[str(self).index('.')+1:]
+            else:
+                langRes = Path("resources/" + str(scripts.game_structure.game_essentials.game.settings["language"]))
+                if langRes.exists():
+                    result = translate.dicts.get(language).get(self,str(self)[str(self).index('.')+1:])
+                else:
+                    result = str(self)[str(self).index('.')+1:]
+            if len(rep) > 0 :
+                for i in range(0, len(rep), 1):
+                    result = result.replace(str(rep[i][0]), str(rep[i][1]))
+            return result
+        except:
+            return str(self)

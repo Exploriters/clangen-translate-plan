@@ -16,6 +16,7 @@ import pygame_gui
 from scripts.game_structure.ui_manager import UIManager
 from scripts.ui.generate_screen_scale_json import generate_screen_scale
 
+from pathlib import Path
 
 offset = (0, 0)
 screen_x = 800
@@ -287,13 +288,35 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
     )
     from scripts.game_structure.game_essentials import game
     if game.settings["language"] != "english":
-        manager.add_font_paths(
-            font_name="notosans",
-            regular_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-Medium.ttf",
-            bold_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBold.ttf",
-            italic_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-MediumItalic.ttf",
-            bold_italic_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBoldItalic.ttf",
-        )
+        langRes = Path("resources/" + str(game.settings["language"]))
+        if langRes.exists():
+            manager.add_font_paths(
+                font_name="notosans",
+                regular_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-Medium.ttf",
+                bold_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBold.ttf",
+                italic_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-MediumItalic.ttf",
+                bold_italic_path="resources/" + str(game.settings["language"]) + "/fonts/NotoSans-ExtraBoldItalic.ttf",
+            )
+            generate_screen_scale(
+                "resources/" + str(game.settings["language"]) + "/theme/master_screen_scale.json",
+                "resources/" + str(game.settings["language"]) + "/theme/generated/screen_scale.json",
+                screen_scale,
+            )
+            manager.get_theme().load_theme("resources/" + str(game.settings["language"]) + "/theme/generated/screen_scale.json")
+        else:
+            manager.add_font_paths(
+                font_name="notosans",
+                regular_path="resources/fonts/NotoSans-Medium.ttf",
+                bold_path="resources/fonts/NotoSans-ExtraBold.ttf",
+                italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
+                bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
+            )
+            generate_screen_scale(
+                "resources/theme/master_screen_scale.json",
+                "resources/theme/generated/screen_scale.json",
+                screen_scale,
+            )
+            manager.get_theme().load_theme("resources/theme/generated/screen_scale.json")
     else:
         manager.add_font_paths(
             font_name="notosans",
@@ -302,28 +325,15 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
             italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
             bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
         )
-    manager.add_font_paths(
-        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
-    )
-
-    from scripts.game_structure.game_essentials import game
-    if game.settings["language"] != "english":
-        generate_screen_scale(
-            "resources/" + str(game.settings["language"]) + "/theme/master_screen_scale.json",
-            "resources/" + str(game.settings["language"]) + "/theme/generated/screen_scale.json",
-            screen_scale,
-        )
-    else:
         generate_screen_scale(
             "resources/theme/master_screen_scale.json",
             "resources/theme/generated/screen_scale.json",
             screen_scale,
         )
-    
-    if game.settings["language"] != "english":
-        manager.get_theme().load_theme("resources/" + str(game.settings["language"]) + "/theme/generated/screen_scale.json")
-    else:
         manager.get_theme().load_theme("resources/theme/generated/screen_scale.json")
+    manager.add_font_paths(
+        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
+    )
     manager.get_theme().load_theme("resources/theme/themes/dark.json")
 
     return manager

@@ -34,48 +34,52 @@ from ..ui.icon import Icon
 
 class MakeClanScreen(Screens):
     # UI images
+    ui_images_en = {
+        "clan_frame": pygame.image.load(
+            "resources/images/pick_clan_screen/clan_name_frame.png"
+        ).convert_alpha(),
+        "name_clan": pygame.image.load(
+            "resources/images/pick_clan_screen/name_clan_light.png"
+        ).convert_alpha(),
+        "leader": pygame.image.load(
+            "resources/images/pick_clan_screen/leader_light.png"
+        ).convert_alpha(),
+        "deputy": pygame.image.load(
+            "resources/images/pick_clan_screen/deputy_light.png"
+        ).convert_alpha(),
+        "medic": pygame.image.load(
+            "resources/images/pick_clan_screen/med_light.png"
+        ).convert_alpha(),
+        "pick_clan": pygame.image.load(
+            "resources/images/pick_clan_screen/clan_light.png"
+        ).convert_alpha(),
+    }
     if game.settings["language"] != "english":
-        ui_images = {
-            "clan_frame": pygame.image.load(
-                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/clan_name_frame.png"
-            ).convert_alpha(),
-            "name_clan": pygame.image.load(
-                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/name_clan_light.png"
-            ).convert_alpha(),
-            "leader": pygame.image.load(
-                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/leader_light.png"
-            ).convert_alpha(),
-            "deputy": pygame.image.load(
-                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/deputy_light.png"
-            ).convert_alpha(),
-            "medic": pygame.image.load(
-                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/med_light.png"
-            ).convert_alpha(),
-            "pick_clan": pygame.image.load(
-                "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/clan_light.png"
-            ).convert_alpha(),
-        }
+        try:
+            ui_images = {
+                "clan_frame": pygame.image.load(
+                    "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/clan_name_frame.png"
+                ).convert_alpha(),
+                "name_clan": pygame.image.load(
+                    "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/name_clan_light.png"
+                ).convert_alpha(),
+                "leader": pygame.image.load(
+                    "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/leader_light.png"
+                ).convert_alpha(),
+                "deputy": pygame.image.load(
+                    "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/deputy_light.png"
+                ).convert_alpha(),
+                "medic": pygame.image.load(
+                    "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/med_light.png"
+                ).convert_alpha(),
+                "pick_clan": pygame.image.load(
+                    "resources/" + str(game.settings["language"]) + "/images/pick_clan_screen/clan_light.png"
+                ).convert_alpha(),
+            }
+        except:
+            ui_images = ui_images_en
     else:
-        ui_images = {
-            "clan_frame": pygame.image.load(
-                "resources/images/pick_clan_screen/clan_name_frame.png"
-            ).convert_alpha(),
-            "name_clan": pygame.image.load(
-                "resources/images/pick_clan_screen/name_clan_light.png"
-            ).convert_alpha(),
-            "leader": pygame.image.load(
-                "resources/images/pick_clan_screen/leader_light.png"
-            ).convert_alpha(),
-            "deputy": pygame.image.load(
-                "resources/images/pick_clan_screen/deputy_light.png"
-            ).convert_alpha(),
-            "medic": pygame.image.load(
-                "resources/images/pick_clan_screen/med_light.png"
-            ).convert_alpha(),
-            "pick_clan": pygame.image.load(
-                "resources/images/pick_clan_screen/clan_light.png"
-            ).convert_alpha(),
-        }
+        ui_images = ui_images_en
 
     classic_mode_text = (
         "This mode is Clan Generator at it's most basic. "
@@ -298,9 +302,10 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements["next_step"]:
-            new_name = sub(
-                r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
-            ).strip()
+            #new_name = sub(
+            #    r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
+            #).strip()
+            new_name = self.elements["name_entry"].get_text().strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
@@ -326,9 +331,10 @@ class MakeClanScreen(Screens):
                 self.open_game_mode()
         elif event.key == pygame.K_RIGHT:
             if not self.elements["name_entry"].is_focused:
-                new_name = sub(
-                    r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
-                ).strip()
+                #new_name = sub(
+                #    r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
+                #).strip()
+                new_name = self.elements["name_entry"].get_text().strip()
                 if not new_name:
                     self.elements["error"].set_text("Your Clan's name cannot be empty")
                     self.elements["error"].show()
@@ -344,9 +350,10 @@ class MakeClanScreen(Screens):
                 self.clan_name = new_name
                 self.open_choose_leader()
         elif event.key == pygame.K_RETURN:
-            new_name = sub(
-                r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
-            ).strip()
+            #new_name = sub(
+            #    r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
+            #).strip()
+            new_name = self.elements["name_entry"].get_text().strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
@@ -1473,10 +1480,10 @@ class MakeClanScreen(Screens):
             ui_scale(pygame.Rect((265, 597), (140, 29))),
             manager=MANAGER,
         )
-        self.elements["name_entry"].set_allowed_characters(
-            list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- ")
-        )
-        self.elements["name_entry"].set_text_length_limit(11)
+        #self.elements["name_entry"].set_allowed_characters(
+        #    list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- ")
+        #)
+        #self.elements["name_entry"].set_text_length_limit(11)
         self.elements["clan"] = pygame_gui.elements.UITextBox(
             "-Clan",
             ui_scale(pygame.Rect((375, 600), (100, 25))),
