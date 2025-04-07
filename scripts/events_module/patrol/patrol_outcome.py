@@ -706,7 +706,7 @@ class PatrolOutcome:
             herbList = []
             herbStr = ""
             for i in specific_herbs[:-1]:
-                herbList.append(translate.tran("herbs." + specific_herbs[i]))
+                herbList.append(translate.tran("herbs." + i)
             herbStr = ', '.join(herbList)
             insert =  herbStr + ", and " + translate.tran("herbs." + specific_herbs[-1]) + " were"
 
