@@ -694,21 +694,21 @@ class PatrolOutcome:
         plural_herbs_list = ["cobwebs", "oak leaves"]
 
         if len(specific_herbs) == 1 and specific_herbs[0] not in plural_herbs_list:
-            insert = translate.tran("herbs." + specific_herbs[0]) +  " was"
+            insert = translate.tran("herbs." + specific_herbs[0]) +  translate.tran("universal. was")
         elif len(specific_herbs) == 1 and specific_herbs[0] in plural_herbs_list:
-            insert = translate.tran("herbs." + specific_herbs[0]) + " were"
+            insert = translate.tran("herbs." + specific_herbs[0]) + translate.tran("universal. were")
         elif len(specific_herbs) == 2:
             if str(specific_herbs[0]) == str(specific_herbs[1]):
-                insert = translate.tran("herbs." + specific_herbs[0]) +  " was"
+                insert = translate.tran("herbs." + specific_herbs[0]) +  translate.tran("universal. was")
             else:
-                insert = translate.tran("herbs." + specific_herbs[0]) + " and " + translate.tran("herbs." + specific_herbs[1]) + " were"
+                insert = translate.tran("herbs." + specific_herbs[0]) + translate.tran("universal. and " )+ translate.tran("herbs." + specific_herbs[1]) + translate.tran("universal. were")
         else:
             herbList = []
             herbStr = ""
             for i in specific_herbs[:-1]:
-                herbList.append(translate.tran("herbs." + i)
+                herbList.append(translate.tran("herbs." + i))
             herbStr = ', '.join(herbList)
-            insert =  herbStr + ", and " + translate.tran("herbs." + specific_herbs[-1]) + " were"
+            insert =  herbStr + translate.tran("universal., and ") + translate.tran("herbs." + specific_herbs[-1]) + translate.tran("universal. were")
 
         insert = re.sub("[_]", " ", insert)
 

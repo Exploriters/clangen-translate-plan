@@ -1466,11 +1466,10 @@ class ProfileScreen(Screens):
                     # Continue of the mentor is invalid too.
                     if not isinstance(ment_obj, Cat):
                         continue
-
                     if len(mentor_influence["skill"][_mentor].get("strings")) > 1:
                         strings = []
-                        for i in len(mentor_influence["skill"][_mentor].get("strings")[:-1]):
-                            strings.append(translate.tran("indluence." + mentor_influence["skill"][_mentor].get("strings")[i]))
+                        for i in mentor_influence["skill"][_mentor].get("strings")[:-1]:
+                            strings.append(translate.tran("influence." + i))
                         string_snippet = (
                             translate.tran("universal., ").join(
                                 strings
@@ -1544,18 +1543,18 @@ class ProfileScreen(Screens):
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
         if all_real_apprentices:
-            text = "{PRONOUN/m_c/subject/CAP} mentored "
+            text = translate.tran("history.{PRONOUN/m_c/subject/CAP} mentored ")
             if len(all_real_apprentices) > 2:
                 text += (
-                    ", ".join([str(i.name) for i in all_real_apprentices[:-1]])
-                    + ", and "
+                    translate.tran("universal., ").join([str(i.name) for i in all_real_apprentices[:-1]])
+                    + translate.tran("universal., and ")
                     + str(all_real_apprentices[-1].name)
                     + "."
                 )
             elif len(all_real_apprentices) == 2:
                 text += (
                     str(all_real_apprentices[0].name)
-                    + " and "
+                    + translate.tran("universal. and ")
                     + str(all_real_apprentices[1].name)
                     + "."
                 )
@@ -1651,21 +1650,21 @@ class ProfileScreen(Screens):
                         continue
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
-                            life_text = "lost {PRONOUN/m_c/poss} final life"
+                            life_text = translate.tran("history.lost {PRONOUN/m_c/poss} final life")
                         elif death_number == 1:
-                            life_text = "lost all of {PRONOUN/m_c/poss} lives"
+                            life_text = translate.tran("history.lost all of {PRONOUN/m_c/poss} lives")
                         else:
-                            life_text = "lost the rest of {PRONOUN/m_c/poss} lives"
+                            life_text = translate.tran("history.lost the rest of {PRONOUN/m_c/poss} lives")
                     else:
                         life_names = [
-                            "first",
-                            "second",
-                            "third",
-                            "fourth",
-                            "fifth",
-                            "sixth",
-                            "seventh",
-                            "eighth",
+                            translate.tran("history.first"),
+                            translate.tran("history.second"),
+                            translate.tran("history.third"),
+                            translate.tran("history.fourth"),
+                            translate.tran("history.fifth"),
+                            translate.tran("history.sixth"),
+                            translate.tran("history.seventh"),
+                            translate.tran("history.eighth"),
                         ]
                         if multi_life_count != 0:
                             temp_index = index - multi_life_count
@@ -1677,14 +1676,14 @@ class ProfileScreen(Screens):
                         else:
                             lives = [life_names[index]]
                         life_text = (
-                            "lost {PRONOUN/m_c/poss} "
+                            translate.tran("history.lost {PRONOUN/m_c/poss} ")
                             + adjust_list_text(lives)
-                            + (" life" if len(lives) == 1 else " lives")
+                            + (translate.tran("history. life") if len(lives) == 1 else translate.tran("history. lives"))
                         )
                 elif death_number > 1:
                     # for retired leaders
                     if index == death_number - 1 and self.the_cat.dead:
-                        life_text = "lost {PRONOUN/m_c/poss} last remaining life"
+                        life_text = translate.tran("history.lost {PRONOUN/m_c/poss} last remaining life")
                         # added code
                         if "This cat was" in text:
                             text = text.replace("This cat was", "{VERB/m_c/were/was}")
@@ -1697,7 +1696,9 @@ class ProfileScreen(Screens):
 
                 if text:
                     if life_text:
-                        text = f"{life_text} when {{PRONOUN/m_c/subject}} {text}"
+                        text = translate.tran("history.[life_text] when {PRONOUN/m_c/subject} [text]",
+                        [["[life_text]", life_text],
+                        ["[text]", text]])
                     else:
                         text = f"{text}"
 

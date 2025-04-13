@@ -9,6 +9,10 @@ class translate():
             #region ========== UNIVERSAL ==========
             "universal.Clan": "族",
             "universal.clan": "族",
+            "universal. was": "被",
+            "universal. were": "被",
+            "universal. and ": "和",
+            "universal., and ": "，以及",
             "universal., ": "，",
             "universal.Open Data Directory": "打开文件目录",
             "universal.Opens the data directory.<br>This is where save files<br>and logs are stored.": "打开文件目录。<br>也就是存档与日志的所在处。",
@@ -2518,6 +2522,23 @@ class translate():
             "history. {PRONOUN/m_c/subject/CAP} graduated late at ": "{PRONOUN/m_c/poss/CAP}被推迟毕业直到{PRONOUN/m_c/subject}",
             "history. {PRONOUN/m_c/subject/CAP} graduated at ": "{PRONOUN/m_c/subject/CAP}毕业于",
             "history. moons old.": "月大时。",
+            "history.{PRONOUN/m_c/subject/CAP} mentored ": "{PRONOUN/m_c/subject/CAP}指导了",
+            "history.lost {PRONOUN/m_c/poss} final life": "失去了{PRONOUN/m_c/poss}最后一条命",
+            "history.lost all of {PRONOUN/m_c/poss} lives": "失去了{PRONOUN/m_c/poss}所有生命",
+            "history.lost the rest of {PRONOUN/m_c/poss} lives": "失去了所有{PRONOUN/m_c/subject}剩余的生命",
+            "history.first": "第一条",
+            "history.second": "第二条",
+            "history.third": "第三条",
+            "history.fourth": "第四条",
+            "history.fifth": "第五条",
+            "history.sixth": "第六条",
+            "history.seventh": "第七条",
+            "history.eighth": "第八条",
+            "history.lost {PRONOUN/m_c/poss} ": "失去了{PRONOUN/m_c/poss}",
+            "history. life": "生命",
+            "history. lives": "生命",
+            "history.lost {PRONOUN/m_c/poss} last remaining life": "失去了{PRONOUN/m_c/subject}所剩下的最后一条生命",
+            "history.[life_text] when {PRONOUN/m_c/subject} [text]": "因[text]而[life_text]",
             #region ===== INFLUENCE =====
             #region === Traits ===
             #region = Lawfulness_raise =
@@ -3571,6 +3592,9 @@ class translate():
             #endregion
             #endregion
             #region ========== EVENTS ===========
+            #region ===== DEATH REASONS =====
+            
+            #endregion
             #region ===== MISC =====
             #region === General ===
             "event.m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.": "m_c再也无法保守这个秘密了，{PRONOUN/m_c/subject/CAP}请求召开了一次族群大会，会上{PRONOUN/m_c/subject}透露了{PRONOUN/m_c/subject}曾死守的可怕秘密：{PRONOUN/m_c/subject}杀害了mur_c。",
@@ -3653,6 +3677,7 @@ class translate():
             #endregion
             #region ========== HERBS ===========
             "herbs.elder_leaves": "接骨木叶",
+            "herbs.elder leaves": "接骨木叶",
             "herbs.cobwebs": "蜘蛛网",
             "herbs.daisy": "雏菊",
             "herbs.horsetail": "马尾草",
@@ -3662,11 +3687,13 @@ class translate():
             "herbs.marigold": "金盏花",
             "herbs.moss": "苔藓",
             "herbs.oak_leaves": "像树叶",
+            "herbs.oak leaves": "像树叶",
             "herbs.ragwort": "千里光",
             "herbs.raspberry": "覆盆子",
             "herbs.tansy": "艾菊",
             "herbs.thyme": "百里香",
             "herbs.wild_garlic": "野生大蒜",
+            "herbs.wild garlic": "野生大蒜",
             "herbs.dandelion": "蒲公英",
             "herbs.mullein": "毛蕊花",
             "herbs.rosemary": "迷迭香",
