@@ -1242,7 +1242,7 @@ class translate():
             'prefix.ochre': '赭石',
             'prefix.cream': '奶油',
             'prefix.morel': '羊肚菌',
-            'prefix.jasmine': '茱莉',
+            'prefix.jasmine': '茉莉',
             'prefix.veil': '纱',
             'prefix.spindle': '长茎',
             'prefix.ivory': '乳白',
@@ -2129,7 +2129,7 @@ class translate():
             "backstories.m_c grew up in another Clan, but chose to leave that life and join the Clan {PRONOUN/m_c/subject} now {VERB/m_c/live/lives} in.": "m_c在另一个族群中长大，但选择了从那边的生活中脱离，并加入了{PRONOUN/m_c/subject}现在所生活的族群。",
             #endregion
             #region ===== DISGRACED =====
-            "backstories.m_c was cast out of {PRONOUN/m_c/poss} old Clan for some transgression that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not keen on talking about.": "m_c因某些{PRONOUN/m_c/subject}所不愿谈论的过分行为而被驱逐出了{PRONOUN/m_c/poss} {PRONOUN/m_c/object}曾经的族群。",
+            "backstories.m_c was cast out of {PRONOUN/m_c/poss} old Clan for some transgression that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not keen on talking about.": "m_c因某些{PRONOUN/m_c/subject}所不愿谈论的过分行为而被驱逐出了{PRONOUN/m_c/object}曾经的族群。",
             "backstories.m_c was exiled from {PRONOUN/m_c/poss} old Clan for something {PRONOUN/m_c/subject} didn't do and came here to seek safety.": "m_c因某些{PRONOUN/m_c/subject}并未做过的事而被{PRONOUN/m_c/object}曾经的族群驱逐，于是他来到了族群以寻求安全",
             "backstories.m_c once held a high rank in another Clan but was exiled for reasons {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to share.": "m_c曾在另一个族群中身居高位，却因为某些{PRONOUN/m_c/subject}拒绝分享的原因而被流放在外。",
             #endregion
