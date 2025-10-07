@@ -19,6 +19,7 @@ from scripts.utility import (
     get_alive_status_cats,
 )
 
+from scripts.translate import translate
 
 class Pregnancy_Events:
     """All events which are related to pregnancy such as kitting and defining who are the parents."""
@@ -165,11 +166,11 @@ class Pregnancy_Events:
         insert = "this should not display"
         insert2 = "this should not display"
         if amount == 1:
-            insert = "a single kitten"
-            insert2 = "it"
+            insert = translate.tran("event.a single kitten")
+            insert2 = translate.tran("it")
         if amount > 1:
-            insert = f"a litter of {amount} kits"
-            insert2 = "them"
+            insert = translate.tran("a litter of {amount} kits",["{amount}", amount])
+            insert2 = translate.tran("them")
 
         print_event = f"{cat.name} found {insert} and decides to adopt {insert2}."
         if other_cat:
@@ -218,9 +219,9 @@ class Pregnancy_Events:
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
                 insert = "this should not display"
                 if amount == 1:
-                    insert = "a single kitten"
+                    insert = translate.tran("event.a single kitten")
                 if amount > 1:
-                    insert = f"a litter of {amount} kits"
+                    insert = translate.tran("a litter of {amount} kits",["{amount}", amount])
                 print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
                 cats_involved = [cat.ID]
                 for kit in kits:
@@ -238,10 +239,13 @@ class Pregnancy_Events:
                 "amount": 0,
             }
 
-            text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
+            text = translate.tran("event." + choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"]))
             severity = random.choices(["minor", "major"], [3, 1], k=1)
             cat.get_injured("pregnant", severity=severity[0])
-            text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
+            print("[DEBUG]HERE'S LINE 246")
+            print(choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"]))
+            print(translate.tran("event." + choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])))
+            text += translate.tran("event." + choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"]))
             text = event_text_adjust(Cat, text, main_cat=cat, clan=clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
         else:
@@ -279,10 +283,13 @@ class Pregnancy_Events:
                 "amount": 0,
             }
 
-            text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
+            text = translate.tran("event." + choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"]))
             severity = random.choices(["minor", "major"], [3, 1], k=1)
             pregnant_cat.get_injured("pregnant", severity=severity[0])
-            text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
+            print(choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"]))
+            print("[DEBUG]HERE'S LINE 289")
+            print(translate.tran("event." + choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])))
+            text += translate.tran("event." + choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"]))
             text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=clan)
             game.cur_events_list.append(
                 Single_Event(text, "birth_death", pregnant_cat.ID)
@@ -319,21 +326,21 @@ class Pregnancy_Events:
 
         if thinking_amount[0] == "correct":
             if correct_guess == "small":
-                text = Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][0]
+                text = translate.tran("event." + Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][0])
             else:
-                text = Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][1]
+                text = translate.tran("event." + Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][1])
         elif thinking_amount[0] == "incorrect":
             if correct_guess == "small":
-                text = Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][1]
+                text = translate.tran("event." + Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][1])
             else:
-                text = Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][0]
+                text = translate.tran("event." + Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][0])
         else:
-            text = Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][2]
+            text = translate.tran("event." + Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][2])
 
         try:
             if cat.injuries["pregnant"]["severity"] == "minor":
                 cat.injuries["pregnant"]["severity"] = "major"
-                text += choice(Pregnancy_Events.PREGNANT_STRINGS["major_severity"])
+                text += translate.tran("event." + choice(Pregnancy_Events.PREGNANT_STRINGS["major_severity"]))
         except:
             print("Is this an old save? Cat does not have the pregnant condition")
 
@@ -387,7 +394,7 @@ class Pregnancy_Events:
         if kits_amount == 1:
             insert = "single kitten"
         else:
-            insert = f"litter of {kits_amount} kits"
+            insert = translate.tran("event.litter of {kits_amount} kits",["{kits_amount}", kits_amount])
 
         # Since cat has given birth, apply the birth cooldown.
         cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
@@ -398,21 +405,21 @@ class Pregnancy_Events:
         events = Pregnancy_Events.PREGNANT_STRINGS
         event_list = []
         if not cat.outside and other_cat is None:
-            event_list.append(choice(events["birth"]["unmated_parent"]))
+            event_list.append(translate.tran("event." + choice(events["birth"]["unmated_parent"])))
         elif cat.outside:
-            adding_text = choice(events["birth"]["outside_alone"])
+            adding_text = translate.tran("event." + choice(events["birth"]["outside_alone"]))
             if other_cat and not other_cat.outside:
-                adding_text = choice(events["birth"]["outside_in_clan"])
+                adding_text = translate.tran("event." + choice(events["birth"]["outside_in_clan"]))
             event_list.append(adding_text)
         elif other_cat.ID in cat.mate and not other_cat.dead and not other_cat.outside:
             involved_cats.append(other_cat.ID)
-            event_list.append(choice(events["birth"]["two_parents"]))
+            event_list.append(translate.tran("event." + choice(events["birth"]["two_parents"])))
         elif other_cat.ID in cat.mate and other_cat.dead or other_cat.outside:
             involved_cats.append(other_cat.ID)
-            event_list.append(choice(events["birth"]["dead_mate"]))
+            event_list.append(translate.tran("event." + choice(events["birth"]["dead_mate"])))
         elif len(cat.mate) < 1 and len(other_cat.mate) < 1 and not other_cat.dead:
             involved_cats.append(other_cat.ID)
-            event_list.append(choice(events["birth"]["both_unmated"]))
+            event_list.append(translate.tran("event." + choice(events["birth"]["both_unmated"])))
         elif (
             len(cat.mate) > 0 and other_cat.ID not in cat.mate and not other_cat.dead
         ) or (
